@@ -1,22 +1,22 @@
-// utils/getPostMetadata.js
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import { getAllFilesRecursively } from "./fileHelpers"; // импортируйте здесь
 
 const getPostMetadata = () => {
   const folder = "_posts";
-  const files = fs.readdirSync(folder);
+  const filepaths = getAllFilesRecursively(folder);
   let posts = [];
 
-  files.forEach((fileName) => {
-    const fileContents = fs.readFileSync(path.join(folder, fileName), "utf8");
+  filepaths.forEach((filepath) => {
+    const fileContents = fs.readFileSync(filepath, "utf8");
     const matterResult = matter(fileContents);
     const postMetadata = {
       title: matterResult.data.title,
       date: matterResult.data.date.toISOString(),
       subtitle: matterResult.data.subtitle || "",
       author: matterResult.data.author || "",
-      slug: matterResult.data.slug || fileName.replace(".md", ""),
+      slug: matterResult.data.slug || path.basename(filepath).replace(".md", ""),
       category: matterResult.data.category,
     };
 
