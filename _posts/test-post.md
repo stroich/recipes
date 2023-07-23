@@ -4,7 +4,7 @@ date: 2023-01-01
 author: andron13
 ---
 
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+This is a starter template for [Learn Next.js](https://nextjs.org/learn). это тестовая статья
 
 
 # Заголовок статьи

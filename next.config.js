@@ -1,4 +1,3 @@
-// next.config.js
 const loadPosts = require('./lib/loadPosts');
 
 module.exports = {

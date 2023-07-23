@@ -3,7 +3,7 @@ import loadPosts from '../lib/loadPosts';
 
 const PostsPage = ({ posts }) => {
   return (
-    <div>
+    <div>это тестовая статья
       {posts.map(post => (
         <div key={post.slug}>
           <Link href={`/posts/${post.slug}`} passHref>
