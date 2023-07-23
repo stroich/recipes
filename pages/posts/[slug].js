@@ -1,9 +1,9 @@
-import fs from "fs";
-import matter from "gray-matter";
+// pages/posts/[slug].js
 import { useRouter } from "next/router";
-import path from "path";
+import React from "react";
 import Markdown from "markdown-to-jsx";
 import getPostMetadata from "../../utils/getPostMetadata";
+import getPostData from "../../utils/getPostData";
 import Link from "next/link";
 
 const Post = ({ postMetadata, content }) => {
@@ -15,14 +15,14 @@ const Post = ({ postMetadata, content }) => {
 
   return (
     <div>
-      <Link href="/"> {/* Добавьте ссылку здесь */}
-        <a>Вернуться на главную</a>
+      <Link href="/">
+        Вернуться на главную
       </Link>
       <h2>{postMetadata.title}</h2>
       <p>{postMetadata.date}</p>
       <p>{postMetadata.subtitle}</p>
       <p>{postMetadata.author}</p>
-      <Markdown>{content}</Markdown> // Обновлено для использования компонента Markdown
+      <Markdown>{content}</Markdown>
     </div>
   );
 };
@@ -39,18 +39,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { slug } = params;
-  const fileContents = fs.readFileSync(path.join("_posts", `${slug}.md`), "utf8");
-  const matterResult = matter(fileContents);
-
-  const postMetadata = {
-    title: matterResult.data.title,
-    date: matterResult.data.date.toISOString(),
-    subtitle: matterResult.data.subtitle || "",
-    author: matterResult.data.author || "",
-    slug,
-  };
-
-  const content = matterResult.content;
+  const { content, postMetadata } = await getPostData(slug);
 
   return {
     props: {
