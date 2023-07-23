@@ -2,6 +2,8 @@
 title: Основы React-разработки
 date: 2023-01-03
 author: andron13
+category: java
+slug: my-java-post-3
 ---
 
 # Обучение React.js это тестовая статья

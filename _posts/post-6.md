@@ -2,6 +2,8 @@
 title: Работа с API и асинхронными операциями
 date: 2023-01-05
 author: andron13
+category: java
+slug: my-java-post-31
 ---
 
 # Fetch API и асинхронные запросы

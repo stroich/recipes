@@ -2,6 +2,8 @@
 title: Введение в Node.js и серверное программирование
 date: 2023-01-06
 author: andron13
+category: java
+slug: my-java-post-6
 ---
 
 # Node.js - серверный JavaScript это тестовая статья

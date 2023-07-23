@@ -2,6 +2,8 @@
 title: This is a starter template for
 date: 2023-01-01
 author: andron13
+category: java
+slug: my-java-post-10  
 ---
 
 This is a starter template for [Learn Next.js](https://nextjs.org/learn). это тестовая статья

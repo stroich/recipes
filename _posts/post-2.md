@@ -2,6 +2,8 @@
 title: Обзор Next.js
 date: 2023-01-02
 author: andron13
+category: java
+slug: my-java-post-2
 ---
 
 # Next.js - платформа разработки приложений это тестовая статья

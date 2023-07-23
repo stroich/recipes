@@ -7,8 +7,8 @@ const PostsIndex = ({ posts }) => {
     <ul>
       {posts.map((post) => (
         <li key={post.slug}>
-          {/* Обновите элемент <Link> здесь: */}
-          <Link href={`/posts/${post.slug}`} passHref>
+          {/* Обновлен элемент <Link> здесь: */}
+          <Link href={`/posts/${post.category}/${post.slug}`}>
             <span>{post.title}</span>
           </Link>
         </li>

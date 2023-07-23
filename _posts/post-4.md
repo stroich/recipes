@@ -2,6 +2,8 @@
 title: Основы стилизации с помощью CSS
 date: 2023-01-04
 author: andron13
+category: java
+slug: my-java-post-4
 ---
 
 # CSS: создание каскадных стилей  это тестовая статья

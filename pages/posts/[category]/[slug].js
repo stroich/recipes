@@ -1,10 +1,11 @@
-// pages/posts/[slug].js
+// pages/posts/[category]/[slug].js
 import { useRouter } from "next/router";
 import React from "react";
 import Markdown from "markdown-to-jsx";
-import getPostMetadata from "../../utils/getPostMetadata";
-import getPostData from "../../utils/getPostData";
+import getPostMetadata from "../../../utils/getPostMetadata";
+import getPostData from "../../../utils/getPostData";
 import Link from "next/link";
+import DateFormatter from "../../../utils/dateFormatter";
 
 const Post = ({ postMetadata, content }) => {
   const router = useRouter();
@@ -19,7 +20,7 @@ const Post = ({ postMetadata, content }) => {
         Вернуться на главную
       </Link>
       <h2>{postMetadata.title}</h2>
-      <p>{postMetadata.date}</p>
+      <p><DateFormatter dateString={postMetadata.date}/></p>
       <p>{postMetadata.subtitle}</p>
       <p>{postMetadata.author}</p>
       <Markdown>{content}</Markdown>
@@ -29,17 +30,16 @@ const Post = ({ postMetadata, content }) => {
 
 export async function getStaticPaths() {
   const posts = getPostMetadata();
-  const slugs = posts.map((post) => post.slug);
-  const paths = slugs.map((slug) => ({
-    params: { slug },
+  const paths = posts.map((post) => ({
+    params: { category: post.category, slug: post.slug },
   }));
 
   return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
-  const { slug } = params;
-  const { content, postMetadata } = await getPostData(slug);
+  const { category, slug } = params;
+  const { content, postMetadata } = await getPostData(category, slug);
 
   return {
     props: {

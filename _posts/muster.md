@@ -2,6 +2,8 @@
 title: Пример статьи
 date: 2023-01-01
 author: Ваше имя
+category: general
+slug: my-java-post
 ---
 
 # Заголовок статьи - это тестовая статья
