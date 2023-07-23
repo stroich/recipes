@@ -1,15 +1,12 @@
 // pages/index.js
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import MainLayout from "../components/mainLayout";
 
-const IndexPage = () => {
-  const router = useRouter();
-
-  useEffect(() => {
-    router.replace('/posts');
-  }, []);
-
-  return null;
+const Index = () => {
+  return (
+    <MainLayout pageTitle="Главная страница">
+      {/* Здесь размещайте уникальное содержимое для главной страницы, например, баннеры, популярные посты и т. д. */}
+    </MainLayout>
+  );
 };
 
-export default IndexPage;
+export default Index;

@@ -1,8 +1,7 @@
-// utils/fileHelpers.js
 import fs from "fs";
 import path from "path";
 
-export function getAllFilesRecursively(dir, fileList = []) {
+function getAllFilesRecursively(dir, fileList = []) {
   const files = fs.readdirSync(dir);
 
   files.forEach((file) => {
@@ -17,3 +16,5 @@ export function getAllFilesRecursively(dir, fileList = []) {
 
   return fileList;
 }
+
+export default getAllFilesRecursively;

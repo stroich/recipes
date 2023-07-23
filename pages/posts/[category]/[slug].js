@@ -1,53 +1,48 @@
-// pages/posts/[category]/[slug].js
-import { useRouter } from "next/router";
-import React from "react";
-import Markdown from "markdown-to-jsx";
-import getPostMetadata from "../../../utils/getPostMetadata";
-import getPostData from "../../../utils/getPostData";
-import Link from "next/link";
 import DateFormatter from "../../../utils/dateFormatter";
+import {getAllPostSlugs} from "../../../utils/postMetadata";
+import {getPostData} from "../../../utils/postHandler";
+import InnerLayout from "../../../components/innerLayout";
 
-const Post = ({ postMetadata, content }) => {
-  const router = useRouter();
 
-  if (router.isFallback) {
-    return <div>Loading...</div>;
-  }
-
+const PostPage = ({ postMetadata, content }) => {
   return (
-    <div>
-      <Link href="/">
-        Вернуться на главную
-      </Link>
-      <h2>{postMetadata.title}</h2>
-      <p><DateFormatter dateString={postMetadata.date}/></p>
-      <p>{postMetadata.subtitle}</p>
-      <p>{postMetadata.author}</p>
-      <Markdown>{content}</Markdown>
-    </div>
+    <InnerLayout pageTitle={postMetadata.title}>
+      <article>
+        <header>
+          <h1>{postMetadata.title}</h1>
+          <DateFormatter dateString={postMetadata.date} />
+        </header>
+        <section dangerouslySetInnerHTML={{ __html: content }}></section>
+      </article>
+    </InnerLayout>
   );
 };
 
+// остальной код файла остается прежним
+
 export async function getStaticPaths() {
-  const posts = getPostMetadata();
-  const paths = posts.map((post) => ({
-    params: { category: post.category, slug: post.slug },
+  const postSlugs = getAllPostSlugs();
+
+  const slugsWithCategory = postSlugs.map(({category, slug}) => ({
+    params: {category, slug},
   }));
 
-  return { paths, fallback: true };
-}
-
-export async function getStaticProps({ params }) {
-  const { category, slug } = params;
-  const { content, postMetadata } = await getPostData(category, slug);
-
   return {
-    props: {
-      postMetadata,
-      content,
-    },
-    revalidate: 1,
+    paths: slugsWithCategory,
+    fallback: false,
   };
 }
 
-export default Post;
+export async function getStaticProps({params}) {
+  const category = params.category;
+  const slug = params.slug;
+
+  try {
+    const {content, postMetadata} = await getPostData(category, slug);
+    return {props: {content, postMetadata}};
+  } catch (error) {
+    return {notFound: true};
+  }
+}
+
+export default PostPage;

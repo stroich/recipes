@@ -1,24 +1,25 @@
-// pages/posts/index.js
 import Link from "next/link";
-import getPostMetadata from "../../utils/getPostMetadata";
+import postMetadata from "../../utils/postMetadata";
+import InnerLayout from "../../components/mainLayout";
 
 const PostsIndex = ({ posts }) => {
   return (
+    <InnerLayout >
     <ul>
       {posts.map((post) => (
         <li key={post.slug}>
-          {/* Обновлен элемент <Link> здесь: */}
           <Link href={`/posts/${post.category}/${post.slug}`}>
             <span>{post.title}</span>
           </Link>
         </li>
       ))}
     </ul>
+    </InnerLayout>
   );
 };
 
 export async function getStaticProps() {
-  const posts = getPostMetadata();
+  const posts = postMetadata();
 
   return {
     props: {

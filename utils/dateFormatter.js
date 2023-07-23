@@ -1,9 +1,8 @@
-// components/DateFormatter.js
 import { parseISO, format } from "date-fns";
 import { ru, de, enUS } from "date-fns/locale";
 import React from "react";
 
-const DateFormatter = (props) => {
+export const DateFormatter = (props) => {
   const { dateString, locale = "de" } = props;
   const date = parseISO(dateString);
 
