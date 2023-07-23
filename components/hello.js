@@ -1,4 +1,4 @@
-// components/Hello.js for testing
+// components/hello.js for testing
 import React from 'react';
 
 const Hello = () => {
