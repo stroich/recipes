@@ -1,35 +1,26 @@
-import fs from "fs";
-import matter from "gray-matter";
-import  getAllFilesRecursively  from "./fileHelpers";
-import  parseMetadata from "./postMetadataHelpers";
+import processFiles from './processFiles';
+import parseMetadata from './postMetadataHelpers';
 
-export function getAllPostSlugs() {
-  const folder = "_posts";
-  const filepaths = getAllFilesRecursively(folder);
-  const slugs = [];
+export async function getAllPostSlugs() {
+  const folder = '_posts';
 
-  filepaths.forEach((filepath) => {
-    const fileContents = fs.readFileSync(filepath, "utf8");
-    const matterResult = matter(fileContents);
+  const slugs = await processFiles(folder, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    slugs.push({ category: postMetadata.category, slug: postMetadata.slug });
+    return { category: postMetadata.category, slug: postMetadata.slug };
   });
 
   return slugs;
 }
 
- const postMetadata = () => {
-  const folder = "_posts";
-  const filepaths = getAllFilesRecursively(folder);
-  let posts = [];
+const postMetadata = async () => {
+  const folder = '_posts';
 
-  filepaths.forEach((filepath) => {
-    const fileContents = fs.readFileSync(filepath, "utf8");
-    const matterResult = matter(fileContents);
+  const posts = await processFiles(folder, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    posts.push(postMetadata);
+    return postMetadata;
   });
 
   return posts;
 };
+
 export default postMetadata;

@@ -19,7 +19,7 @@ const PostsIndex = ({ posts }) => {
 };
 
 export async function getStaticProps() {
-  const posts = postMetadata();
+  const posts = await postMetadata();
 
   return {
     props: {

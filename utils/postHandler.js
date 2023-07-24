@@ -1,25 +1,23 @@
-import fs from "fs";
-import matter from "gray-matter";
-import getAllFilesRecursively from "./fileHelpers";
+// utils/postHandler.js
+import processFiles from "./processFiles";
 import parseMetadata from "./postMetadataHelpers";
 
 export const getPostData = async (category, slug) => {
   const folder = "_posts";
-  const filepaths = getAllFilesRecursively(folder);
-  const filepath = filepaths.find((filepath) => {
-    const fileContents = fs.readFileSync(filepath, "utf8");
-    const matterResult = matter(fileContents);
+
+  const matchingPosts = await processFiles(folder, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    return postMetadata.slug === slug && (category === null || postMetadata.category === category);
+    if (postMetadata.slug === slug && (category === null || postMetadata.category === category)) {
+      return { content: matterResult.content, postMetadata };
+    }
   });
 
-  if (filepath) {
-    const fileContents = fs.readFileSync(filepath, "utf8");
-    const matterResult = matter(fileContents);
-    const postMetadata = parseMetadata(matterResult, filepath);
-    return {content: matterResult.content, postMetadata};
+  // Фильтрация пустых результатов (оптимизация для случая, когда не все файлы соответствуют)
+  const filteredPosts = matchingPosts.filter((post) => post !== undefined);
+
+  if (filteredPosts.length) {
+    return filteredPosts[0];
   }
 
   throw new Error(`Post with slug "${slug}" and category "${category}" not found.`);
 };
-

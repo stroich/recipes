@@ -21,7 +21,7 @@ const PostPage = ({ postMetadata, content }) => {
 // остальной код файла остается прежним
 
 export async function getStaticPaths() {
-  const postSlugs = getAllPostSlugs();
+  const postSlugs = await getAllPostSlugs();
 
   const slugsWithCategory = postSlugs.map(({category, slug}) => ({
     params: {category, slug},
