@@ -2,17 +2,18 @@ import DateFormatter from "../../../utils/dateFormatter";
 import {getAllPostSlugs} from "../../../utils/postMetadata";
 import {getPostData} from "../../../utils/postHandler";
 import InnerLayout from "../../../components/innerLayout";
+import {MdArticle} from "../../../components/markdown";
 
 
-const PostPage = ({ postMetadata, content }) => {
+const PostPage = ({postMetadata, content}) => {
   return (
     <InnerLayout pageTitle={postMetadata.title}>
       <article>
         <header>
           <h1>{postMetadata.title}</h1>
-          <DateFormatter dateString={postMetadata.date} />
+          <DateFormatter dateString={postMetadata.date}/>
         </header>
-        <section dangerouslySetInnerHTML={{ __html: content }}></section>
+        <MdArticle content={content}/>
       </article>
     </InnerLayout>
   );
