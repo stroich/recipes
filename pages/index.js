@@ -1,11 +1,12 @@
 // pages/index.js
-import MainLayout from "../components/mainLayout";
+import Link from "next/link";
 
 const Index = () => {
   return (
-    <MainLayout pageTitle="Главная страница">
-      {/* Здесь размещайте уникальное содержимое для главной страницы, например, баннеры, популярные посты и т. д. */}
-    </MainLayout>
+    <>
+      <h1>тест</h1>
+      <Link href="/posts">посты</Link>
+    </>
   );
 };
 
