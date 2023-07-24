@@ -2,7 +2,10 @@
 
 const Footer = () => {
   return (
-    <footer  className="">Footer test</footer>
+    <>
+      <div className="flex-grow"></div>
+      <footer className="bg-gray-400 text-white text-center py-4">Footer test</footer>
+    </>
   )
 };
 

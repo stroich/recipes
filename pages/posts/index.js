@@ -1,21 +1,21 @@
 
 import Link from "next/link";
 import postMetadata from "../../utils/postMetadata";
-import InnerLayout from "../../components/mainLayout";
+import PostsIndexLayout from "../../components/layouts/postsIndexLayout";
 
 const PostsIndex = ({ posts }) => {
   return (
-    <InnerLayout >
+    <PostsIndexLayout >
     <ul>
       {posts.map((post) => (
         <li key={post.slug}>
-          <Link href={`/posts/${post.category}/${post.slug}`}>
+          <Link href={`/posts/${post.category}/${post.slug}`} className="text-blue-500 hover:underline">
             <span>{post.title}</span>
           </Link>
         </li>
       ))}
     </ul>
-    </InnerLayout>
+    </PostsIndexLayout>
   );
 };
 

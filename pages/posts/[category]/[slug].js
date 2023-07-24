@@ -1,20 +1,20 @@
-//pages/posts/[category]/[slug].js
 
 import DateFormatter from "../../../utils/dateFormatter";
 import {getAllPostSlugs} from "../../../utils/postMetadata";
 import {getPostData} from "../../../utils/postHandler";
 import {MdArticle} from "../../../components/markdown";
+import PostPageLayout from "../../../components/layouts/postPageLayout";
 
 
 const PostPage = ({postMetadata, content}) => {
   return (
-      <article>
+    <PostPageLayout>
         <header>
           <h1>{postMetadata.title}</h1>
           <DateFormatter dateString={postMetadata.date}/>
         </header>
         <MdArticle content={content}/>
-      </article>
+    </PostPageLayout>
   );
 };
 
