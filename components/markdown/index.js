@@ -1,3 +1,3 @@
-import {MdArticle}  from "./mdArticle";
+import {MdToHtml}  from "./mdToHtml";
 
-export {MdArticle};
+export {MdToHtml};

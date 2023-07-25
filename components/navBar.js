@@ -1,16 +1,5 @@
-import Link from "next/link";
-
-const navLinks = [
-  { title: "Главная", path: "/" },
-  { title: "Посты", path: "/posts" },
-  { title: "Контакты", path: "/contact" },
-];
-
-const myLink = (url, text) => (
-  <Link href={url} key={url + text} className="text-white hover:text-purple-200 transition duration-300 ease-in-out">
-      {text}
-  </Link>
-);
+import {defaultLink} from "./Link/myLink";
+import {primaryLinks} from "../utils/constants";
 
 export const Navbar = () => {
   return (
@@ -18,10 +7,10 @@ export const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-xl">Мой Логотип</div>
         <div className="space-x-6">
-          {navLinks.map((link) => myLink(link.path, link.title))}
+          {primaryLinks.map((link) =>
+            defaultLink(link.path, link.title))}
         </div>
       </div>
     </nav>
   );
 };
-

@@ -1,3 +1,6 @@
+//utils/postMetadataHelpers.js
+
+
 import path from 'path';
 
 function parseMetadata(matterResult, filepath) {
@@ -7,6 +10,7 @@ function parseMetadata(matterResult, filepath) {
     date: matterResult.data.date?.toISOString() || new Date().toISOString(),
     author: matterResult.data.author || '',
     category: matterResult.data.category || 'default',
+    weight: matterResult.data.weight || 100,
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),
   };
 }

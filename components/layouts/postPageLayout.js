@@ -1,8 +1,10 @@
 import {Navbar} from "../navBar";
 
-const PostPageLayout = ({children}) => {
+const PostPageLayout = ({postMetadata, children}) => {
+  console.log(postMetadata)
   return (
     <>
+      <h1>{}</h1>
       <header className="bg-indigo-900 text-white">
         <div className="container mx-auto py-8">
           <h1 className="text-5xl font-bold">Информатика: Мир Знаний</h1>

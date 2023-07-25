@@ -1,10 +1,9 @@
 import processFiles from './processFiles';
 import parseMetadata from './postMetadataHelpers';
+import {POSTS_FOLDER} from "./constants/folderVars";
 
 export async function getAllPostSlugs() {
-  const folder = '_posts';
-
-  const slugs = await processFiles(folder, (matterResult, filepath) => {
+  const slugs = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     return { category: postMetadata.category, slug: postMetadata.slug };
   });
@@ -13,9 +12,7 @@ export async function getAllPostSlugs() {
 }
 
 const postMetadata = async () => {
-  const folder = '_posts';
-
-  const posts = await processFiles(folder, (matterResult, filepath) => {
+  const posts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     return postMetadata;
   });

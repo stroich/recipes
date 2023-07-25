@@ -1,11 +1,10 @@
 // utils/postHandler.js
 import processFiles from "./processFiles";
 import parseMetadata from "./postMetadataHelpers";
+import {POSTS_FOLDER} from "./constants/folderVars";
 
 export const getPostData = async (category, slug) => {
-  const folder = "_posts";
-
-  const matchingPosts = await processFiles(folder, (matterResult, filepath) => {
+  const matchingPosts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     if (postMetadata.slug === slug && (category === null || postMetadata.category === category)) {
       return { content: matterResult.content, postMetadata };
