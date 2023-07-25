@@ -1,8 +1,10 @@
 ---
 title: Пример статьи
+subtitle: "Exploring the fundamental principles of physics"
 date: 2023-01-01
 author: Ваше имя
 category: general
+weight: 1
 slug: my-java-post
 ---
 
@@ -32,4 +34,3 @@ slug: my-java-post
 
 [Ссылка на сайт](https://example.com)
 
-![Альтернативный текст изображения](/path/to/image.jpg)

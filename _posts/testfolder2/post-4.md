@@ -1,9 +1,11 @@
 ---
-title: Основы стилизации с помощью CSS
-date: 2023-01-04
-author: andron13
-category: java
-slug: my-java-post-4
+title: "The Power of Artificial Intelligence"
+subtitle: "Understanding the potential of AI in today's world"
+date: 2023-01-03
+author: "andron13"
+category: technology
+weight: 13
+slug: the-power-of-ai
 ---
 
 # CSS: создание каскадных стилей  это тестовая статья

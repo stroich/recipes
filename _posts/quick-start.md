@@ -1,10 +1,11 @@
 ---
 title: Quick Start
-subtitle: Optional
-date: 2023-01-03
-author: andron13
-category: java
-slug: my-java-post-3dsfcdsfdsfadsdfas
+subtitle: "Unraveling the tales behind iconic artworks"
+date: 2023-01-09
+author: "andron13"
+category: art
+weight: 23
+slug: famous-paintings-stories
 ---
 
 "Cloud computing" plays a vital role in the creation of software products and services. It's also one of the most highly sought-after skills in the tech industry.

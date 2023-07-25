@@ -1,9 +1,11 @@
 ---
 title: Работа с API и асинхронными операциями
-date: 2023-01-05
-author: andron13
-category: java
-slug: my-java-post-31
+subtitle: "Exploring the benefits of mindfulness and meditation"
+date: 2023-01-07
+author: "andron13"
+category: health
+weight: 23
+slug: mindfulness-meditation-journey
 ---
 
 # Fetch API и асинхронные запросы

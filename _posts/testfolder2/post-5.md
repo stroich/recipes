@@ -1,9 +1,11 @@
 ---
-title: Введение в Node.js и серверное программирование
-date: 2023-01-06
-author: andron13
-category: java
-slug: my-java-post-6
+title: Node.js - серверный JavaScript это тестовая статья
+subtitle: "Appreciating stunning sculptures from diverse cultures"
+date: 2023-01-19
+author: "andron13"
+category: art
+weight: 12
+slug: sculptures-around-the-world
 ---
 
 # Node.js - серверный JavaScript это тестовая статья

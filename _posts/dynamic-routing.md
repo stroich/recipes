@@ -1,10 +1,11 @@
 ---
 title:  "Lorem Ipsum"
 subtitle: "Lorem ipsum dolor sit amet, conse"
-date:  2023-01-01
+date: 2023-01-04
 author: "andron13"
-category: general
-slug: my-java-post-dsfsdfdsa
+category: travel
+weight: 23
+slug: exploring-paris-5
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

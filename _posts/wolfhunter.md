@@ -1,10 +1,11 @@
 ---
-title: Making a Retro Game with PICO-8
-subtitle: dsfsdfdsdfdfsds
-date: 2023-01-05 14:52:52
-author: andron13
-category: java
-slug: my-java-post-10dfdfsf
+title: "Vegetarian Delights: Tasty and Nourishing Recipes"
+subtitle: "Exploring mouthwatering vegetarian recipes"
+date: 2023-01-15
+author: "andron13"
+category: food
+weight: 23
+slug: vegetarian-delights-recipes
 ---
 
 In a [previous post](retro-games-with-pico-8.md) I talked about how making retro 8-bit games is a great way for fledgling developers to learn new things whilst expanding their portfolio.

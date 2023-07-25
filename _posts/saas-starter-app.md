@@ -1,10 +1,11 @@
 ---
 title: SaaS Starter App
-subtitle: Optional
-date: 2023-01-03
-author: andron13
-category: java
-slug: my-java-post-3
+subtitle: "Discovering the artistic and cultural revival of the Renaissance"
+date: 2023-01-12
+author: "andron13"
+category: history
+weight: 23
+slug: renaissance-era-rebirth
 ---
 
 The [SaaS (software as a service)](https://en.wikipedia.org/wiki/Software_as_a_service) model underpins many of today's successful new businesses. Knowing how to build one from start to finish is probably a useful addition to any software developer's skill set.

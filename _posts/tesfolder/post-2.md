@@ -1,10 +1,15 @@
 ---
-title: Обзор Next.js
+title: "Ancient Civilizations: Unraveling the Past"
+subtitle: "A journey through the history of ancient civilizations"
 date: 2023-01-02
-author: andron13
-category: java
-slug: my-java-post-2
+author: "andron13"
+category: history
+weight: 12
+slug: ancient-civilizations-history
 ---
+
+
+
 
 # Next.js - платформа разработки приложений это тестовая статья
 

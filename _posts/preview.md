@@ -1,10 +1,11 @@
 ---
-title: Основы React-разработки
-subtitle:  Optional  
-date: 2023-01-03
-author: andron13
-category: java
-slug: my-java-post-3dsfsdf
+title: "The Evolution of Jazz Music"
+subtitle: "Tracing the history and impact of jazz on music"
+date: 2023-01-08
+author: "andron13"
+category: music
+weight: 23
+slug: evolution-of-jazz
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus. Praesent elementum facilisis leo vel fringilla. Congue mauris rhoncus aenean vel. Egestas sed tempus urna et pharetra pharetra massa massa ultricies.

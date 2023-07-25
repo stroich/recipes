@@ -1,9 +1,10 @@
 ---
 title: Building a QR Code Micro Web-App with Python and AWS
 subtitle: A "Hello World" QR code project
-date: 2023-01-01
-author: andron13
-category: general
+date: 2023-01-09
+author: "andron13"
+category: art
+weight: 23
 slug: qr-code-micro-app
 ---
 

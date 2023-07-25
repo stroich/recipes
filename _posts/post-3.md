@@ -1,9 +1,11 @@
 ---
 title: Основы React-разработки
-date: 2023-01-03
-author: andron13
-category: java
-slug: my-java-post-3
+subtitle: "Exploring the benefits of mindfulness and meditation"
+date: 2023-01-07
+author: "andron13"
+category: health
+weight: 23
+slug: mindfulness-meditation-journey-50
 ---
 
 # Обучение React.js это тестовая статья
