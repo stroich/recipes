@@ -16,7 +16,6 @@ I spent two weekends on the project, which—despite my prior experience in game
 
 [Source (GitHib)](https://github.com/pixegami/wolfhunter) | [Play the Game! (Web, Mobile)](https://pixegami.github.io/wolfhunter/)
 
-![images/wolfhunter_title](/images/wolfhunter_title.png)
 
 ## Concept
 
@@ -30,13 +29,11 @@ It is made with [PICO-8](https://www.lexaloffle.com/pico-8.php), and can be play
 
 ## Gameplay
 
-![images/wolfhunter_gameplay](/images/wolfhunter_gameplay.gif)
 
 I set out to make a game loop that felt similar to the combat in [Pokemon Red/Blue](https://en.wikipedia.org/wiki/Pok%C3%A9mon_Red_and_Blue), which was the most popular title on the [original Nintendo Gameboy](https://en.wikipedia.org/wiki/Game_Boy).
 
 The characters stand opposite each other, and take turns to fight. There's a bunch of other mechanics too, like strengths/weaknesses, status effects, and switching characters. Here's a scene from it:
 
-![images/pokemon_red_fight_scene](/images/pokemon_fight_scene.png)
 
 For Wolfhunter, I copied the scene layout, the turn based fighting, and the status effects. I didn't have a chance to implement other aspects of Pokemon — so instead I doubled down on the mechanics I did implement.
 
@@ -102,7 +99,6 @@ This is pretty much the back-bone of a turn-based system. Everything in the game
 
 And in this game, events are always sequential and happening in order. But new events can be added in the middle of the sequence—for example if an attack is blocked, we need a "block" event to resolve.
 
-![images/linked_list](/images/linked_list.jpg)
 
 This is pretty much a [linked list](https://en.wikipedia.org/wiki/Linked_list), and that's how I implemented it. The events are the nodes. Additionally, when each event resolves, it can modify the nodes directly ahead of it, or at the tail of the list.
 

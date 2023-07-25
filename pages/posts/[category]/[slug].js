@@ -3,7 +3,7 @@ import DateFormatter from "../../../utils/dateFormatter";
 import {getAllPostSlugs} from "../../../utils/postMetadata";
 import {getPostData} from "../../../utils/postHandler";
 import PostPageLayout from "../../../components/layouts/postPageLayout";
-import {MdToHtml} from "../../../components/markdown/mdToHtml";
+import {MdToHtml} from "../../../components/markdown";
 
 
 const PostPage = ({postMetadata, content}) => {

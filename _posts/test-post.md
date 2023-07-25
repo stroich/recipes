@@ -37,4 +37,3 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn). это
 
 [Ссылка на сайт](https://example.com)
 
-![Альтернативный текст изображения](/path/to/image.jpg)
