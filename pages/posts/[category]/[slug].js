@@ -2,8 +2,8 @@
 import DateFormatter from "../../../utils/dateFormatter";
 import {getAllPostSlugs} from "../../../utils/postMetadata";
 import {getPostData} from "../../../utils/postHandler";
-import {MdArticle} from "../../../components/markdown";
 import PostPageLayout from "../../../components/layouts/postPageLayout";
+import {MdToHtml} from "../../../components/markdown/mdToHtml";
 
 
 const PostPage = ({postMetadata, content}) => {
@@ -13,7 +13,7 @@ const PostPage = ({postMetadata, content}) => {
           <h1>{postMetadata.title}</h1>
           <DateFormatter dateString={postMetadata.date}/>
         </header>
-        <MdArticle content={content}/>
+        <MdToHtml mdSource={content}/>
     </PostPageLayout>
   );
 };

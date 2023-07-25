@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx";
 
-export const MdArticle = ({content}) => {
+export const MdToHtml = ({mdSource}) => {
   const overrides = {
     div: {component: "div", props: {className: "mb-4"}},
     p: {component: "p", props: {className: "my-4"}},
@@ -26,7 +26,7 @@ export const MdArticle = ({content}) => {
 
   return (
     <article className="bg-white shadow-md rounded-md p-4 text-gray-800">
-      <Markdown options={{overrides}}>{content}</Markdown>
+      <Markdown options={{overrides}}>{mdSource}</Markdown>
     </article>
   );
 };
