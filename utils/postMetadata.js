@@ -1,3 +1,4 @@
+// utils/postMetadata.js
 import processFiles from './processFiles';
 import parseMetadata from './postMetadataHelpers';
 import {POSTS_FOLDER} from "./constants/folderVars";
@@ -5,7 +6,8 @@ import {POSTS_FOLDER} from "./constants/folderVars";
 export async function getAllPostSlugs() {
   const slugs = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    return { category: postMetadata.category, slug: postMetadata.slug };
+    const category = postMetadata.category === 'default' ? '' : postMetadata.category;
+    return { category: category, slug: postMetadata.slug };
   });
 
   return slugs;

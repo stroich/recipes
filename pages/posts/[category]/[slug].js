@@ -1,3 +1,4 @@
+// pages/posts/[category]/[slug].js
 
 import DateFormatter from "../../../utils/dateFormatter";
 import {getAllPostSlugs} from "../../../utils/postMetadata";
@@ -8,12 +9,10 @@ import {MdToHtml} from "../../../components/markdown";
 
 const PostPage = ({postMetadata, content}) => {
   return (
-    <PostPageLayout>
-        <header>
-          <h1>{postMetadata.title}</h1>
-          <DateFormatter dateString={postMetadata.date}/>
-        </header>
-        <MdToHtml mdSource={content}/>
+    <PostPageLayout postMetadata={postMetadata}>
+      <header>
+      </header>
+      <MdToHtml mdSource={content}/>
     </PostPageLayout>
   );
 };

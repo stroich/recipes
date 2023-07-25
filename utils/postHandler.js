@@ -4,6 +4,7 @@ import parseMetadata from "./postMetadataHelpers";
 import {POSTS_FOLDER} from "./constants/folderVars";
 
 export const getPostData = async (category, slug) => {
+  category = category || null;
   const matchingPosts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     if (postMetadata.slug === slug && (category === null || postMetadata.category === category)) {
@@ -11,7 +12,6 @@ export const getPostData = async (category, slug) => {
     }
   });
 
-  // Фильтрация пустых результатов (оптимизация для случая, когда не все файлы соответствуют)
   const filteredPosts = matchingPosts.filter((post) => post !== undefined);
 
   if (filteredPosts.length) {

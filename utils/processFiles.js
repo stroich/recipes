@@ -1,3 +1,4 @@
+// utils/processFiles.js
 import fs from 'fs';
 import matter from 'gray-matter';
 import getAllFilesRecursively from './fileHelpers';
