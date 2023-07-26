@@ -1,12 +1,12 @@
 // utils/postHandler.js
-import processFiles from "./processFiles";
-import parseMetadata from "./postMetadataHelpers";
-import {POSTS_FOLDER} from "./constants/folderVars";
+import { POSTS_FOLDER } from './constants/folderVars';
+import parseMetadata from './postMetadataHelpers';
+import processFiles from './processFiles';
 
 export async function getAllPostsData() {
   return await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    return {content: matterResult.content, ...postMetadata};
+    return { content: matterResult.content, ...postMetadata };
   });
 }
 export const getPostData = async (category, slug) => {

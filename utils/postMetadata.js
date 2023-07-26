@@ -1,7 +1,7 @@
 // utils/postMetadata.js
-import processFiles from './processFiles';
+import { POSTS_FOLDER } from './constants/folderVars';
 import parseMetadata from './postMetadataHelpers';
-import {POSTS_FOLDER} from "./constants/folderVars";
+import processFiles from './processFiles';
 
 export async function getAllPostSlugs() {
   const slugs = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {

@@ -5,9 +5,9 @@
     "start": "next start",
     "typecheck": "tsc",
     "test": "jest",
-    "lint": "eslint components pages",
-    "eslint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx components pages",
-    "eslint:fix": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx components pages",
+    "lint": "eslint ./",
+    "eslint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./",
+    "eslint:fix": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx ./",
     "prepublish": "npm run eslint:fix"
   },
   "dependencies": {
