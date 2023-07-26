@@ -1,3 +1,71 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+
+body {
+    line-height: 1.6;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+
+blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 4px solid #333;
+}
+
+blockquote p {
+    font-style: italic;
+}
+
+a {
+    color: #3182CE;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #2C5282;
+}
+
+article {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #f7f7f7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}

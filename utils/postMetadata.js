@@ -1,5 +1,5 @@
 // utils/postMetadata.js
-import { POSTS_FOLDER } from './constants/folderVars';
+import { POSTS_FOLDER } from './constants/webSiteVars';
 import parseMetadata from './postMetadataHelpers';
 import processFiles from './processFiles';
 

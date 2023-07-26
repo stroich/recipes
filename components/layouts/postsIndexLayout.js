@@ -1,4 +1,6 @@
 // components/postsIndexLayout.js
+import { Navbar } from '../navBar';
+
 const PostsIndexLayout = ({ children }) => {
   return (
     <>
@@ -8,6 +10,7 @@ const PostsIndexLayout = ({ children }) => {
           <p className="text-xl mt-4">Исследуйте мир информатики и технологий.</p>
         </div>
       </header>
+      <Navbar />
       <main>{children}</main>
       <footer>{/* Здесь ваш футер для страницы index.js постов */}</footer>
     </>

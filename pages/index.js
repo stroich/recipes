@@ -1,5 +1,6 @@
-import Link from 'next/link';
-
+import FirstScreen from '../components/frontpage/firstScreen';
+import SecondScreen from '../components/frontpage/secondScreen';
+import ThirdScreen from '../components/frontpage/thirdScreen';
 import HomeLayout from '../components/layouts/homeLayout';
 import { getAllPostsData } from '../utils/postHandler';
 
@@ -16,10 +17,11 @@ const Index = ({ allPostsData }) => {
   console.log(allPostsData);
   return (
     <HomeLayout>
-      <h1>тест</h1>
-      <Link href="/posts" className="text-blue-500 hover:underline">
-        посты
-      </Link>
+      <div>
+        <FirstScreen />
+        <SecondScreen />
+        <ThirdScreen />
+      </div>
     </HomeLayout>
   );
 };

@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const defaultLink = (
   url,
   text,
-  classname = 'text-white hover:text-purple-200 transition duration-300 ease-in-out'
+  classname = 'text-black hover:text-white hover:bg-black transition duration-300'
 ) => (
   <Link href={url} key={url + text} className={classname}>
     {text}
