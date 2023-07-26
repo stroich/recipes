@@ -1,20 +1,23 @@
+import Link from 'next/link';
 
-import Link from "next/link";
-import postMetadata from "../../utils/postMetadata";
-import PostsIndexLayout from "../../components/layouts/postsIndexLayout";
+import PostsIndexLayout from '../../components/layouts/postsIndexLayout';
+import postMetadata from '../../utils/postMetadata';
 
 const PostsIndex = ({ posts }) => {
   return (
-    <PostsIndexLayout >
-    <ul>
-      {posts.map((post) => (
-        <li key={post.slug}>
-          <Link href={`/posts/${post.category}/${post.slug}`} className="text-blue-500 hover:underline">
-            <span>{post.title}</span>
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <PostsIndexLayout>
+      <ul>
+        {posts.map((post) => (
+          <li key={post.slug}>
+            <Link
+              href={`/posts/${post.category}/${post.slug}`}
+              className="text-blue-500 hover:underline"
+            >
+              <span>{post.title}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </PostsIndexLayout>
   );
 };

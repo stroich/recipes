@@ -1,10 +1,10 @@
-import Link from "next/link";
+import Link from 'next/link';
 
-const Breadcrumb = ({breadcrumbs}) => {
+const Breadcrumb = ({ breadcrumbs }) => {
   return (
     <nav className="text-gray-500 text-sm my-1" aria-label="breadcrumb">
       <ol className="flex items-center space-x-3">
-        {breadcrumbs.map(({label, href}, i) => {
+        {breadcrumbs.map(({ label, href }, i) => {
           const lastElement = i === breadcrumbs.length - 1;
           if (lastElement) {
             return (

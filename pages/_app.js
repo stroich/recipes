@@ -1,10 +1,9 @@
 // pages/_app.js
-import MainLayout from "../components/layouts/mainLayout";
-import "../styles/globals.css";
-
+import MainLayout from '../components/layouts/mainLayout';
+import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
-  const pageTitle = pageProps.pageTitle || "pageTitle not set";
+  const pageTitle = pageProps.pageTitle || 'pageTitle not set';
   return (
     <MainLayout pageTitle={pageTitle}>
       <Component {...pageProps} />

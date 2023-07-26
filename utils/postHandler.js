@@ -3,6 +3,12 @@ import processFiles from "./processFiles";
 import parseMetadata from "./postMetadataHelpers";
 import {POSTS_FOLDER} from "./constants/folderVars";
 
+export async function getAllPostsData() {
+  return await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
+    const postMetadata = parseMetadata(matterResult, filepath);
+    return {content: matterResult.content, ...postMetadata};
+  });
+}
 export const getPostData = async (category, slug) => {
   category = category || null;
   const matchingPosts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {

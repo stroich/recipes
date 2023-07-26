@@ -1,7 +1,8 @@
 // Created on 23.07.23 by 22:01:
 
-import Link from "next/link";
-import {primaryLinks, secondaryLinks, thirdLinks} from "../utils/constants";
+import Link from 'next/link';
+
+import { primaryLinks, secondaryLinks, thirdLinks } from '../utils/constants';
 
 const Footer = () => {
   return (
@@ -54,4 +55,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

@@ -1,16 +1,16 @@
-import { parseISO, format } from "date-fns";
-import { ru, de, enUS } from "date-fns/locale";
+import { parseISO, format } from 'date-fns';
+import { ru, de, enUS } from 'date-fns/locale';
 
 export const DateFormatter = (props) => {
-  const { dateString, locale = "de" } = props;
+  const { dateString, locale = 'de' } = props;
   const date = parseISO(dateString);
 
   let chosenLocale;
   switch (locale) {
-    case "ru":
+    case 'ru':
       chosenLocale = ru;
       break;
-    case "enUS":
+    case 'enUS':
       chosenLocale = enUS;
       break;
     default:
@@ -18,9 +18,7 @@ export const DateFormatter = (props) => {
   }
 
   return (
-    <time dateTime={dateString}>
-      {format(date, "d LLLL, yyyy", { locale: chosenLocale })}
-    </time>
+    <time dateTime={dateString}>{format(date, 'd LLLL, yyyy', { locale: chosenLocale })}</time>
   );
 };
 

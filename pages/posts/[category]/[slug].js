@@ -1,18 +1,15 @@
 // pages/posts/[category]/[slug].js
 
-import DateFormatter from "../../../utils/dateFormatter";
-import {getAllPostSlugs} from "../../../utils/postMetadata";
-import {getPostData} from "../../../utils/postHandler";
-import PostPageLayout from "../../../components/layouts/postPageLayout";
-import {MdToHtml} from "../../../components/markdown";
+import PostPageLayout from '../../../components/layouts/postPageLayout';
+import { MdToHtml } from '../../../components/markdown';
+import { getPostData } from '../../../utils/postHandler';
+import { getAllPostSlugs } from '../../../utils/postMetadata';
 
-
-const PostPage = ({postMetadata, content}) => {
+const PostPage = ({ postMetadata, content }) => {
   return (
     <PostPageLayout postMetadata={postMetadata}>
-      <header>
-      </header>
-      <MdToHtml mdSource={content}/>
+      <header></header>
+      <MdToHtml mdSource={content} />
     </PostPageLayout>
   );
 };
@@ -20,8 +17,8 @@ const PostPage = ({postMetadata, content}) => {
 export async function getStaticPaths() {
   const postSlugs = await getAllPostSlugs();
 
-  const slugsWithCategory = postSlugs.map(({category, slug}) => ({
-    params: {category, slug},
+  const slugsWithCategory = postSlugs.map(({ category, slug }) => ({
+    params: { category, slug },
   }));
 
   return {
@@ -30,15 +27,15 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({params}) {
+export async function getStaticProps({ params }) {
   const category = params.category;
   const slug = params.slug;
 
   try {
-    const {content, postMetadata} = await getPostData(category, slug);
-    return {props: {content, postMetadata}};
+    const { content, postMetadata } = await getPostData(category, slug);
+    return { props: { content, postMetadata } };
   } catch (error) {
-    return {notFound: true};
+    return { notFound: true };
   }
 }
 

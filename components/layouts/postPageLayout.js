@@ -1,14 +1,14 @@
-import {Navbar} from "../navBar";
-import Head from "next/head";
-import Breadcrumb from "../seo/breadcrumb";
-import DateFormatter from "../../utils/dateFormatter";
+import Head from 'next/head';
 
+import { DateFormatter } from '../../utils/dateFormatter';
+import { Navbar } from '../navBar';
+import Breadcrumb from '../seo/breadcrumb';
 
-const PostPageLayout = ({postMetadata, children}) => {
+const PostPageLayout = ({ postMetadata, children }) => {
   const breadcrumbs = [
-    {label: "Home", href: "/"},
-    {label: "Posts", href: "/posts"},
-    {label: postMetadata.title, href: `/posts/${postMetadata.category}/${postMetadata.slug}`},
+    { label: 'Home', href: '/' },
+    { label: 'Posts', href: '/posts' },
+    { label: postMetadata.title, href: `/posts/${postMetadata.category}/${postMetadata.slug}` },
   ];
 
   const pageTitle = postMetadata.title;
@@ -17,7 +17,7 @@ const PostPageLayout = ({postMetadata, children}) => {
     <>
       <Head>
         <title>{pageTitle}</title>
-        <meta name="description" content={postMetadata.subtitle}/>
+        <meta name="description" content={postMetadata.subtitle} />
       </Head>
       <header className="bg-indigo-900 text-white">
         <div className="container mx-auto py-8">
@@ -25,11 +25,10 @@ const PostPageLayout = ({postMetadata, children}) => {
           <p className="text-xl mt-4">{subtitle}</p>
         </div>
       </header>
-      <Navbar/>
-      <Breadcrumb breadcrumbs={breadcrumbs}/>
+      <Navbar />
+      <Breadcrumb breadcrumbs={breadcrumbs} />
       {children}
-      <DateFormatter dateString={postMetadata.date}/>
-
+      <DateFormatter dateString={postMetadata.date} />
     </>
   );
 };
