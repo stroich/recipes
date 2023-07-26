@@ -52,7 +52,6 @@ a:hover {
 }
 
 article {
-    margin-bottom: 2rem;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -64,8 +63,6 @@ section {
     background-color: #f7f7f7;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
+.list-decimal {
+    list-style-type: decimal;
 }

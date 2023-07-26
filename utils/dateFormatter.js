@@ -18,7 +18,9 @@ export const DateFormatter = (props) => {
   }
 
   return (
-    <time dateTime={dateString}>{format(date, 'd LLLL, yyyy', { locale: chosenLocale })}</time>
+    <time dateTime={dateString} className="px-2 my1 text-gray-500 text-sm">
+      {format(date, 'd LLLL, yyyy', { locale: chosenLocale })}
+    </time>
   );
 };
 

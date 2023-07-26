@@ -14,6 +14,12 @@ In fact, most of the projects on this site will require cloud interaction of som
 
 ## Getting Started
 
+1. ras
+2. dwa
+3. tri
+
+![Placeholder Image](https://via.placeholder.com/400 "Placeholder Image Title")
+
 > To use AWS in these projects, we'll need to set up an account, the CLI, and the SDK.
 
 ### Create an account
@@ -51,7 +57,7 @@ Once the user is created, you'll need to generate access keys (passwords, essent
 
 Your access keys should look something like this:
 
-```
+``` bash
 Access key ID: AKIAIOSFODNN7EXAMPLE
 Secret access key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```

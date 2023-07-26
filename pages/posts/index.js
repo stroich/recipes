@@ -6,9 +6,9 @@ import postMetadata from '../../utils/postMetadata';
 const PostsIndex = ({ posts }) => {
   return (
     <PostsIndexLayout>
-      <ul>
+      <ol className="mb-2 list-decimal ml-4">
         {posts.map((post) => (
-          <li key={post.slug}>
+          <li key={post.slug} className="m-2 text-lg">
             <Link
               href={`/posts/${post.category}/${post.slug}`}
               className="text-blue-500 hover:underline"
@@ -17,7 +17,7 @@ const PostsIndex = ({ posts }) => {
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
     </PostsIndexLayout>
   );
 };

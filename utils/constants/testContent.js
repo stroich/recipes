@@ -40,13 +40,13 @@ const TestContent = () => {
         </div>
       </div>
       <h2>Заголовок 2</h2>
-      <ul>
+      <ul className="list-disc my-4 ml-8">
         <li>Элемент списка 1</li>
         <li>Элемент списка 2</li>
         <li>Элемент списка 3</li>
       </ul>
       <h3>Заголовок 3</h3>
-      <ol>
+      <ol className="my-4 ml-8 list-decimal">
         <li>Элемент упорядоченного списка 1</li>
         <li>Элемент упорядоченного списка 2</li>
         <li>Элемент упорядоченного списка 3</li>
@@ -76,7 +76,11 @@ const TestContent = () => {
         <p>Это цитата.</p>
         <footer>Автор цитаты</footer>
       </blockquote>
-      <img src="https://via.placeholder.com/400" alt="Placeholder Image" />
+      <img
+        src="https://via.placeholder.com/400"
+        alt="Placeholder Image"
+        className="my-4 rounded-md border-2 border-gray-300 p-1"
+      />
       <p>
         Еще один абзац текста. Vestibulum et bibendum elit. Vivamus elementum nulla a volutpat
         mollis. In ac metus non orci malesuada egestas a nec arcu. Nulla facilisi. Nullam viverra

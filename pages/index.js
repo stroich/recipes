@@ -14,7 +14,6 @@ export async function getStaticProps() {
 }
 
 const Index = ({ allPostsData }) => {
-  console.log(allPostsData);
   return (
     <HomeLayout>
       <div>
