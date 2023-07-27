@@ -26,7 +26,7 @@ We've all seen and used them before, but how does a QR code actually work? The f
 
 As long an image respects these standard, it is a "QR code" and can be understood by most smartphone cameras. The image itself also has a kind of anatomy:
 
-![images/qr_code_anatomy.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1628900340423/NSYNLARYu.png)
+![text](https://cdn.hashnode.com/res/hashnode/image/upload/v1628900340423/NSYNLARYu.png)
 
 It is quite interesting, but ultimately these were the three things I cared about:
 

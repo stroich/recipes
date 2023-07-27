@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { webSiteTitle } from '../../utils/constants/webSiteVars';
 import { DateFormatter } from '../../utils/dateFormatter';
 import AdvertisementPlaceholder from '../advertising/placeholder';
+import Aside from '../aside';
 import UserImg from '../author/userImg';
 import UserName from '../author/userName';
 import { Navbar } from '../navBar';
@@ -31,7 +32,10 @@ const PostPageLayout = ({ postMetadata, children }) => {
       </header>
       <Navbar />
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      {children}
+      <main className="text-black shadow-md rounded-lg my-2 flex flex-col sm:flex-row">
+        {children}
+      </main>
+
       <div className="container mx-auto text-black text-center flex flex-row items-center justify-between shadow-md rounded-md">
         <div>
           <DateFormatter dateString={postMetadata.date} />

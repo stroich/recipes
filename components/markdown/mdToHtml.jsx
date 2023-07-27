@@ -24,6 +24,7 @@ export const MdToHtml = ({ mdSource }) => {
       props: {
         className: 'my-4 rounded-md border-2 border-gray-300 p-1',
         alt: 'Альтернативный текст',
+        width: '60%',
       },
     },
     figcaption: {
@@ -33,7 +34,7 @@ export const MdToHtml = ({ mdSource }) => {
   };
 
   return (
-    <article className="bg-white shadow-md rounded-md p-2 text-gray-800 mb-1">
+    <article className="bg-white shadow-md rounded-md p-2 text-gray-800 mb-1 w-4/5">
       <Markdown options={{ overrides }}>{mdSource}</Markdown>
     </article>
   );
