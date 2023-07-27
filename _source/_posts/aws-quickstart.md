@@ -1,7 +1,7 @@
 ---
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
-date: 2023-01-04
+date: '2020-03-16T05:35:07.322Z'
 author: "andron13"
 category: travel
 weight: 100
@@ -17,6 +17,8 @@ In fact, most of the projects on this site will require cloud interaction of som
 1. ras
 2. dwa
 3. tri
+
+
 
 ![Placeholder Image](https://via.placeholder.com/400 "Placeholder Image Title")
 

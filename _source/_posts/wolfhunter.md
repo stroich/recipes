@@ -1,7 +1,7 @@
 ---
 title: "Vegetarian Delights: Tasty and Nourishing Recipes"
 subtitle: "Exploring mouthwatering vegetarian recipes"
-date: 2023-01-15
+date: '2019-01-08T14:50:33.666Z'
 author: "andron13"
 category: food
 weight: 23

@@ -6,7 +6,10 @@ function parseMetadata(matterResult, filepath) {
   return {
     title: matterResult.data.title,
     subtitle: matterResult.data.subtitle || '',
-    date: matterResult.data.date?.toISOString() || new Date().toISOString(),
+    date:
+      matterResult.data.date instanceof Date
+        ? matterResult.data.date.toISOString()
+        : new Date().toISOString(),
     author: matterResult.data.author || '',
     category: matterResult.data.category || 'default',
     weight: matterResult.data.weight || 100,
