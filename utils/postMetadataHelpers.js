@@ -10,7 +10,7 @@ function parseMetadata(matterResult, filepath) {
       matterResult.data.date instanceof Date
         ? matterResult.data.date.toISOString()
         : new Date().toISOString(),
-    author: matterResult.data.author || '',
+    author: matterResult.data.author,
     category: matterResult.data.category || 'default',
     weight: matterResult.data.weight || 100,
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),

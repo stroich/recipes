@@ -6,7 +6,7 @@ import postMetadata from '../../utils/postMetadata';
 const PostsIndex = ({ posts }) => {
   return (
     <PostsIndexLayout>
-      <ol className="mb-2 list-decimal ml-4">
+      <ol className="mb-2 list-decimal ml-6">
         {posts.map((post) => (
           <li key={post.slug} className="m-2 text-lg">
             <Link

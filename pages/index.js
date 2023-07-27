@@ -16,11 +16,9 @@ export async function getStaticProps() {
 const Index = ({ allPostsData }) => {
   return (
     <HomeLayout>
-      <div>
-        <FirstScreen />
-        <SecondScreen />
-        <ThirdScreen />
-      </div>
+      <FirstScreen />
+      {/*        <SecondScreen />
+        <ThirdScreen />*/}
     </HomeLayout>
   );
 };

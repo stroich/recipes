@@ -2,7 +2,7 @@ import { parseISO, format } from 'date-fns';
 import { ru, de, enUS } from 'date-fns/locale';
 
 export const DateFormatter = (props) => {
-  const { dateString, locale = 'de' } = props;
+  const { dateString = new Date(), locale = 'de' } = props;
   const date = parseISO(dateString);
 
   let chosenLocale;
@@ -17,9 +17,16 @@ export const DateFormatter = (props) => {
       chosenLocale = undefined;
   }
 
+  const ariaLabel = `Posted on ${format(date, 'd LLLL, yyyy', { chosenLocale })}`;
+  const timeCode = format(date, 'LLLL d, yyyy', { chosenLocale });
+
   return (
-    <time dateTime={dateString} className="px-2 my1 text-gray-500 text-sm">
-      {format(date, 'd LLLL, yyyy', { locale: chosenLocale })}
+    <time
+      dateTime={dateString}
+      /*   className="px-2 my1 text-gray-500 text-sm  border-2 border-gray-500 rounded-md"*/
+      aria-label={ariaLabel}
+    >
+      {timeCode}
     </time>
   );
 };
