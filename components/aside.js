@@ -2,7 +2,7 @@
 
 const Aside = () => {
   return (
-    <>
+    <aside className="bg-gray-200 shadow-md rounded-lg p-4 my-1 mr-1 w-full sm:w-1/5">
       <h2 className="text-xl font-bold mb-4">Меню</h2>
       <ul className="space-y-2">
         <li>
@@ -15,7 +15,7 @@ const Aside = () => {
           <a href="#">Продукты</a>
         </li>
       </ul>
-    </>
+    </aside>
   );
 };
 

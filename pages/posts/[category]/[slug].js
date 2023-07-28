@@ -1,5 +1,4 @@
 // pages/posts/[category]/[slug].js
-
 import Aside from '../../../components/aside';
 import PostPageLayout from '../../../components/layouts/postPageLayout';
 import { MdToHtml } from '../../../components/markdown';
@@ -10,13 +9,11 @@ const PostPage = ({ postMetadata, content }) => {
   return (
     <PostPageLayout postMetadata={postMetadata}>
       <header></header>
-      <main className="text-black shadow-md rounded-lg my-2 flex flex-col sm:flex-row">
-        <div className="flex-grow w-2/3">
+      <main className="text-black rounded-lg my-2 flex flex-col sm:flex-row gap-2">
+        <div className="flex-grow">
           <MdToHtml mdSource={content} />
         </div>
-        <aside className="bg-gray-200 rounded-lg p-4 my-1 mr-1">
-          <Aside />
-        </aside>
+        <Aside />
       </main>
     </PostPageLayout>
   );

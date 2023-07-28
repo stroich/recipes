@@ -34,7 +34,7 @@ export const MdToHtml = ({ mdSource }) => {
   };
 
   return (
-    <article className="bg-white shadow-md rounded-md p-2 text-gray-800 mb-1 w-4/5">
+    <article className="bg-white shadow-md rounded-md text-gray-800 my-1  p-2 ">
       <Markdown options={{ overrides }}>{mdSource}</Markdown>
     </article>
   );

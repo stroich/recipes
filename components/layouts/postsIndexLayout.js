@@ -14,10 +14,8 @@ const PostsIndexLayout = ({ children }) => {
       </header>
       <Navbar />
       <main className="text-black shadow-md rounded-lg my-2 flex flex-col sm:flex-row">
-        <div className="flex-grow"> {children}</div>
-        <aside className="bg-gray-200 rounded-lg p-4 my-1 mr-1 w-1/5">
-          <Aside />
-        </aside>
+        <div className="flex-grow">{children}</div>
+        <Aside />
       </main>
     </>
   );

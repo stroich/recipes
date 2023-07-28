@@ -32,10 +32,9 @@ const PostPageLayout = ({ postMetadata, children }) => {
       </header>
       <Navbar />
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <main className="text-black shadow-md rounded-lg my-2 flex flex-col sm:flex-row">
-        {children}
+      <main>
+        <div className="flex-grow">{children}</div>
       </main>
-
       <div className="container mx-auto text-black text-center flex flex-row items-center justify-between shadow-md rounded-md">
         <div>
           <DateFormatter dateString={postMetadata.date} />
