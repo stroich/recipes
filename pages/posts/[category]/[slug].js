@@ -9,8 +9,8 @@ const PostPage = ({ postMetadata, content }) => {
   return (
     <PostPageLayout postMetadata={postMetadata}>
       <header></header>
-      <main className="text-black rounded-lg my-2 flex flex-col sm:flex-row gap-2">
-        <div className="flex-grow">
+      <main className="text-black rounded-lg my-2 grid sm:grid-cols-5 grid-cols-1 gap-2">
+        <div className="sm:col-start-1 sm:col-end-5">
           <MdToHtml mdSource={content} />
         </div>
         <Aside />
