@@ -9,11 +9,10 @@ export async function getAllPostsData() {
     return { content: matterResult.content, ...postMetadata };
   });
 }
-export const getPostData = async (category, slug) => {
-  category = category || null;
+export const getPostData = async (slug) => {
   const matchingPosts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
-    if (postMetadata.slug === slug && (category === null || postMetadata.category === category)) {
+    if (postMetadata.slug === slug) {
       return { content: matterResult.content, postMetadata };
     }
   });
@@ -24,5 +23,5 @@ export const getPostData = async (category, slug) => {
     return filteredPosts[0];
   }
 
-  throw new Error(`Post with slug "${slug}" and category "${category}" not found.`);
+  throw new Error(`Post with slug "${slug}" not found.`);
 };

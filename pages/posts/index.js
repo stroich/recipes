@@ -1,3 +1,4 @@
+//pages/posts/index.js
 import Link from 'next/link';
 
 import PostsIndexLayout from '../../components/layouts/postsIndexLayout';
@@ -9,10 +10,7 @@ const PostsIndex = ({ posts }) => {
       <ol className="mb-2 list-decimal ml-6">
         {posts.map((post) => (
           <li key={post.slug} className="m-2 text-lg">
-            <Link
-              href={`/posts/${post.category}/${post.slug}`}
-              className="text-blue-500 hover:underline"
-            >
+            <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
               <span>{post.title}</span>
             </Link>
           </li>

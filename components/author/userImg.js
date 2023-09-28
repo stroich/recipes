@@ -11,8 +11,6 @@ const UserImg = ({ userName = 'admin' }) => {
     imgSrc: '../../public/assets/img/webpage/logo.png',
   };
 
-  console.log(user);
-  console.log(testImg);
   const testImg = () => {
     return (
       <Image

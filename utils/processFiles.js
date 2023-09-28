@@ -6,10 +6,10 @@ import matter from 'gray-matter';
 import getAllFilesRecursively from './fileHelpers';
 
 const processFiles = async (folder, callback) => {
-  const filepaths = getAllFilesRecursively(folder);
+  const filePaths = getAllFilesRecursively(folder);
   const results = [];
 
-  filepaths.forEach((filepath) => {
+  filePaths.forEach((filepath) => {
     const fileContents = fs.readFileSync(filepath, 'utf8');
     const matterResult = matter(fileContents);
     const result = callback(matterResult, filepath);

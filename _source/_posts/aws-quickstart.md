@@ -4,6 +4,7 @@ subtitle: "Create an AWS account and set up CLI/SDK access."
 date: '2020-03-16T05:35:07.322Z'
 author: "andron13"
 category: travel
+tags: [ aws, cloud, serverless ]
 weight: 100
 slug: exploring-paris
 ---
@@ -17,8 +18,6 @@ In fact, most of the projects on this site will require cloud interaction of som
 1. ras
 2. dwa
 3. tri
-
-
 
 ![Placeholder Image](https://via.placeholder.com/400 "Placeholder Image Title")
 
@@ -63,7 +62,6 @@ Your access keys should look something like this:
 Access key ID: AKIAIOSFODNN7EXAMPLE
 Secret access key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 ```
-
 
 ### Configure the CLI
 
@@ -114,8 +112,7 @@ Finally, to use AWS directly from your application code, you need to download th
 
 The SDKs can be configured in different ways as well, but by default it usually uses the same profiles and credentials stored by your `aws configure`.
 
-
-### That's it! 
+### That's it!
 
 You're all set to start using AWS.
 
@@ -140,18 +137,17 @@ On the flip-side, the biggest drawback is its upfront complexity.
 
 Personally though, the reason I use AWS is because it's the technology I'm most familiar with.
 
-
 ## Why Serverless?
 
-**It's cheaper.** Most cloud "getting started" guides will show you how to spin up a server—a mercenary rented computer that stays online  24/7 to do your bidding.
+**It's cheaper.** Most cloud "getting started" guides will show you how to spin up a server—a mercenary rented computer that stays online 24/7 to do your bidding.
 
 But for most of my projects, I'm going utilize technology that doesn't require a hosted server. In particular:
 
-| Service | Purpose |
-| --- | --- |
-| S3 | File storage |
-| DynamoDB | Database |
-| Lambda | Compute engine |
+| Service  | Purpose        |
+|----------|----------------|
+| S3       | File storage   |
+| DynamoDB | Database       |
+| Lambda   | Compute engine |
 
 Their on-demand pricing means the cost scales with usage. There is a [free tier](https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc), and it only begins to cost money if usage exceeds a certain amount.
 

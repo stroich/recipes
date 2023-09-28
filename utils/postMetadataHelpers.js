@@ -11,7 +11,7 @@ function parseMetadata(matterResult, filepath) {
         ? matterResult.data.date.toISOString()
         : new Date().toISOString(),
     author: matterResult.data.author,
-    category: matterResult.data.category || 'default',
+    category: matterResult.data.category || '',
     weight: matterResult.data.weight || 100,
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),
   };
