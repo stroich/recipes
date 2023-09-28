@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
-const Error = () => {
+const useOriginalUrl = () => {
   const [originalUrl, setOriginalUrl] = useState('');
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const url = window.location.href;
@@ -9,6 +10,12 @@ const Error = () => {
       setOriginalUrl(decodedUrl);
     }
   }, []);
+
+  return originalUrl;
+};
+
+const Error = () => {
+  const originalUrl = useOriginalUrl();
 
   return (
     <div>

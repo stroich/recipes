@@ -1,4 +1,3 @@
-// pages/_app.js
 import MainLayout from '../components/layouts/mainLayout';
 import '../styles/globals.css';
 

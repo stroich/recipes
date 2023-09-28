@@ -7,7 +7,7 @@ import logo from '../public/assets/img/webpage/logo.png';
 import { primaryLinks } from '../utils/constants';
 
 const logoLoader = ({ src, width, quality }) => {
-  return `{logo}=${quality || 75}`;
+  return `${logo}=${quality || 75}`;
 };
 export const Navbar = () => {
   return (

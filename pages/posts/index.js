@@ -1,4 +1,3 @@
-//pages/posts/index.js
 import Link from 'next/link';
 
 import PostsIndexLayout from '../../components/layouts/postsIndexLayout';

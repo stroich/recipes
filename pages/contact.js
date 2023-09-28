@@ -33,10 +33,7 @@ const ContactPage = () => {
           alt="Logo"
           width={500}
           height={500}
-          style={{
-            objectFit: 'cover',
-            borderRadius: '20px',
-          }}
+          className="object-cover rounded-lg"
         />
       </div>
     </div>

@@ -1,5 +1,3 @@
-//utils/postMetadataHelpers.js
-
 import path from 'path';
 
 function parseMetadata(matterResult, filepath) {

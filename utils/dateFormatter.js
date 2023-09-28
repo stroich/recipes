@@ -1,31 +1,22 @@
 import { parseISO, format } from 'date-fns';
 import { ru, de, enUS } from 'date-fns/locale';
 
-export const DateFormatter = (props) => {
-  const { dateString = new Date(), locale = 'de' } = props;
+export const DateFormatter = ({ dateString = new Date(), locale = 'de' }) => {
   const date = parseISO(dateString);
 
-  let chosenLocale;
-  switch (locale) {
-    case 'ru':
-      chosenLocale = ru;
-      break;
-    case 'enUS':
-      chosenLocale = enUS;
-      break;
-    default:
-      chosenLocale = undefined;
-  }
+  const localesMap = {
+    ru: ru,
+    enUS: enUS,
+    de: de,
+  };
 
-  const ariaLabel = `Posted on ${format(date, 'd LLLL, yyyy', { chosenLocale })}`;
-  const timeCode = format(date, 'LLLL d, yyyy', { chosenLocale });
+  const chosenLocale = localesMap[locale] || de;
+
+  const ariaLabel = `Posted on ${format(date, 'd LLLL, yyyy', { locale: chosenLocale })}`;
+  const timeCode = format(date, 'LLLL d, yyyy', { locale: chosenLocale });
 
   return (
-    <time
-      dateTime={dateString}
-      /*   className="px-2 my1 text-gray-500 text-sm  border-2 border-gray-500 rounded-md"*/
-      aria-label={ariaLabel}
-    >
+    <time dateTime={dateString} aria-label={ariaLabel}>
       {timeCode}
     </time>
   );

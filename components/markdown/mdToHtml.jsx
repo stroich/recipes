@@ -15,7 +15,14 @@ export const MdToHtml = ({ mdSource }) => {
     code: { component: 'code', props: { className: 'text-gray-800' } },
     div: { component: 'div', props: { className: 'mb-2' } },
     p: { component: 'p', props: { className: 'my-4' } },
-    a: { component: 'a', props: { className: 'text-blue-500 hover:underline' } },
+    a: {
+      component: 'a',
+      props: {
+        className: 'text-blue-500 hover:underline',
+        role: 'link',
+        'aria-label': 'external link',
+      },
+    },
     ul: { component: 'ul', props: { className: 'list-disc my-4 ml-8' } },
     ol: { component: 'ol', props: { className: 'list-decimal my-4 ml-8' } },
     li: { component: 'li', props: { className: 'my-2' } },
@@ -23,7 +30,7 @@ export const MdToHtml = ({ mdSource }) => {
       component: 'img',
       props: {
         className: 'my-4 rounded-md border-2 border-gray-300 p-1',
-        alt: 'Альтернативный текст',
+        alt: '',
         width: '60%',
       },
     },

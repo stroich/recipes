@@ -11,47 +11,45 @@ export async function getStaticProps() {
   };
 }
 
+const Block = ({ title, children, ...props }) => (
+  <div className={`rounded-lg p-8 text-white text-center ${props.className}`}>
+    <h2 className="text-2xl font-bold">{title}</h2>
+    <p className="mt-4">{children}</p>
+  </div>
+);
+
+const Image = ({ src, alt }) => <img src={src} alt={alt} className="w-full h-auto rounded-lg" />;
+
 const Index = ({ allPostsData }) => {
   return (
     <HomeLayout>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 p-4">
-        <div className="bg-blue-500 rounded-lg p-8 text-white text-center">
-          <h2 className="text-2xl font-bold">Блок 1</h2>
-          <p className="mt-4">Ваш текст или содержимое для первого блока.</p>
-        </div>
+        <Block className="bg-blue-500" title="Блок 1">
+          Ваш текст или содержимое для первого блока.
+        </Block>
 
-        <div className="bg-green-500 rounded-lg p-8 text-white text-center mt-4 sm:mt-0">
-          <h2 className="text-2xl font-bold">Блок 2</h2>
-          <p className="mt-4">Ваш текст или содержимое для второго блока.</p>
-        </div>
+        <Block className="bg-green-500 mt-4 sm:mt-0" title="Блок 2">
+          Ваш текст или содержимое для второго блока.
+        </Block>
 
-        <div className="bg-purple-500 rounded-lg p-8 text-white text-center mt-4 sm:mt-0">
-          <h2 className="text-2xl font-bold">Блок 3</h2>
-          <p className="mt-4">Ваш текст или содержимое для третьего блока.</p>
-        </div>
+        <Block className="bg-purple-500 mt-4 sm:mt-0" title="Блок 3">
+          Ваш текст или содержимое для третьего блока.
+        </Block>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4">
         <div className="bg-orange-400 rounded-lg p-8">
-          <img
-            src="https://via.placeholder.com/500x300"
-            alt="Фотография 1"
-            className="w-full h-auto rounded-lg"
-          />
+          <Image src="https://via.placeholder.com/500x300" alt="Фотография 1" />
         </div>
 
         <div className="bg-yellow-400 rounded-lg p-8">
-          <img
-            src="https://via.placeholder.com/500x300"
-            alt="Фотография 2"
-            className="w-full h-auto rounded-lg"
-          />
+          <Image src="https://via.placeholder.com/500x300" alt="Фотография 2" />
         </div>
       </div>
-      <div className="bg-sky-500 rounded-lg p-8 text-white text-center mt-4 sm:mt-0">
-        <h2 className="text-2xl font-bold">Блок 3</h2>
-        <p className="mt-4">Ваш текст или содержимое для третьего блока.</p>
-      </div>
+
+      <Block className="bg-sky-500 mt-4 sm:mt-0" title="Блок 3">
+        Ваш текст или содержимое для третьего блока.
+      </Block>
 
       <FirstScreen />
     </HomeLayout>
