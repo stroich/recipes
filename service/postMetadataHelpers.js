@@ -10,6 +10,9 @@ function parseMetadata(matterResult, filepath) {
         : new Date().toISOString(),
     author: matterResult.data.author,
     category: matterResult.data.category || '',
+    tags: matterResult.data.tags || '',
+    testtags: matterResult.data.testtags || '',
+    ingredients: matterResult.data.ingredients || '',
     weight: matterResult.data.weight || 100,
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),
   };

@@ -1,6 +1,6 @@
 import FirstScreen from '../components/frontpage/firstScreen';
 import HomeLayout from '../components/layouts/homeLayout';
-import { getAllPostsData } from '../utils/postHandler';
+import { getAllPostsData } from '../service/postHandler';
 
 export async function getStaticProps() {
   const allPostsData = await getAllPostsData();

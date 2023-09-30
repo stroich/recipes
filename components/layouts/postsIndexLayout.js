@@ -1,5 +1,4 @@
-// components/postsIndexLayout.js
-import { webSiteSlogan, webSiteTitle } from '../../utils/constants/webSiteVars';
+import { webSiteSlogan, webSiteTitle } from '../../constants/webSiteVars';
 import Aside from '../aside';
 import { Navbar } from '../navBar';
 

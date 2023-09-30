@@ -1,8 +1,8 @@
 import Aside from '../../components/aside';
 import PostPageLayout from '../../components/layouts/postPageLayout';
 import { MdToHtml } from '../../components/markdown';
-import { getPostData } from '../../utils/postHandler';
-import { getAllPostSlugs } from '../../utils/postMetadata';
+import { getPostData } from '../../service/postHandler';
+import { getAllPostSlugs } from '../../service/postMetadata';
 
 const PostPage = ({ postMetadata, content }) => {
   return (

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import { primaryLinks, secondaryLinks, thirdLinks } from '../utils/constants';
+import { primaryLinks, secondaryLinks, thirdLinks } from '../constants';
 
 // Компонент для ссылки с необходимыми стилями
 const CustomLink = ({ href, children }) => (

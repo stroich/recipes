@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import wework from '../../public/assets/img/webpage/wework.jpeg';
+import wework from '../public/assets/img/webpage/wework.jpeg';
 
 const TestContent = () => {
   return (
