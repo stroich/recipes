@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Footer from '../footer';
+import { SeoScripts } from '../seo/seoScripts';
 
 const MainLayout = ({ pageTitle, children }) => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = ({ pageTitle, children }) => {
       <section className="flex flex-col min-h-screen max-w-5xl mx-auto">
         {children}
         <Footer />
+        <SeoScripts />
       </section>
     </>
   );

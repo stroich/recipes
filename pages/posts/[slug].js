@@ -1,3 +1,4 @@
+import AdvertisingContentBottom from '../../components/advertising/contentBottom';
 import Aside from '../../components/aside';
 import DisqusComments from '../../components/disqusComments/disqusComments';
 import PostPageLayout from '../../components/layouts/postPageLayout';
@@ -14,17 +15,20 @@ const PostPage = ({ postMetadata, content }) => {
       <main className="text-black rounded-lg my-2 grid sm:grid-cols-5 grid-cols-1 gap-2">
         <div className="sm:col-start-1 sm:col-end-5">
           <article lang={language} className="bg-white shadow-md rounded-md text-gray-800 my-1 p-2">
-            <p>title: {title}</p>
-            <p>subtitle: {subtitle}</p>
-            <p>date: {date}</p>
-            <p>author: {author}</p>
-            <p>category: {category}</p>
-            <p>ingredients: {ingredients}</p>
-            <p>weight: {weight}</p>
-            <p>slug: {slug}</p>
-            <p>taxonomy: {taxonomy}</p>
-            <p>language: {language}</p>
-            <p>{console.log(postMetadata)}</p>
+            <AdvertisingContentBottom />
+            <header>
+              <p>title: {title}</p>
+              <p>subtitle: {subtitle}</p>
+              <p>date: {date}</p>
+              <p>author: {author}</p>
+              <p>category: {category}</p>
+              <p>ingredients: {ingredients}</p>
+              <p>weight: {weight}</p>
+              <p>slug: {slug}</p>
+              <p>taxonomy: {taxonomy}</p>
+              <p>language: {language}</p>
+              <p>{console.log(postMetadata)}</p>
+            </header>
             <hr />
             <MdToHtml mdSource={content} />
           </article>
