@@ -39,10 +39,5 @@ export const MdToHtml = ({ mdSource }) => {
       props: { className: 'text-sm text-gray-500 mt-2' },
     },
   };
-
-  return (
-    <article className="bg-white shadow-md rounded-md text-gray-800 my-1 p-2">
-      <Markdown options={{ overrides }}>{mdSource}</Markdown>
-    </article>
-  );
+  return <Markdown options={{ overrides }}>{mdSource}</Markdown>;
 };

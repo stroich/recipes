@@ -4,14 +4,13 @@ import { webSiteTitle } from '../../constants/webSiteVars';
 import { DateFormatter } from '../../helpers/dateFormatter';
 import { checkObjectDataTypes } from '../../helpers/typeOf';
 import AdvertisementPlaceholder from '../advertising/placeholder';
-import Aside from '../aside';
 import UserImg from '../author/userImg';
 import UserName from '../author/userName';
 import { Navbar } from '../navBar';
 import Breadcrumb from '../seo/breadcrumb';
 
 const PostPageLayout = ({ postMetadata, children }) => {
-  const { tags, testtags, title, subtitle, date, author, category, ingredients, weight, slug } =
+  const { title, subtitle, date, author, language, category, taxonomy, ingredients, weight, slug } =
     postMetadata;
   checkObjectDataTypes(postMetadata);
   const breadcrumbs = [
@@ -34,20 +33,6 @@ const PostPageLayout = ({ postMetadata, children }) => {
       <Navbar />
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <main>
-        <div className="bg-white shadow-md rounded-md text-gray-800 my-1 p-2">
-          <p>title: {title}</p>
-          <p>subtitle: {subtitle}</p>
-          <p>date: {date}</p>
-          <p>author: {author}</p>
-          <p>category: {category}</p>
-          <p>ingredients: {ingredients}</p>
-          <p>weight: {weight}</p>
-          <p>slug: {slug}</p>
-          <p>testtags: {testtags}</p>
-          <p>tags: {tags}</p>
-          <p>{console.log(postMetadata)}</p>
-          <p>{console.log('tags: ', tags.join(', '))}</p>
-        </div>
         <div className="flex-grow">{children}</div>
       </main>
       <div className="container mx-auto text-black text-center flex flex-row items-center justify-between shadow-md rounded-md">
