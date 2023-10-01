@@ -6,7 +6,7 @@ import { checkObjectDataTypes } from '../../helpers/typeOf';
 import AdvertisementPlaceholder from '../advertising/placeholder';
 import UserImg from '../author/userImg';
 import UserName from '../author/userName';
-import { Navbar } from '../navBar';
+import Navbar from '../navBar';
 import Breadcrumb from '../seo/breadcrumb';
 
 const PostPageLayout = ({ postMetadata, children }) => {

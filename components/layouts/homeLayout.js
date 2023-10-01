@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import { webSiteSlogan, webSiteTitle } from '../../constants/webSiteVars';
-import { Navbar } from '../navBar';
+import Navbar from '../navBar';
 
 const HomeLayout = ({ children }) => {
   return (

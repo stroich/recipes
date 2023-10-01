@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
 import Footer from '../footer';
-import { SeoScripts } from '../seo/seoScripts';
+import SeoScripts from '../seo/seoScripts';
 
 const MainLayout = ({ pageTitle, children }) => {
   return (

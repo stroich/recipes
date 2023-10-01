@@ -1,1 +1,2 @@
-export { SeoScripts } from './seoScripts';
+import SeoScripts from './seoScripts';
+export default SeoScripts;

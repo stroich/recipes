@@ -2,7 +2,7 @@ import AdvertisingContentBottom from '../../components/advertising/contentBottom
 import Aside from '../../components/aside';
 import DisqusComments from '../../components/disqusComments/disqusComments';
 import PostPageLayout from '../../components/layouts/postPageLayout';
-import { MdToHtml } from '../../components/markdown';
+import MdToHtml from '../../components/markdown';
 import { getPostData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
 

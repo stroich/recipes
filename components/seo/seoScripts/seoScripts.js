@@ -1,4 +1,4 @@
-import { Analytics } from './analytics';
+import Analytics from './analytics';
 
 const SeoScripts = () => {
   return (
@@ -8,4 +8,4 @@ const SeoScripts = () => {
   );
 };
 
-export { SeoScripts };
+export default SeoScripts;

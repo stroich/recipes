@@ -8,7 +8,7 @@ import logo from '../public/assets/img/webpage/logo.png';
 const logoLoader = ({ src, width, quality }) => {
   return `${logo}=${quality || 75}`;
 };
-export const Navbar = () => {
+const Navbar = () => {
   return (
     <nav className="pt-2">
       <div className="mx-auto px-2 flex justify-between items-center">
@@ -22,3 +22,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+export default Navbar;

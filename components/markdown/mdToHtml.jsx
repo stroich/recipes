@@ -1,6 +1,6 @@
 import Markdown from 'markdown-to-jsx';
 
-export const MdToHtml = ({ mdSource }) => {
+const MdToHtml = ({ mdSource }) => {
   const overrides = {
     h1: { component: 'h1', props: { className: 'text-4xl font-bold my-4' } },
     h2: { component: 'h2', props: { className: 'text-2xl font-bold my-4' } },
@@ -41,3 +41,5 @@ export const MdToHtml = ({ mdSource }) => {
   };
   return <Markdown options={{ overrides }}>{mdSource}</Markdown>;
 };
+
+export default MdToHtml;
