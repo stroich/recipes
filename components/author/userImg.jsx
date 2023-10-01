@@ -7,8 +7,7 @@ import logo from '../../public/assets/img/webpage/logo.png';
 const UserImg = ({ userName = 'admin' }) => {
   const user = {
     userName: userName,
-    // imgSrc: '/assets/img/webpage/logo.png',
-    imgSrc: '../../public/assets/img/webpage/logo.png',
+    imgSrc: logo,
   };
 
   const testImg = () => {

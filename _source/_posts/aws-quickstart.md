@@ -1,11 +1,13 @@
 ---
 title: "Getting Started with AWS"
 subtitle: "Create an AWS account and set up CLI/SDK access."
-date: '2020-03-16T05:35:07.322Z'
+date: '13.10.1975'
 author: "andron13"
+language: en
 category: travel
-tags: [ aws, cloud, serverless ]
-weight: 100
+taxonomy: [tag-1, tag-2, tag-3]
+ingredients: [salt, pepper] 
+weight: -100
 slug: exploring-paris
 ---
 

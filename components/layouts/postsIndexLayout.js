@@ -1,7 +1,6 @@
-// components/postsIndexLayout.js
-import { webSiteSlogan, webSiteTitle } from '../../utils/constants/webSiteVars';
+import { webSiteTitle } from '../../constants/webSiteVars';
 import Aside from '../aside';
-import { Navbar } from '../navBar';
+import Navbar from '../navBar';
 
 const PostsIndexLayout = ({ children }) => {
   return (

@@ -1,6 +1,6 @@
 // Created on 26.07.23 by 15:36:
 
-import TestContent from '../../utils/constants/testContent';
+import TestContent from '../../constants/testContent';
 
 const FirstScreen = () => {
   return (

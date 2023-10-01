@@ -1,16 +1,19 @@
 import Link from 'next/link';
 
 import PostsIndexLayout from '../../components/layouts/postsIndexLayout';
-import postMetadata from '../../utils/postMetadata';
+import postMetadata from '../../service/postMetadata';
 
 const PostsIndex = ({ posts }) => {
+  const sortedPosts = posts.sort((a, b) => a.weight - b.weight);
   return (
     <PostsIndexLayout>
       <ol className="mb-2 list-decimal ml-6">
-        {posts.map((post) => (
+        {sortedPosts.map((post) => (
           <li key={post.slug} className="m-2 text-lg">
             <Link href={`/posts/${post.slug}`} className="text-blue-500 hover:underline">
-              <span>{post.title}</span>
+              <span>
+                {post.title} / {post.weight}
+              </span>
             </Link>
           </li>
         ))}

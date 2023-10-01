@@ -1,9 +1,7 @@
-// components/HomeLayout.js
-
 import Head from 'next/head';
 
-import { webSiteSlogan, webSiteTitle } from '../../utils/constants/webSiteVars';
-import { Navbar } from '../navBar';
+import { webSiteSlogan, webSiteTitle } from '../../constants/webSiteVars';
+import Navbar from '../navBar';
 
 const HomeLayout = ({ children }) => {
   return (
