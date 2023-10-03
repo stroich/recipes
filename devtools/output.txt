@@ -8,8 +8,8 @@ utils
 utils/postMetadata.js
 utils/postMetadataHelpers.js
 utils/constants
-utils/constants/menuLinks.js
-utils/constants/index.js
+utils/constants/menuLinks.ts
+utils/constants/index.tsx
 utils/constants/webSiteVars.js
 utils/constants/testContent.js
 utils/dateFormatter.js
@@ -26,7 +26,7 @@ components/footer.jsx
 components/navBar.js
 components/markdown
 components/markdown/mdToHtml.jsx
-components/markdown/index.js
+components/markdown/index.tsx
 components/author
 components/author/userName.js
 components/author/userImg.js
@@ -34,9 +34,9 @@ components/hello.js
 components/Link
 components/Link/myLink.js
 components/layouts
-components/layouts/homeLayout.js
+components/layouts/homeLayout.tsx
 components/layouts/postPageLayout.js
-components/layouts/mainLayout.js
+components/layouts/mainLayout.tsx
 components/layouts/postsIndexLayout.js
 components/advertising
 components/advertising/placeholder.js
@@ -106,11 +106,11 @@ devtools/output.txt
 .github/pull_request_template.md
 postcss.config.js
 pages
-pages/_app.js
+pages/_app.ts
 pages/posts
-pages/posts/index.js
+pages/posts/index.tsx
 pages/posts/[slug].js
 pages/404.js
-pages/index.js
+pages/index.tsx
 pages/contact.js
 .eslintrc.json

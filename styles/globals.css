@@ -1,66 +1,67 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:ital,wght@1,100&display=swap');
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 body {
     line-height: 1.6;
     color: #333;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 600;
-}
-
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 1rem;
 }
 
 h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
 }
 
 h3 {
-    font-size: 1.75rem;
-    margin-bottom: 0.75rem;
+    font-family: 'Poiret One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 35px;
+    text-align: center;
+    color: #2C2B2B;
 }
 
 p {
-    margin-bottom: 1rem;
-}
-
-
-blockquote {
-    margin: 1rem 0;
-    padding-left: 1rem;
-    border-left: 4px solid #333;
-}
-
-blockquote p {
-    font-style: italic;
+    font-family: 'Poiret One', cursive;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 }
 
 a {
-    color: #3182CE;
-    text-decoration: underline;
+    color: #2C2B2B;
+    font-family: 'Inter', serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+    line-height: 31px;
+    text-align: center;
 }
 
-a:hover {
-    color: #2C5282;
+a:hover,
+.active{
+    color: #666a70;
 }
 
 article {
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 4px;
-}
-
-section {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background-color: #f7f7f7;
 }
 
 .list-decimal {
