@@ -1,14 +1,14 @@
 import Image from 'next/image';
 
+import Logo from '../../../public/assets/img/logo.svg';
+import imgBanner from '../../../public/assets/img/mainBanner.png';
 import Banner from '../../shared/banner/banner';
 import NavBar from '../../shared/navbar/navBar';
 import SearchBox from '../../shared/searchBox/SearchBox';
-import Logo from '../../../public/assets/img/logo.svg';
-import imgBanner from '../../../public/assets/img/mainBanner.png';
 
 const Header = () => {
   return (
-    <header className="bg-teal-400 shadow-md pb-0">
+    <header className="bg-cyan-500 shadow-md pb-0">
       <div className="container mt-5 bg-white p-5">
         <div className="flex justify-between items-center max-w-5xl mx-auto">
           <div className="flex">

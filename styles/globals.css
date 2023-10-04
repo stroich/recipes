@@ -1,7 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 * {
     padding: 0;
@@ -10,8 +9,13 @@
 }
 
 body {
-    line-height: 1.6;
+    line-height: 1.4;
     color: #133;
+    font-family: 'Inter', serif;
+}
+
+h1, h2, h3 {
+    font-family: 'Poiret One', cursive;
 }
 
 h1 {
@@ -23,13 +27,13 @@ h2 {
 }
 
 h3 {
-    font-family: 'Poiret One', cursive;
     font-weight: 400;
     font-size: 30px;
     line-height: 35px;
     text-align: center;
     color: #2C2B2B;
 }
+
 
 p {
     font-family: 'Poiret One', cursive;
@@ -42,14 +46,20 @@ p {
     text-align: center;
 }
 
-a {
+a,
+h4 {
     color: #2C2B2B;
-    font-family: 'Inter', serif;
-    font-style: normal;
     font-weight: 700;
     font-size: 26px;
-    line-height: 31px;
+}
+
+h4 {
+    line-height: 1;
+}
+
+a {
     text-align: center;
+    line-height: 31px;
 }
 
 a:hover,

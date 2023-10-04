@@ -1,13 +1,11 @@
 ---
 title: "Рисовые панкейки"
-subtitle: "Create an AWS account and set up CLI/SDK access."
-date: '13.10.1975'
+subtitle: "Идеальный выбор для завтрака или десерта."
 author: "andron13"
 language: ru
-tags: ["завтрак", "десерт", "выпечка", "с собой"]
-ingredients: ['Рисовая мука 60 г', 'Разрыхлитель 3 г', 'Ванильный сахар 4 г', 'Соль, сахар — по вкусу',  'Яйцо 1 шт.', 'Кефир 60 мл'] 
+tags: ["завтрак", "десерт", "выпечка", "ссобой"]
 weight: -100
-slug: exploring-paris
+slug: rice-pancakes
 image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
 
 ---

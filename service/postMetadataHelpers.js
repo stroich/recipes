@@ -10,11 +10,10 @@ function parseMetadata(matterResult, filepath) {
         : new Date().toISOString(),
     author: matterResult.data.author || 'admin',
     language: matterResult.data.language || 'en',
-    category: matterResult.data.category || '',
-    taxonomy: matterResult.data.tags || '',
-    ingredients: matterResult.data.ingredients || '',
+    tags: matterResult.data.tags || '',
     weight: matterResult.data.weight || 100,
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),
+    image: matterResult.data.image || '',
   };
 }
 
