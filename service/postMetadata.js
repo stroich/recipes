@@ -1,6 +1,7 @@
 import parseMetadata from './postMetadataHelpers';
 import processFiles from './processFiles';
-import { POSTS_FOLDER } from '../constants/webSiteVars';
+
+const POSTS_FOLDER = '_source/_posts';
 
 export async function getAllPostSlugs() {
   return await processFiles(POSTS_FOLDER, (matterResult, filepath) => {

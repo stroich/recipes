@@ -1,10 +1,10 @@
 import Image from 'next/image';
 
-import Banner from './banner/banner';
-import NavBar from './navbar/navBar';
-import SearchBox from './searchBox/SearchBox';
-import Logo from '../public/assets/img/logo.svg';
-import imgBanner from '../public/assets/img/mainBanner.png';
+import Banner from '../../shared/banner/banner';
+import NavBar from '../../shared/navbar/navBar';
+import SearchBox from '../../shared/searchBox/SearchBox';
+import Logo from '../../../public/assets/img/logo.svg';
+import imgBanner from '../../../public/assets/img/mainBanner.png';
 
 const Header = () => {
   return (

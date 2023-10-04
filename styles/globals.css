@@ -1,7 +1,7 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
-@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Roboto:ital,wght@1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
 
 * {
     padding: 0;
@@ -11,7 +11,7 @@
 
 body {
     line-height: 1.6;
-    color: #333;
+    color: #133;
 }
 
 h1 {
@@ -24,7 +24,6 @@ h2 {
 
 h3 {
     font-family: 'Poiret One', cursive;
-    font-style: normal;
     font-weight: 400;
     font-size: 30px;
     line-height: 35px;

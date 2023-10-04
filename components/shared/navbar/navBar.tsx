@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { primaryLinks } from '../../constants/menuLinks';
+import { primaryLinks } from '../../../constants/menuLinks';
 
 const NavBar = () => {
   const { pathname } = useRouter();

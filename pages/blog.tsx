@@ -1,4 +1,4 @@
-import HomeLayout from '../components/layouts/homeLayout';
+import HomeLayout from '../components/shared/layouts/homeLayout';
 
 const Blog = () => {
   return (

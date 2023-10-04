@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import search from '../../public/assets/img/search.svg';
+import search from '../../../public/assets/img/search.svg';
 const SearchBox = () => {
   return (
     <div className="flex items-center border rounded-full bg-gray-100 p-2 shadow-md">

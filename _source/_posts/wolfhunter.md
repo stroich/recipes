@@ -1,5 +1,5 @@
 ---
-title: "Vegetarian Delights: Tasty and Nourishing Recipes"
+title: "Vegetarian Delights: Tasty and Nourishing Index"
 subtitle: "Exploring mouthwatering vegetarian recipes"
 date: '2019-01-08T14:50:33.666Z'
 author: "andron13"

@@ -1,7 +1,7 @@
 import Head from 'next/head';
 
-import Footer from '../footer';
-import Header from '../header';
+import Footer from '../../widgets/Footer/Footer';
+import Header from '../../widgets/Header/Header';
 
 const HomeLayout = ({ children, title }) => {
   return (

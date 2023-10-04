@@ -45,7 +45,7 @@ components/frontpage/secondScreen.js
 components/frontpage/firstScreen.js
 components/frontpage/thirdScreen.js
 components/seo
-components/seo/breadcrumb.js
+components/seo/breadcrumb.tsx
 public
 public/favicon.ico
 public/apple-touch-icon.png
