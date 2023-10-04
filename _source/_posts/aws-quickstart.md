@@ -24,6 +24,7 @@ In fact, most of the projects on this site will require cloud interaction of som
 
 ![Placeholder Image](https://via.placeholder.com/400 "Placeholder Image Title")
 
+
 > To use AWS in these projects, we'll need to set up an account, the CLI, and the SDK.
 
 ### Create an account
