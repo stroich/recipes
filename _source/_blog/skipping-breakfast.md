@@ -5,11 +5,11 @@ author: "andron13"
 language: ru
 weight: 7
 slug: skipping-breakfast
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/ed876c82-7c63-459a-a3e4-39d74e3fdf3f
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
+![image](https://github.com/stroich/recipes/assets/115462690/ed876c82-7c63-459a-a3e4-39d74e3fdf3f)
 
 
 «Завтрак - самая важная еда дня, завтрак съешь сам, завтрак - будильник организма» - фразы, которые твердили нам родители, блогеры и рекламные кампании.
