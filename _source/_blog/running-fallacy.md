@@ -5,11 +5,11 @@ author: "andron13"
 language: ru
 weight: 3
 slug: running-fallacy
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/c111a4ec-76e8-4b69-9abb-bc94b94f6578
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
+![image](https://github.com/stroich/recipes/assets/115462690/c111a4ec-76e8-4b69-9abb-bc94b94f6578)
 
 Сразу после таяния снега и первых засушливых пятен на асфальте появляются те, кто бросается в бег. Эти "весенние бегуны" как ландыши, мелькают сначала, но быстро исчезают. Апрель, май - и всё.
 
