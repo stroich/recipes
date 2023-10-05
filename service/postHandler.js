@@ -3,13 +3,13 @@ import processFiles from './processFiles';
 
 const POSTS_FOLDER = '_source/_posts';
 
-export async function getAllPostsData() {
+export async function getAllRecipesData() {
   return await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     return { content: matterResult.content, ...postMetadata };
   });
 }
-export const getPostData = async (slug) => {
+export const getRecipeData = async (slug) => {
   const matchingPosts = await processFiles(POSTS_FOLDER, (matterResult, filepath) => {
     const postMetadata = parseMetadata(matterResult, filepath);
     if (postMetadata.slug === slug) {
