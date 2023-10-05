@@ -3,7 +3,7 @@ title: "Метаболическая адаптация (Часть 2)"
 subtitle: "Борьба с метаболической адаптацией: секреты поддержания баланса и преодоления вызовов похудения"
 author: "andron13"
 language: ru
-weight: 1
+weight: 2
 slug: metabolic-adaptation-part-2
 image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
 
