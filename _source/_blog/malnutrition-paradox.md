@@ -5,11 +5,11 @@ author: "andron13"
 language: ru
 weight: 8
 slug: malnutrition-paradox
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/8689d14d-319d-4f67-814d-2a9f3989f72c
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
+![image](https://github.com/stroich/recipes/assets/115462690/8689d14d-319d-4f67-814d-2a9f3989f72c)
 
 
 Исторически неполноценное питание рассматривалось с двух аспектов:
@@ -42,5 +42,5 @@ image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85
 
 Поэтому помимо глядения в цифры, очень важно смотреть в свою продуктовую корзину. Вносить в неё разнообразие и уменьшать количество обработанных продуктов.
 
-https://pubmed.ncbi.nlm.nih.gov/31852605/
-https://www.who.int/nutrition/challenges/ru/
+[Ссылка на исследование](https://pubmed.ncbi.nlm.nih.gov/31852605/)    
+[Ссылка на исследование](https://www.who.int/nutrition/challenges/ru/)
