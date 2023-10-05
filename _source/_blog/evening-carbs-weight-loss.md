@@ -1,15 +1,16 @@
 ---
 title: "Углеводы на ужин - польза или лишний вес?"
-subtitle: "Углеводы на ужин принесут пользу, а не лишний вес."
+subtitle: "Спойлер: наука подтверждает их благоприятное влияние на потерю веса и здоровье."
 author: "andron13"
 language: ru
 weight: 9
 slug: evening-carbs-weight-loss
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/07d8ad6e-bd4b-4a0b-8420-bbfffd1c3138
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
+![image](https://github.com/stroich/recipes/assets/115462690/07d8ad6e-bd4b-4a0b-8420-bbfffd1c3138)
+
 
 
 Приём порции углеводов на ужин, при соблюдении низкокалорийной диеты, благоприятно влияет на потерю веса, показатели сытости и гормональный фон.
@@ -28,4 +29,4 @@ image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85
 
 Ну разве это не решающий фактор вернуть милость к «вечерним» углеводам.
 
-https://pubmed.ncbi.nlm.nih.gov/21475137/
+[Ссылка на исследование](https://pubmed.ncbi.nlm.nih.gov/21475137/)
