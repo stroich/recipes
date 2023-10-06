@@ -2,7 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const RecipeCard = ({ posts }) => {
-  console.log(posts);
   return (
     <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg">
       <Image
