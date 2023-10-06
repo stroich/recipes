@@ -8,7 +8,7 @@ const RecipesList: FC = ({ posts }) => {
     <div>
       <div className="flex flex-col">
         {sortedPosts.map((posts) => (
-          <RecipeCard key={Math.random()} posts={posts} />
+          <RecipeCard key={posts.slug} posts={posts} />
         ))}
       </div>
     </div>
