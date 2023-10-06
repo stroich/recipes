@@ -4,6 +4,11 @@ import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
+<<<<<<< HEAD
+=======
+
+const POSTS_FOLDER = '_source/_posts';
+>>>>>>> main
 
 interface IRecipeMetadata {
   title: string;
@@ -39,7 +44,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
 };
 
 export async function getStaticPaths() {
-  const postSlugs = await getAllPostSlugs();
+  const postSlugs = await getAllPostSlugs(POSTS_FOLDER);
 
   const paths = postSlugs.map(({ slug }) => ({
     params: { slug },
@@ -50,7 +55,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const { content, postMetadata } = await getRecipeData(params.slug);
+    const { content, postMetadata } = await getRecipeData(params.slug, POSTS_FOLDER);
     return { props: { content, postMetadata } };
   } catch (error) {
     return { notFound: true };

@@ -1,29 +1,28 @@
-import FilterRecipesSection from '../../components/features/FilterRecipesSection/FilterRecipesSection';
 import List from '../../components/features/RecipesList/List';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import postMetadata from '../../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_posts';
+const POSTS_FOLDER = '_source/_blog';
 
 export async function getStaticProps() {
-  const posts = await postMetadata(POSTS_FOLDER);
+  const articles = await postMetadata(POSTS_FOLDER);
   return {
     props: {
-      posts,
+      articles,
     },
     revalidate: 1,
   };
 }
 
-const Recipes = ({ posts }) => {
+const Blog = ({ articles }) => {
   return (
-    <HomeLayout title={'Рецепты'}>
+    <HomeLayout title={'Блог'}>
       <section className="flex justify-center">
-        <FilterRecipesSection />
-        <List posts={posts} isRecipe={true} />
+        <h2 className="grid">Популярные статьи:</h2>
+        <List posts={articles} isRecipe={false} />
       </section>
     </HomeLayout>
   );
 };
 
-export default Recipes;
+export default Blog;
