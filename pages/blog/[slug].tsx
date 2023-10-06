@@ -1,36 +1,23 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_posts';
+const POSTS_FOLDER = '_source/_blog';
 
-interface IRecipeMetadata {
-  title: string;
-  subtitle: string;
-  date: string;
-  author: string;
-  image: string;
-  language: string;
-  slug: string;
-  tags: string[];
-  weight: number;
-}
-
-interface SlugProps {
-  postMetadata: IRecipeMetadata;
-  content: string;
-}
-
-const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
+const Article = ({ postMetadata, content }) => {
+  console.log(postMetadata);
+  console.log(content);
   return (
-    <HomeLayout title={'Кушать будешь?'}>
-      <article>
-        <h2>{postMetadata.title}</h2>
-        <MdToHtml mdSource={content} />
-      </article>
+    <HomeLayout title={postMetadata.title}>
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="">{postMetadata.title}</h2>
+        <div className={'max-w-screen-lg'}>
+          <MdToHtml mdSource={content} />
+        </div>
+      </section>
     </HomeLayout>
   );
 };
@@ -54,4 +41,4 @@ export async function getStaticProps({ params }) {
   }
 }
 
-export default Slug;
+export default Article;

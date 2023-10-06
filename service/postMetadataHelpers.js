@@ -1,6 +1,7 @@
 import path from 'path';
 
 function parseMetadata(matterResult, filepath) {
+  console.log(matterResult);
   return {
     title: matterResult.data.title,
     subtitle: matterResult.data.subtitle || '',
