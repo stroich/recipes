@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
