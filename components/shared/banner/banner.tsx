@@ -1,6 +1,6 @@
 const Banner = ({ imageUrl, text }) => {
   const backgroundImageStyle = {
-    backgroundImage: `url(${imageUrl.src})`,
+    backgroundImage: `url(${imageUrl})`,
     backgroundRepeat: 'no-repeat',
     backgroundSize: 'cover',
     backgroundPosition: 'center',

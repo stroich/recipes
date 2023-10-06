@@ -4,11 +4,9 @@ import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
-<<<<<<< HEAD
-=======
+import Banner from "../../components/shared/banner/banner";
 
 const POSTS_FOLDER = '_source/_posts';
->>>>>>> main
 
 interface IRecipeMetadata {
   title: string;
@@ -28,9 +26,10 @@ interface SlugProps {
 }
 
 const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
+
   return (
     <HomeLayout title={'Кушать будешь?'}>
-      <article className="border-0">
+      <article className="border-0 px-40">
         <h2 className="items-center">{postMetadata.title}</h2>
         <div>
           {postMetadata.tags.map((tag) => (
