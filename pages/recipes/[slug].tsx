@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
+import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
+import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
-import HomeLayout from "../../components/shared/layouts/homeLayout";
-import MdToHtml from "../../components/features/MdToHtml/Md.ToHtml";
 
 interface IRecipeMetadata {
   title: string;
@@ -24,12 +24,17 @@ interface SlugProps {
 
 const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
   return (
-      <HomeLayout title={'Кушать будешь?'}>
-        <article>
-          <h2>{postMetadata.title}</h2>
-          <MdToHtml mdSource={content} />
-        </article>
-      </HomeLayout>
+    <HomeLayout title={'Кушать будешь?'}>
+      <article className="border-0">
+        <h2 className="items-center">{postMetadata.title}</h2>
+        <div>
+          {postMetadata.tags.map((tag) => (
+            <span key={tag} className="bg-yellow-300 p-1 mr-1 rounded-xl">#{tag}</span>
+          ))}
+        </div>
+        <MdToHtml mdSource={content} />
+      </article>
+    </HomeLayout>
   );
 };
 
