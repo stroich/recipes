@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const RecipeCard = ({ posts }) => {
+const Card = ({ posts, content, href }) => {
   return (
     <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg">
       <Image
@@ -11,6 +11,7 @@ const RecipeCard = ({ posts }) => {
         alt={'image'}
         loading="lazy"
         className="rounded-l-lg mr-5"
+        style={{ objectFit: 'cover' }}
       />
       <div className="flex flex-col justify-between py-3 px-2">
         <div>
@@ -18,15 +19,15 @@ const RecipeCard = ({ posts }) => {
           <div>{posts.subtitle}</div>
         </div>
         <Link
-          href={`recipes/${posts.slug}`}
-          className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-40"
+          href={`${href}/${posts.slug}`}
+          className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-52"
         >
           {' '}
-          Готовить{' '}
+          {content}{' '}
         </Link>
       </div>
     </div>
   );
 };
 
-export default RecipeCard;
+export default Card;

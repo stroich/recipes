@@ -1,34 +1,44 @@
+import React, { FC } from 'react';
+
+import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
-import { getArticlesData } from '../../service/blogHandler';
-import { getAllArticleSlugs } from '../../service/blogMetadata';
+import { getRecipeData } from '../../service/postHandler';
+import { getAllPostSlugs } from '../../service/postMetadata';
+
+const POSTS_FOLDER = '_source/_blog';
+
+const Article = ({ postMetadata, content }) => {
+  console.log(postMetadata);
+  console.log(content);
+  return (
+    <HomeLayout title={postMetadata.title}>
+      <section className="flex flex-col items-center justify-center">
+        <h2 className="">{postMetadata.title}</h2>
+        <div className={'max-w-screen-lg'}>
+          <MdToHtml mdSource={content} />
+        </div>
+      </section>
+    </HomeLayout>
+  );
+};
 
 export async function getStaticPaths() {
-  const articleSlugs = await getAllArticleSlugs();
-  const paths = articleSlugs.map(({ slug }) => ({
+  const postSlugs = await getAllPostSlugs(POSTS_FOLDER);
+
+  const paths = postSlugs.map(({ slug }) => ({
     params: { slug },
   }));
+
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
   try {
-    const { content, articleMetadata } = await getArticlesData(params.slug);
-    return { props: { content, articleMetadata } };
+    const { content, postMetadata } = await getRecipeData(params.slug, POSTS_FOLDER);
+    return { props: { content, postMetadata } };
   } catch (error) {
     return { notFound: true };
   }
 }
-
-const Article = ({ content, articleMetadata }) => {
-  const { title, subtitle, date, author, language, category, taxonomy, ingredients, weight, slug } =
-    articleMetadata;
-  return (
-    <HomeLayout title={title}>
-      <section className="flex justify-center">
-        <h2 className="grid">{title}</h2>
-      </section>
-    </HomeLayout>
-  );
-};
 
 export default Article;

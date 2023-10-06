@@ -1,9 +1,11 @@
 import List from '../../components/features/RecipesList/List';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
-import { articleMetadata } from '../../service/blogMetadata';
+import postMetadata from '../../service/postMetadata';
+
+const POSTS_FOLDER = '_source/_blog';
 
 export async function getStaticProps() {
-  const articles = await articleMetadata();
+  const articles = await postMetadata(POSTS_FOLDER);
   return {
     props: {
       articles,
