@@ -6,11 +6,10 @@ language: ru
 tags: ["салат", "овощи", "беззаморочек"]
 weight: 8
 slug: cucumber-egg-salad
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/8cca1bd7-8a60-4f1a-bb56-6723a37a06b9
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

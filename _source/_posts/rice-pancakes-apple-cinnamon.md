@@ -6,7 +6,7 @@ language: ru
 tags: ["завтрак", "десерт", "ссобой", ",беззаморочек"]
 weight: 16
 slug: rice-pancakes-apple-cinnamon
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/2e5bf58c-4658-41f4-b482-defd1181f02d
 
 ---
 

@@ -6,11 +6,10 @@ language: ru
 tags: ["беззаморочек", "перекус", "ссобой", "десерт", "безсахара"]
 weight: 7
 slug: mug-cake
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/c7995d8e-2631-45a5-a445-76868570f190
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

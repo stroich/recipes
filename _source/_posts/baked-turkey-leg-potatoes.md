@@ -6,7 +6,7 @@ language: ru
 tags: ["индейка", "гарнир"]
 weight: 15
 slug: baked-turkey-leg-potatoes
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/3166d561-a9d8-4e74-92d3-c42fd98688b6
 
 ---
 

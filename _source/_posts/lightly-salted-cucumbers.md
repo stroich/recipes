@@ -6,7 +6,7 @@ language: ru
 tags: ["овощи", "вегетарианское", "беззаморочек"]
 weight: 24
 slug: lightly-salted-cucumbers
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/5cddf958-d9f9-4f04-8ed2-ace20134d164
 
 ---
 

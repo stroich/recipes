@@ -6,11 +6,10 @@ language: ru
 tags: ["овощи", "беззаморочек", "перекус", "ссобой"]
 weight: 2
 slug: zucchini-pancakes
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/6d62274d-d2d7-4b19-bd53-03670daede2a
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

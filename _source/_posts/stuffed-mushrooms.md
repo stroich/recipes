@@ -6,7 +6,7 @@ language: ru
 tags: ["овощи"]
 weight: 23
 slug:  stuffed-mushrooms
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image:  https://github.com/stroich/recipes/assets/115462690/f6c0fde1-d5d1-4543-b62f-78fe9384042c
 
 ---
 

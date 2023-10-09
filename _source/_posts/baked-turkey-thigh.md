@@ -1,16 +1,15 @@
 ---
-title: "Запеченное бедро индейки"
+title: "Запечённое бедро индейки"
 subtitle: "Нежное бедро индейки, запеченное в духовке с чесноком и сметаной. Превосходное блюдо для ужина."
 author: "andron13"
 language: ru
 tags: ["индейка"]
 weight: 12
 slug: baked-turkey-thigh
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/9c94349d-8da4-4296-b6ea-f9f53b70c81d
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 
