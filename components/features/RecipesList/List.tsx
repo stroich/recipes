@@ -1,4 +1,4 @@
-import {FC, useState} from 'react';
+import { FC, useState } from 'react';
 
 import Card from '../../entitites/Card';
 
@@ -47,11 +47,15 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
         ))}
       </div>
       <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>-</button>
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          -
+        </button>
         <span>
           Страница {currentPage} из {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>+</button>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          +
+        </button>
       </div>
     </div>
   );
