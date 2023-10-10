@@ -1,7 +1,7 @@
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
 import Card from '../components/entitites/Card';
 import RecipeCardOnMain from '../components/entitites/RecipeCardOnMain';
-import List from '../components/features/RecipesList/List';
+import List from '../components/features/List/List';
 import HomeLayout from '../components/shared/layouts/homeLayout';
 import { getRandomElementsFromArray } from '../components/shared/RandomElements/RamdomElements';
 import postMetadata from '../service/postMetadata';

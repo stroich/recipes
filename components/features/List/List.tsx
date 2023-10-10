@@ -46,15 +46,23 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
           />
         ))}
       </div>
-      <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          -
+      <div className="max-w-fit my-0 mx-auto font-bold">
+        <button
+          className="p-1 px-3 bg-yellow-300 rounded-3xl mr-1"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          &lt;
         </button>
         <span>
           Страница {currentPage} из {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          +
+        <button
+          className="py-0.5 px-3 bg-yellow-300 rounded-2xl ml-1"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          &gt;
         </button>
       </div>
     </div>

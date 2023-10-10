@@ -7,7 +7,7 @@ tags: ["курица"]
 weight: 1
 slug: creamy-chicken-fillet
 image: https://github.com/stroich/recipes/assets/115462690/e9091e54-8ccf-4391-a19b-f264b01976ca
-
+video: https://github.com/stroich/recipes/assets/115462690/6c01e153-1594-44b1-a39c-fa0f13ecc662
 ---
 
 

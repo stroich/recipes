@@ -7,7 +7,7 @@ tags: ["завтрак", "десерт", "творог", "выпечка", "бе
 weight: 19
 slug: lazy-cherry-strudel
 image: https://github.com/stroich/recipes/assets/115462690/97e2d560-fca2-4631-b7ce-ce18cedb940a
-
+video: https://github.com/stroich/recipes/assets/115462690/0389a700-2870-4860-bc77-d5ea39fce74f
 ---
 
 

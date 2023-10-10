@@ -7,7 +7,7 @@ tags: ["индейка"]
 weight: 12
 slug: baked-turkey-thigh
 image: https://github.com/stroich/recipes/assets/115462690/9c94349d-8da4-4296-b6ea-f9f53b70c81d
-
+video: ''
 ---
 
 

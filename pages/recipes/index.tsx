@@ -1,5 +1,5 @@
 import FilterRecipesSection from '../../components/features/FilterRecipesSection/FilterRecipesSection';
-import List from '../../components/features/RecipesList/List';
+import List from '../../components/features/List/List';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import postMetadata from '../../service/postMetadata';
 

@@ -7,6 +7,7 @@ tags: ["напиток", "десерт", "вегетарианство", "без
 weight: 20
 slug: banana-strawberry-smoothie
 image: https://github.com/stroich/recipes/assets/115462690/1d48a7e5-f7e8-4403-8579-eba412788f8d
+video: https://github.com/stroich/recipes/assets/115462690/c84401f2-568f-4b1f-ba98-9fcf9f473692
 ---
 
 

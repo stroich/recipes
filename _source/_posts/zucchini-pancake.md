@@ -7,7 +7,7 @@ tags: ["завтрак", "перекус", "овощи"]
 weight: 18
 slug: zucchini-pancake
 image: https://github.com/stroich/recipes/assets/115462690/6e801c08-df78-4d2a-9ad7-e73454b06c47
-
+video: https://github.com/stroich/recipes/assets/115462690/40e5a3c9-04e6-4b7e-a793-3ad936df732f
 ---
 
 
