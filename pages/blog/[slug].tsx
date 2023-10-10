@@ -2,14 +2,11 @@ import React from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
+import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_blog';
-
 const Article = ({ postMetadata, content }) => {
-  console.log(postMetadata);
-  console.log(content);
   return (
     <HomeLayout title={postMetadata.title}>
       <section className="flex flex-col items-center justify-center">
@@ -23,7 +20,7 @@ const Article = ({ postMetadata, content }) => {
 };
 
 export async function getStaticPaths() {
-  const postSlugs = await getAllPostSlugs(POSTS_FOLDER);
+  const postSlugs = await getAllPostSlugs(Folders.Posts);
 
   const paths = postSlugs.map(({ slug }) => ({
     params: { slug },
@@ -34,7 +31,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   try {
-    const { content, postMetadata } = await getRecipeData(params.slug, POSTS_FOLDER);
+    const { content, postMetadata } = await getRecipeData(params.slug, Folders.Posts);
     return { props: { content, postMetadata } };
   } catch (error) {
     return { notFound: true };

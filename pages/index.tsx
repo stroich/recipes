@@ -1,17 +1,13 @@
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
-import Card from '../components/entitites/Card';
 import RecipeCardOnMain from '../components/entitites/RecipeCardOnMain';
-import List from '../components/features/List/List';
 import HomeLayout from '../components/shared/layouts/homeLayout';
 import { getRandomElementsFromArray } from '../components/shared/RandomElements/RamdomElements';
+import { Folders } from '../interfaces/interfaces';
 import postMetadata from '../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_posts';
-const ARTICLES_FOLDER = '_source/_blog';
-
 export async function getStaticProps() {
-  const allPosts = await postMetadata(POSTS_FOLDER);
-  const allArticles = await postMetadata(ARTICLES_FOLDER);
+  const allPosts = await postMetadata(Folders.Recipes);
+  const allArticles = await postMetadata(Folders.Posts);
   const articles = getRandomElementsFromArray(allArticles, 2);
   const posts = getRandomElementsFromArray(allPosts, 4);
   return {

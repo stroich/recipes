@@ -1,11 +1,10 @@
 import List from '../../components/features/List/List';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
+import { Folders } from '../../interfaces/interfaces';
 import postMetadata from '../../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_blog';
-
 export async function getStaticProps() {
-  const articles = await postMetadata(POSTS_FOLDER);
+  const articles = await postMetadata(Folders.Posts);
   return {
     props: {
       articles,
