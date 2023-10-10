@@ -20,7 +20,7 @@ const Header = () => {
         </div>
       </div>
       <Banner
-        imageUrl={imgBanner}
+        imageUrl={imgBanner.src}
         text="Секреты вдохновения в каждом блюде: гармония с собой, забота о здоровье
  и любовь к активному образу жизни!"
       />

@@ -6,11 +6,10 @@ language: ru
 tags: ["завтрак", "яйца", "беззаморочек"]
 weight: 11
 slug: omelette-in-tortilla
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/b3063507-a072-4377-bfaf-9400df2783b4
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

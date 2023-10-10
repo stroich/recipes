@@ -6,11 +6,10 @@ language: ru
 tags: ["курица"]
 weight: 1
 slug: creamy-chicken-fillet
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/e9091e54-8ccf-4391-a19b-f264b01976ca
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

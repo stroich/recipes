@@ -6,11 +6,10 @@ language: ru
 tags: ["овощи", "беззаморочек"]
 weight: 11
 slug: creamy-zucchini-stew
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/5412c903-2942-45a1-9755-80a0b4917094
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 

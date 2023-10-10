@@ -31,9 +31,10 @@ const MdToHtml = ({ mdSource }) => {
     img: {
       component: 'img',
       props: {
-        className: 'my-4 rounded-md border-2 border-gray-300 p-1 mx-auto block',
+        className: 'rounded-md p-1',
         alt: '',
-        width: '60%',
+        width: '300px',
+        height: '300px',
       },
     },
     figcaption: {

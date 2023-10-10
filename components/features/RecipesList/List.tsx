@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import Card from '../../entitites/Card';
 
@@ -18,11 +18,26 @@ interface ListProps {
 }
 
 const List: FC<ListProps> = ({ posts, isRecipe }) => {
-  const sortedPosts = posts.sort((a, b) => a.weight - b.weight);
+  const pageSize = 3;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = startIndex + pageSize;
+  const currentPosts = posts.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(posts.length / pageSize);
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+  };
+
+  const handlePrevPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+  };
   return (
     <div>
       <div className="flex flex-col">
-        {sortedPosts.map((posts) => (
+        {currentPosts.map((posts) => (
           <Card
             key={posts.slug}
             posts={posts}
@@ -30,6 +45,17 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
             href={isRecipe ? 'recipes' : 'blog'}
           />
         ))}
+      </div>
+      <div className="pagination">
+        <button onClick={handlePrevPage} disabled={currentPage === 1}>
+          -
+        </button>
+        <span>
+          Страница {currentPage} из {totalPages}
+        </span>
+        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
+          +
+        </button>
       </div>
     </div>
   );

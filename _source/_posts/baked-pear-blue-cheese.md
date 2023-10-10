@@ -6,11 +6,10 @@ language: ru
 tags: ["безсахара", "десерт", "беззаморочек"]
 weight: 1
 slug: baked-pear-blue-cheese
-image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+image: https://github.com/stroich/recipes/assets/115462690/ed30ef55-e0e6-41a7-9759-1e42479173c9
 
 ---
 
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 **Ингредиенты:**
 
