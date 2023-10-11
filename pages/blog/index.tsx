@@ -23,8 +23,8 @@ const Blog = ({ articles }) => {
   return (
     <HomeLayout title={'Блог'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <section className="flex justify-center">
-        <h2 className="grid">Популярные статьи:</h2>
+      <section className="flex flex-col items-center">
+        <h2>Популярные статьи:</h2>
         <List posts={articles} isRecipe={false} />
       </section>
     </HomeLayout>

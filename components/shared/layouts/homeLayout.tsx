@@ -10,7 +10,7 @@ const HomeLayout = ({ children, title }) => {
         <title>{title}</title>
       </Head>
       <Header />
-      <main className="py-2 shadow-md rounded-md">{children}</main>
+      <main className="py-2 shadow-md rounded-md px-40">{children}</main>
       <Footer />
     </>
   );

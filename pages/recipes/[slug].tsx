@@ -51,10 +51,9 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
   return (
     <HomeLayout title={'Кушать будешь?'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <article className="border-0 px-20">
+      <article className="border-0">
         <h2 className="text-center">{postMetadata.title}</h2>
-
-        <div className="flex justify-around">
+        <div className="flex justify-between">
           <div className="w-[40%]">
             <div>
               {postMetadata.tags.map((tag) => (

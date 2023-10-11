@@ -1,7 +1,17 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const Card = ({ posts, content, href }) => {
+import { FC } from 'react';
+
+import { IArticle } from '../../interfaces/interfaces';
+
+interface CardProps {
+  posts: IArticle;
+  content: string;
+  href: string;
+}
+
+const Card: FC<CardProps> = ({ posts, content, href }) => {
   return (
     <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg">
       <Image

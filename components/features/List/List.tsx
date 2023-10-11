@@ -3,19 +3,10 @@ import { FC, useState } from 'react';
 
 import arrow from '../../../public/assets/icons/arrow-pagination.svg';
 import Card from '../../entitites/Card';
-
-interface Recipe {
-  title: string;
-  subtitle: string;
-  author: string;
-  tags: Array<string>;
-  weight: number;
-  image: string;
-  slug: string;
-}
+import {IArticle} from "../../../interfaces/interfaces";
 
 interface ListProps {
-  posts: Array<Recipe>;
+  posts: Array<IArticle>;
   isRecipe: boolean;
 }
 
@@ -37,7 +28,7 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
     setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
   };
   return (
-    <div>
+    <div className="mt-10">
       <div className="flex flex-col">
         {currentPosts.map((posts) => (
           <Card

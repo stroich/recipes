@@ -24,7 +24,7 @@ const Recipes = ({ posts }) => {
   return (
     <HomeLayout title={'Рецепты'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <section className="flex justify-center">
+      <section className="flex justify-between">
         <FilterRecipesSection />
         <List posts={posts} isRecipe={true} />
       </section>
