@@ -7,7 +7,7 @@ tags: ["салат", "вегетарианство", "овощи"]
 weight: 25
 slug: kimchi-salad
 image: https://github.com/stroich/recipes/assets/115462690/d692137f-d47a-4eb0-aef1-a15ea55ad322
-
+video: ''
 ---
 
 

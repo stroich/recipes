@@ -7,7 +7,7 @@ tags: ["завтрак", "яйца", "беззаморочек"]
 weight: 11
 slug: omelette-in-tortilla
 image: https://github.com/stroich/recipes/assets/115462690/b3063507-a072-4377-bfaf-9400df2783b4
-
+video: https://github.com/stroich/recipes/assets/115462690/8ebd24a5-823d-44bc-b457-9f105312717d
 ---
 
 

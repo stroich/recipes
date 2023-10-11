@@ -7,7 +7,7 @@ tags: ["овощи"]
 weight: 21
 slug: creamy-eggplants
 image: https://github.com/stroich/recipes/assets/115462690/9fd901a8-1596-4b01-82db-e635923a3b16
-
+video: https://github.com/stroich/recipes/assets/115462690/6dc99b43-8380-46e2-8f04-725e9d3b3ed3
 ---
 
 **Ингредиенты:**

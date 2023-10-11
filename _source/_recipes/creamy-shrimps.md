@@ -7,7 +7,7 @@ tags: ["морепродукты", "беззаморочек"]
 weight: 17
 slug: creamy-shrimps
 image: https://github.com/stroich/recipes/assets/115462690/853004ed-eb5c-46d2-bb29-3feb535eda9f
-
+video: https://github.com/stroich/recipes/assets/115462690/987b7a65-d0e8-444d-95d8-4f4b7e6d6774
 ---
 
 

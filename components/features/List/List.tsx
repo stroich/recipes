@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import { FC, useState } from 'react';
 
+import arrow from '../../../public/assets/icons/arrow-pagination.svg';
 import Card from '../../entitites/Card';
 
 interface Recipe {
@@ -46,15 +48,23 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
           />
         ))}
       </div>
-      <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>
-          -
+      <div className="max-w-fit my-0 mx-auto font-bold flex">
+        <button
+          className="p-1 bg-yellow-300 rounded-3xl mr-1"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          <Image width={15} height={15} src={arrow} alt={'arrow'} className="rotate-180" />
         </button>
         <span>
           Страница {currentPage} из {totalPages}
         </span>
-        <button onClick={handleNextPage} disabled={currentPage === totalPages}>
-          +
+        <button
+          className="p-1 bg-yellow-300 rounded-2xl ml-1"
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+        >
+          <Image width={15} height={15} src={arrow} alt={'arrow'} />
         </button>
       </div>
     </div>

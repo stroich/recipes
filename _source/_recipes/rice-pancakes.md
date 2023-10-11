@@ -7,6 +7,7 @@ tags: ["завтрак", "десерт", "выпечка", "ссобой"]
 weight: -100
 slug: rice-pancakes
 image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405
+video: https://github.com/stroich/recipes/assets/115462690/ac915f09-2b26-4c8e-9110-5a9721d84e34
 ---
 #### Ингредиенты:
 
@@ -33,9 +34,6 @@ image: https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85
 
 4. Разогреть сковороду и выпекать панкейки с обеих сторон до золотистой корочки.
 
-
-![image](https://github.com/stroich/recipes/assets/115462690/722cb6c3-200e-48b7-aca9-65f9610fa917)
-![image](https://github.com/stroich/recipes/assets/115462690/b6c18573-3375-4506-85f7-743e2ab0c405)
 
 #### Примеры топпингов:
 

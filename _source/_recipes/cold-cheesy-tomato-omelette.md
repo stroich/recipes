@@ -7,7 +7,7 @@ tags: ["завтрак", "яйца", "беззаморочек"]
 weight: 5
 slug:  cold-cheesy-tomato-omelette
 image: https://github.com/stroich/recipes/assets/115462690/0462eb50-826b-4743-bd2b-041eefd32798
-
+video: https://github.com/stroich/recipes/assets/115462690/247620bc-1b38-4d99-b307-529b68d979e4
 ---
 
 

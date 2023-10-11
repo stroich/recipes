@@ -7,7 +7,7 @@ tags: ["овощи", "курица"]
 weight: 100
 slug: vegetable-chicken-ragu
 image: https://github.com/stroich/recipes/assets/115462690/d76fa96c-d1d5-4ffc-9227-6384dd6c7e11
-
+video: https://github.com/stroich/recipes/assets/115462690/ad26751d-0089-4197-b713-92c44448cfcd
 ---
 
 

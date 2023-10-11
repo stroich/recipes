@@ -1,24 +1,27 @@
 import Link from 'next/link';
 
+import arrow from '../../public/assets/icons/arrow-pagination.svg';
+import Image from "next/image";
+
 const Breadcrumb = ({ breadcrumbs }) => {
   return (
-    <nav className="text-gray-500 text-sm my-1 px-2" aria-label="breadcrumb">
-      <div className="flex items-center space-x-2">
+    <nav aria-label="breadcrumb">
+      <div className="flex items-baseline">
         {breadcrumbs.map(({ label, href }, i) => {
           const lastElement = i === breadcrumbs.length - 1;
           if (lastElement) {
             return (
-              <div key={label} className="breadcrumb-item active" aria-current="page">
+              <div key={label} className="text-base" aria-current="page">
                 {label}
               </div>
             );
           }
           return (
-            <div key={label} className="breadcrumb-item">
-              <Link href={href} className="hover:text-gray-800 transition-colors duration-200">
+            <div key={label} className="flex items-baseline">
+              <Link href={href} className="text-base">
                 {label}
               </Link>
-              <span className="text-gray-400 mx-2">/</span>
+              <Image width={10} height={10} src={arrow} alt={'/'} className="mx-2" />
             </div>
           );
         })}

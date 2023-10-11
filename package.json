@@ -8,7 +8,8 @@
     "lint": "eslint ./",
     "eslint": "eslint --ext .js --ext .jsx --ext .ts --ext .tsx ./",
     "eslint:fix": "eslint --fix --ext .js --ext .jsx --ext .ts --ext .tsx ./",
-    "prepublish": "npm run eslint:fix"
+    "prepublish": "npm run eslint:fix",
+    "vercel": "vercel"
   },
   "dependencies": {
     "date-fns": "^2.30.0",

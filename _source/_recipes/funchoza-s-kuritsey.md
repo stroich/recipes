@@ -7,7 +7,7 @@ tags: ["курица", "гарнир"]
 weight: 22
 slug:  funchoza-s-kuritsey
 image: https://github.com/stroich/recipes/assets/115462690/362aa063-6c47-4da6-b3ed-2cace19b78f4
-
+video: https://github.com/stroich/recipes/assets/115462690/c2986046-a25b-498e-9acd-32de406517a5
 ---
 
 

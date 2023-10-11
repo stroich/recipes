@@ -7,7 +7,7 @@ tags: ["салат", "овощи"]
 weight: 12
 slug: waldorf-salad
 image: https://github.com/stroich/recipes/assets/115462690/607dcd2c-941f-4c10-bee0-c93a6d5b4c3a
-
+video: ''
 ---
 
 

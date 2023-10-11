@@ -7,7 +7,7 @@ tags: ["завтрак", "творог", "безсахара", "с собой", 
 weight: 2
 slug: syrniki
 image: https://github.com/stroich/recipes/assets/115462690/fd79c781-2663-44e2-8c1f-4bef69f2af4f
-
+video: https://github.com/stroich/recipes/assets/115462690/5d4d77a2-19cb-401f-85a4-8b6e9c2f6698
 ---
 
 

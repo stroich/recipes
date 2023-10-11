@@ -1,12 +1,12 @@
 import FilterRecipesSection from '../../components/features/FilterRecipesSection/FilterRecipesSection';
-import List from '../../components/features/RecipesList/List';
+import List from '../../components/features/List/List';
+import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
+import { Folders } from '../../interfaces/interfaces';
 import postMetadata from '../../service/postMetadata';
 
-const POSTS_FOLDER = '_source/_posts';
-
 export async function getStaticProps() {
-  const posts = await postMetadata(POSTS_FOLDER);
+  const posts = await postMetadata(Folders.Recipes);
   return {
     props: {
       posts,
@@ -15,9 +15,15 @@ export async function getStaticProps() {
   };
 }
 
+const breadcrumbs = [
+  {label: 'Главная', href: '/'},
+  {label: 'Рецепты', href: '/recipes'}
+];
+
 const Recipes = ({ posts }) => {
   return (
     <HomeLayout title={'Рецепты'}>
+      <Breadcrumb breadcrumbs={breadcrumbs} />
       <section className="flex justify-center">
         <FilterRecipesSection />
         <List posts={posts} isRecipe={true} />

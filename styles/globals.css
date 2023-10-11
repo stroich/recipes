@@ -19,7 +19,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    margin: 20px 10px;
+    margin: 10px 0px;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
@@ -77,5 +77,8 @@ article {
 
 .list-decimal {
     list-style-type: decimal;
+}
+button:disabled {
+    opacity: .4;
 }
 
