@@ -16,8 +16,8 @@ export async function getStaticProps() {
 }
 
 const breadcrumbs = [
-  {label: 'Главная', href: '/'},
-  {label: 'Рецепты', href: '/recipes'}
+  { label: 'Главная', href: '/' },
+  { label: 'Рецепты', href: '/recipes' },
 ];
 
 const Recipes = ({ posts }) => {

@@ -1,8 +1,8 @@
 import List from '../../components/features/List/List';
+import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { Folders } from '../../interfaces/interfaces';
 import postMetadata from '../../service/postMetadata';
-import Breadcrumb from "../../components/seo/breadcrumb";
 
 export async function getStaticProps() {
   const articles = await postMetadata(Folders.Posts);
@@ -15,8 +15,8 @@ export async function getStaticProps() {
 }
 
 const breadcrumbs = [
-  {label: 'Главная', href: '/'},
-  {label: 'Статьи', href: '/blog'}
+  { label: 'Главная', href: '/' },
+  { label: 'Статьи', href: '/blog' },
 ];
 
 const Blog = ({ articles }) => {

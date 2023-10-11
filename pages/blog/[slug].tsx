@@ -1,17 +1,17 @@
 import React from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
+import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
-import Breadcrumb from "../../components/seo/breadcrumb";
 
 const Article = ({ postMetadata, content }) => {
   const breadcrumbs = [
-    {label: 'Главная', href: '/'},
-    {label: 'Статьи', href: '/blog'},
-    {label: `${postMetadata.title}`, href: `/blog/${postMetadata.slug}`},
+    { label: 'Главная', href: '/' },
+    { label: 'Статьи', href: '/blog' },
+    { label: `${postMetadata.title}`, href: `/blog/${postMetadata.slug}` },
   ];
   return (
     <HomeLayout title={postMetadata.title}>

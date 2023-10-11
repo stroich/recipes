@@ -1,6 +1,7 @@
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
 import RecipeCardOnMain from '../components/entitites/RecipeCardOnMain';
 import HomeLayout from '../components/shared/layouts/homeLayout';
+import PlateMethod from '../components/shared/PlateMethod/PlateMethod';
 import { getRandomElementsFromArray } from '../components/shared/RandomElements/RamdomElements';
 import { Folders } from '../interfaces/interfaces';
 import postMetadata from '../service/postMetadata';
@@ -36,6 +37,7 @@ const Index = ({ posts, articles }) => {
           ))}
         </div>
       </section>
+      <PlateMethod />
     </HomeLayout>
   );
 };
