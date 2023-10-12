@@ -2,12 +2,12 @@ import Image from 'next/image';
 import React, { FC, useEffect } from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
+import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import SpinnerComponent from '../../components/shared/Spiner/Spiner';
 import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
-import Breadcrumb from "../../components/seo/breadcrumb";
 
 interface IRecipeMetadata {
   title: string;
@@ -29,9 +29,9 @@ interface SlugProps {
 
 const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
   const breadcrumbs = [
-    {label: 'Главная', href: '/'},
-    {label: 'Рецепты', href: '/recipes'},
-    {label: `${postMetadata.title}`, href: `/recipes/${postMetadata.slug}`},
+    { label: 'Главная', href: '/' },
+    { label: 'Рецепты', href: '/recipes' },
+    { label: `${postMetadata.title}`, href: `/recipes/${postMetadata.slug}` },
   ];
 
   const [isLoading, setIsLoading] = React.useState(true);
@@ -51,10 +51,9 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
   return (
     <HomeLayout title={'Кушать будешь?'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
-      <article className="border-0 px-20">
+      <article className="border-0">
         <h2 className="text-center">{postMetadata.title}</h2>
-
-        <div className="flex justify-around">
+        <div className="flex justify-between">
           <div className="w-[40%]">
             <div>
               {postMetadata.tags.map((tag) => (

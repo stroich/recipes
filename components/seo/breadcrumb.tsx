@@ -1,7 +1,7 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import arrow from '../../public/assets/icons/arrow-pagination.svg';
-import Image from "next/image";
 
 const Breadcrumb = ({ breadcrumbs }) => {
   return (

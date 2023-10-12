@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { FC } from 'react';
 
-const RecipeCardOnMain = ({ recipe }) => {
+import { IArticle } from '../../interfaces/interfaces';
+
+type RecipeCardOnMainProps = {
+  recipe: IArticle;
+};
+
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
   return (
     <div className="w-72 bg-gray-200 mb-4 flex flex-col rounded-lg">
       <Image

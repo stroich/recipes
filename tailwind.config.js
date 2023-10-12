@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Helvetica', 'Arial', 'sans-serif'],
+        cursive: ['Poiret One', 'cursive'],
       },
       screens: {
         tablet: '640px',

@@ -7,7 +7,7 @@ const Banner = ({ imageUrl, text }) => {
   };
 
   return (
-    <div className="" style={backgroundImageStyle}>
+    <div style={backgroundImageStyle}>
       <h1 className="pt-1 pb-56 max-w-5xl mx-auto text-white md:text-2xl">{text}</h1>
     </div>
   );
