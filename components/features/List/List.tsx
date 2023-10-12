@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import { FC, useState } from 'react';
 
+import { IArticle } from '../../../interfaces/interfaces';
 import arrow from '../../../public/assets/icons/arrow-pagination.svg';
 import Card from '../../entitites/Card';
-import {IArticle} from "../../../interfaces/interfaces";
 
 interface ListProps {
   posts: Array<IArticle>;

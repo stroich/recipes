@@ -1,10 +1,11 @@
 import Image from 'next/image';
 
 import plateMethodData from '../../../constants/plateMethodData';
+import styles from './PlateMethod.module.css';
 
 const PlateMethod = () => {
   return (
-    <section className="pb-5 bg-cyan-500">
+    <section className={styles.plate}>
       <h2 className="text-center">Метод тарелки:</h2>
       <div className="flex justify-center gap-20 mb-5">
         {plateMethodData.map((data) => (

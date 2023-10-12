@@ -5,7 +5,11 @@ import { FC } from 'react';
 
 import { IArticle } from '../../interfaces/interfaces';
 
-const ArticleCardOnMain: FC<IArticle> = (article) => {
+type ArticleCardOnMainProps = {
+  article: IArticle;
+};
+
+const ArticleCardOnMain: FC<ArticleCardOnMainProps> = ({ article }) => {
   return (
     <div className="w-80 bg-gray-200 mb-4 flex flex-col rounded-lg justify-center items-center p-3">
       <h4 className="mb-2 text-center">{article.title}</h4>

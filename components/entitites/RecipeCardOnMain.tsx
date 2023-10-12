@@ -4,7 +4,11 @@ import { FC } from 'react';
 
 import { IArticle } from '../../interfaces/interfaces';
 
-const RecipeCardOnMain: FC<IArticle> = (recipe) => {
+type RecipeCardOnMainProps = {
+  recipe: IArticle;
+};
+
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
   return (
     <div className="w-72 bg-gray-200 mb-4 flex flex-col rounded-lg">
       <Image
