@@ -16,7 +16,7 @@ export async function getStaticProps() {
 
 const breadcrumbs = [
   { label: 'Главная', href: '/' },
-  { label: 'Статьи', href: '/blog' },
+  { label: 'Блог', href: '/blog' },
 ];
 
 const Blog = ({ articles }) => {
@@ -24,7 +24,6 @@ const Blog = ({ articles }) => {
     <HomeLayout title={'Блог'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <section className="flex flex-col items-center">
-        <h2>Популярные статьи:</h2>
         <List posts={articles} isRecipe={false} />
       </section>
     </HomeLayout>

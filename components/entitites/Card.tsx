@@ -13,7 +13,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ posts, content, href }) => {
   return (
-    <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg">
+    <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg hover:shadow-xl transition-all duration-200">
       <Image
         src={posts.image}
         width={160}

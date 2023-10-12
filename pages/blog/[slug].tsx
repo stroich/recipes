@@ -10,7 +10,7 @@ import { getAllPostSlugs } from '../../service/postMetadata';
 const Article = ({ postMetadata, content }) => {
   const breadcrumbs = [
     { label: 'Главная', href: '/' },
-    { label: 'Статьи', href: '/blog' },
+    { label: 'Блог', href: '/blog' },
     { label: `${postMetadata.title}`, href: `/blog/${postMetadata.slug}` },
   ];
   return (

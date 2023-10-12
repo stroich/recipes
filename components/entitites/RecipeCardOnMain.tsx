@@ -10,7 +10,7 @@ type RecipeCardOnMainProps = {
 
 const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
   return (
-    <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg">
+    <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg hover:shadow-2xl transition-all duration-200">
       <Link href={`recipes/${recipe.slug}`}>
         <Image
           src={recipe.image}

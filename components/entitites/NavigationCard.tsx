@@ -10,9 +10,12 @@ const NavigationCard: FC<NavigationCardProps> = ({ title, data }) => {
       <h5 className="font-bold">{title}:</h5>
       <div className="flex flex-wrap w-[50%]">
         {data.map((subcat) => (
-          <div key={subcat} className="bg-yellow-300 rounded-xl max-w-fit px-2 mr-1 mb-1 font-bold">
+          <button
+            key={subcat}
+            className="bg-yellow-300 rounded-xl max-w-fit px-2 mr-1 mb-1 font-bold hover:shadow transition-all duration-100"
+          >
             #{subcat}
-          </div>
+          </button>
         ))}
       </div>
     </div>

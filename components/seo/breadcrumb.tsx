@@ -17,8 +17,8 @@ const Breadcrumb = ({ breadcrumbs }) => {
             );
           }
           return (
-            <div key={label} className="flex items-baseline">
-              <Link href={href} className="text-base">
+            <div key={label} className="flex items-baseline h-10">
+              <Link href={href} className="text-base hover:border-b-2 border-amber-300 duration-75">
                 {label}
               </Link>
               <Image width={10} height={10} src={arrow} alt={'/'} className="mx-2" />
