@@ -9,8 +9,8 @@ import SearchBox from '../../shared/searchBox/SearchBox';
 const Header = () => {
   return (
     <header className="bg-cyan-500 shadow-md pb-0">
-      <div className="container mt-5 bg-white p-5">
-        <div className="flex justify-between items-center max-w-5xl mx-auto">
+      <div className=" mt-5 bg-white p-5">
+        <div className="flex justify-between items-center  max-w-5xl mx-auto">
           <div className="flex">
             <Image src={Logo} alt={'Logo'} width={40} height={40} />
             <h3 className="text-neutral-800 ml-5">Кушать будешь?</h3>

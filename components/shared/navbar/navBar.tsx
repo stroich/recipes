@@ -8,7 +8,7 @@ const NavBar = () => {
   return (
     <div>
       {primaryLinks.map(({ title, path, id }) => (
-        <Link className={`m-3 ${path === pathname ? 'active' : ''}`} href={path} key={id}>
+        <Link className={`mx-3 ${path === pathname ? 'active' : ''}`} href={path} key={id}>
           {title}
         </Link>
       ))}
