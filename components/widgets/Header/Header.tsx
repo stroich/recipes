@@ -8,7 +8,7 @@ import SearchBox from '../../shared/searchBox/SearchBox';
 
 const Header = () => {
   return (
-    <header className="bg-cyan-500 shadow-md pb-0">
+    <header className="bg-customBlue shadow-md pb-0">
       <div className=" mt-5 bg-white p-5">
         <div className="flex justify-between items-center  max-w-5xl mx-auto">
           <div className="flex">

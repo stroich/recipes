@@ -27,7 +27,7 @@ const ArticleCardOnMain: FC<ArticleCardOnMainProps> = ({ article }) => {
         <div className="text-center">
           <Link
             href={`blog/${article.slug}`}
-            className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-52 font-cursive font-bold"
+            className="bg-customBlue py-1 px-5 rounded-xl text-xl w-52 font-cursive font-bold"
             prefetch={true}
           >
             {' '}

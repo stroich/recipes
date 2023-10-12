@@ -11,6 +11,9 @@ module.exports = {
         laptop: '1024px',
         desktop: '1280px',
       },
+      colors: {
+        customBlue: '#09AAB4',
+      },
     },
   },
   plugins: [],

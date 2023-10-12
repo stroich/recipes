@@ -11,7 +11,7 @@ const Breadcrumb = ({ breadcrumbs }) => {
           const lastElement = i === breadcrumbs.length - 1;
           if (lastElement) {
             return (
-              <div key={label} className="text-base" aria-current="page">
+              <div key={label} className="text-base text-customBlue" aria-current="page">
                 {label}
               </div>
             );

@@ -68,9 +68,10 @@ a {
     line-height: 31px;
 }
 
-a:hover,
+.navigation a:hover,
 .active{
-    color: #666a70;
+    border-bottom: 3px solid #fdd20d;
+    transition: all .2s;
 }
 
 article {

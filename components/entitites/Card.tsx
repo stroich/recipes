@@ -30,7 +30,7 @@ const Card: FC<CardProps> = ({ posts, content, href }) => {
         </div>
         <Link
           href={`${href}/${posts.slug}`}
-          className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-52"
+          className="bg-customBlue py-1 px-5 rounded-xl text-xl w-52"
           prefetch={true}
         >
           {' '}
