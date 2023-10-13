@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
