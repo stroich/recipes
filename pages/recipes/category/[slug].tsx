@@ -1,6 +1,7 @@
+import { useRouter } from 'next/router';
+
 import Breadcrumb from '../../../components/seo/breadcrumb';
 import HomeLayout from '../../../components/shared/layouts/homeLayout';
-import {useRouter} from "next/router";
 
 const Slug = () => {
   const router = useRouter();
