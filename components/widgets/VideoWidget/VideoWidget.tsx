@@ -27,6 +27,7 @@ const VideoWidget: FC<VideoWidgetProps> = ({
       onLoadedData={handleLoadedData}
       onLoadStart={handleLoadStart}
       onError={handleError}
+      className={`${isLoading ? 'loaded' : ''}`}
     >
       <source src={videoLink} type="video/mp4" />
       Your browser does not support the video.

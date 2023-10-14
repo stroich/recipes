@@ -77,6 +77,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
               handleLoadedData={handleLoadedData}
               handleLoadStart={handleLoadStart}
               handleError={handleError}
+              isLoading={isLoading}
             />
           </div>
         </div>
