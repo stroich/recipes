@@ -1,5 +1,3 @@
-import { log } from 'util';
-
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { FC, useEffect, useRef, useState } from 'react';

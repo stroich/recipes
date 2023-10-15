@@ -23,6 +23,7 @@ export async function getStaticProps() {
 const Recipes = ({ posts }) => {
   const router = useRouter();
   const [postWithFilter, setPostWithFilter] = useState(posts);
+  const [filterName, setFilterName] = useState('');
 
   const breadcrumbs = [
     { label: 'Главная', href: '/' },
@@ -37,10 +38,19 @@ const Recipes = ({ posts }) => {
     setPostWithFilter(posts.filter((post) => post.tags.some((el) => el === filterName)));
   };
 
+  const resetFilters = () => {
+    router.push({
+      pathname: '/recipes',
+    });
+    setPostWithFilter(posts);
+    setFilterName('');
+  };
+
   useEffect(() => {
     const { filter: filterSlug } = router.query;
     if (filterSlug) {
       const filterNameAfterLoad = getFilterNameFromSlug(filterSlug as string);
+      setFilterName(filterNameAfterLoad);
       setPostWithFilter(posts.filter((post) => post.tags.some((el) => el === filterNameAfterLoad)));
     }
   }, [router.query, posts]);
@@ -49,7 +59,11 @@ const Recipes = ({ posts }) => {
     <HomeLayout title={'Рецепты'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <section className="flex justify-between">
-        <FilterRecipesSection handleFilterClick={handleFilterClick} />
+        <FilterRecipesSection
+          handleFilterClick={handleFilterClick}
+          filterName={filterName}
+          resetFilters={resetFilters}
+        />
         <List posts={postWithFilter} isRecipe={true} />
       </section>
     </HomeLayout>
