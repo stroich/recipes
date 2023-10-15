@@ -1,5 +1,3 @@
-import React from 'react';
-
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
@@ -10,7 +8,7 @@ import { getAllPostSlugs } from '../../service/postMetadata';
 const Article = ({ postMetadata, content }) => {
   const breadcrumbs = [
     { label: 'Главная', href: '/' },
-    { label: 'Статьи', href: '/blog' },
+    { label: 'Блог', href: '/blog' },
     { label: `${postMetadata.title}`, href: `/blog/${postMetadata.slug}` },
   ];
   return (

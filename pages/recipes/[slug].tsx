@@ -57,9 +57,12 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
           <div className="w-[40%]">
             <div>
               {postMetadata.tags.map((tag) => (
-                <span key={tag} className="bg-yellow-300 p-1 mr-1 rounded-xl font-bold">
+                <button
+                  key={tag}
+                  className="bg-yellow-300 p-1 mr-1 rounded-xl font-bold hover:shadow transition-all duration-100"
+                >
                   #{tag}
-                </span>
+                </button>
               ))}
             </div>
             <MdToHtml mdSource={content} />

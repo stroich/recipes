@@ -11,27 +11,27 @@ type ArticleCardOnMainProps = {
 
 const ArticleCardOnMain: FC<ArticleCardOnMainProps> = ({ article }) => {
   return (
-    <div className="w-80 bg-gray-200 mb-4 flex flex-col rounded-lg justify-center items-center p-3">
-      <h4 className="mb-2 text-center">{article.title}</h4>
+    <div className="w-60 bg-gray-100 mb-6 flex flex-col rounded-lg justify-center items-center py-2 hover:shadow-xl transition-all duration-200">
+      <h4 className="mb-2 px-3 text-lg">{article.title}</h4>
       <Image
         src={article.image}
-        width={470}
-        height={180}
+        width={200}
+        height={100}
         alt={'image'}
         loading="lazy"
-        className="mx-5"
-        style={{ objectFit: 'cover' }}
+        className="w-full"
+        style={{ objectFit: 'cover', height: 100 }}
       />
-      <div className="flex flex-col justify-between py-3 px-2">
-        <div className="my-3">{article.subtitle}</div>
+      <div className="flex flex-col justify-between py-2 px-2">
+        <div className="my-3 text-sm">{article.subtitle}</div>
         <div className="text-center">
           <Link
             href={`blog/${article.slug}`}
-            className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-52"
+            className="bg-customBlue py-1 px-5 rounded-xl text-lg w-20 font-cursive font-bold"
             prefetch={true}
           >
             {' '}
-            Читать дальше{' '}
+            Читать полностью...{' '}
           </Link>
         </div>
       </div>

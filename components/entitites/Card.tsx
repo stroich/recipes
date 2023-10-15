@@ -13,7 +13,7 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({ posts, content, href }) => {
   return (
-    <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg">
+    <div className="max-w-2xl h-40 bg-gray-200 mb-4 flex flex-nowrap rounded-lg hover:shadow-xl transition-all duration-200">
       <Image
         src={posts.image}
         width={160}
@@ -30,7 +30,7 @@ const Card: FC<CardProps> = ({ posts, content, href }) => {
         </div>
         <Link
           href={`${href}/${posts.slug}`}
-          className="bg-cyan-500 py-1 px-5 rounded-xl text-xl w-52"
+          className="bg-customBlue py-1 px-5 rounded-xl text-xl w-52"
           prefetch={true}
         >
           {' '}

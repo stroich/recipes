@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FC } from 'react';
 
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
@@ -16,8 +17,8 @@ interface IndexProps {
 export async function getStaticProps() {
   const allPosts = await postMetadata(Folders.Recipes);
   const allArticles = await postMetadata(Folders.Posts);
-  const articles = getRandomElementsFromArray(allArticles, 2);
-  const posts = getRandomElementsFromArray(allPosts, 4);
+  const articles = getRandomElementsFromArray(allArticles, 3);
+  const posts = getRandomElementsFromArray(allPosts, 9);
   return {
     props: {
       posts,
@@ -29,19 +30,26 @@ export async function getStaticProps() {
 const Index: FC<IndexProps> = ({ posts, articles }) => {
   return (
     <HomeLayout title={'Кушать будешь?'}>
-      <section className="flex justify-center">
+      <section className="flex justify-between">
         <div className="m-3">
-          <h2 className="grid">Популярные рецепты:</h2>
-          <div className="m-3 grid grid-cols-2 gap-2">
+          <h2>Популярные рецепты:</h2>
+          <div className="m-3 grid grid-cols-3 gap-2">
             {posts.map((post) => (
               <RecipeCardOnMain key={post.slug} recipe={post} />
             ))}
           </div>
         </div>
-        <div className="m-3">
+        <div className="bg-yellow-50 p-6">
+          <h5 className="mb-4 font-cursive text-center">Популярное в блоге:</h5>
           {articles.map((article) => (
             <ArticleCardOnMain key={article.slug} article={article} />
           ))}
+          <Link
+            href={'/blog'}
+            className="block mx-auto mt-32 bg-yellow-300 py-1 px-5 rounded-xl text-lg font-cursive font-bold"
+          >
+            Читать все статьи
+          </Link>
         </div>
       </section>
       <PlateMethod />

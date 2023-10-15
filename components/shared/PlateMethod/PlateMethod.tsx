@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import plateMethodData from '../../../constants/plateMethodData';
 import styles from './PlateMethod.module.css';
+import plateMethodData from '../../../constants/plateMethodData';
 
 const PlateMethod = () => {
   return (
