@@ -43,7 +43,7 @@ const Recipes = ({ posts }) => {
       const filterNameAfterLoad = getFilterNameFromSlug(filterSlug as string);
       setPostWithFilter(posts.filter((post) => post.tags.some((el) => el === filterNameAfterLoad)));
     }
-  }, [router.query]);
+  }, [router.query, posts]);
 
   return (
     <HomeLayout title={'Рецепты'}>
