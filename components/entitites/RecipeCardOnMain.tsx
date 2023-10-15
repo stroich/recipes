@@ -1,27 +1,38 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { FC } from 'react';
+import React, { FC, useState } from 'react';
 
 import { IArticle } from '../../interfaces/interfaces';
+import SpinnerComponent from '../shared/Spiner/Spiner';
 
 type RecipeCardOnMainProps = {
   recipe: IArticle;
 };
 
 const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleImageLoad = () => {
+    setIsLoading(true);
+  };
+
   return (
     <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg hover:shadow-2xl transition-all duration-200">
-      <Link href={`recipes/${recipe.slug}`}>
-        <Image
-          src={recipe.image}
-          width={350}
-          height={180}
-          alt={'image'}
-          loading="lazy"
-          className="rounded-t-lg"
-          style={{ objectFit: 'cover', height: 180 }}
-        />
-      </Link>
+      <div className="relative shrink-0">
+        {!isLoading && <SpinnerComponent />}
+        <Link href={`recipes/${recipe.slug}`}>
+          <Image
+            src={recipe.image}
+            width={350}
+            height={180}
+            alt={'image'}
+            loading="lazy"
+            className={`rounded-t-lg ${isLoading ? 'loaded' : ''}`}
+            style={{ objectFit: 'cover', height: 180 }}
+            onLoad={handleImageLoad}
+          />
+        </Link>
+      </div>
       <div className="flex flex-col justify-between p-2 h-full">
         <h4 className="mb-1">{recipe.title}</h4>
         <div className="my-3 text-base">{recipe.subtitle}</div>
