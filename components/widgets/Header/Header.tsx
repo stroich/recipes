@@ -2,6 +2,9 @@ import Image from 'next/image';
 
 import Link from 'next/link';
 
+import { useState } from 'react';
+
+import imgBurger from '../../../public/assets/icons/burger.svg';
 import Logo from '../../../public/assets/img/logo.png';
 import imgBanner from '../../../public/assets/img/mainBanner.png';
 import Banner from '../../shared/banner/banner';
@@ -9,16 +12,29 @@ import NavBar from '../../shared/navbar/navBar';
 import SearchBox from '../../shared/searchBox/SearchBox';
 
 const Header = () => {
+  const [isOpenBurger, setIsOpenBurger] = useState(false);
+
+  function workWithMenu() {
+    setIsOpenBurger(!isOpenBurger);
+  }
+
   return (
     <header className="bg-customBlue shadow-md pb-0">
-      <div className=" mt-5 bg-white p-5">
-        <div className="flex justify-between items-center max-w-5xl mx-auto">
+      <div className=" mt-5 bg-white lg:px-20  sm:px-10 px-6 py-5">
+        <div className="container flex justify-between items-center">
           <Link href={'/'} className="flex items-center">
-            <Image src={Logo} alt={'Logo'} width={70} height={70} />
-            <h3 className="text-neutral-800 ml-5">Кушать будешь?</h3>
+            <Image
+              className={'w-12 h-12 md:w-20 md:h-50 lg:w-20 lg:h-20'}
+              src={Logo}
+              alt={'Logo'}
+            />
+            <h3 className="text-neutral-800 lg:ml-5 md:ml-1.5 hidden sm:block">Кушать будешь?</h3>
           </Link>
-          <NavBar />
+          <NavBar isOpenBurger={isOpenBurger} closeMenu={workWithMenu} />
           <SearchBox />
+          <div className="lg:hidden h-auto" onClick={workWithMenu}>
+            <Image src={imgBurger} alt={'Burger'}></Image>
+          </div>
         </div>
       </div>
       <Banner

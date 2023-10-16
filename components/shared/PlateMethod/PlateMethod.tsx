@@ -4,10 +4,14 @@ import styles from './PlateMethod.module.css';
 import plateMethodData from '../../../constants/plateMethodData';
 
 const PlateMethod = () => {
+  const plate = {
+    backgroundColor: '#09AAB4',
+  };
+
   return (
-    <section className={styles.plate}>
+    <section className={'bg-customBlue md:px-16'}>
       <h2 className="text-center">Метод тарелки:</h2>
-      <div className="flex justify-center gap-20 mb-5">
+      <div className="flex flex-col sm:flex-row justify-center sm:gap-10 lg:gap-20 mb-5 items-center">
         {plateMethodData.map((data) => (
           <div className="w-80 flex flex-col items-center" key={data.id}>
             <Image className="mb-3" width={150} height={150} src={data.image} alt={'plate'} />

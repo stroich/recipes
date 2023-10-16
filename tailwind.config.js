@@ -7,7 +7,7 @@ module.exports = {
         cursive: ['Poiret One', 'cursive'],
       },
       screens: {
-        tablet: '640px',
+        tablet: '500px',
         laptop: '1024px',
         desktop: '1280px',
       },
