@@ -1,13 +1,8 @@
 import Image from 'next/image';
 
-import styles from './PlateMethod.module.css';
 import plateMethodData from '../../../constants/plateMethodData';
 
 const PlateMethod = () => {
-  const plate = {
-    backgroundColor: '#09AAB4',
-  };
-
   return (
     <section className={'bg-customBlue md:px-16'}>
       <h2 className="text-center">Метод тарелки:</h2>

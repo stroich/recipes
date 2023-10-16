@@ -13,13 +13,15 @@ const Article = ({ postMetadata, content }) => {
   ];
   return (
     <HomeLayout title={postMetadata.title}>
-      <Breadcrumb breadcrumbs={breadcrumbs} />
-      <section className="flex flex-col items-center justify-center">
-        <h2 className="">{postMetadata.title}</h2>
-        <div className={'max-w-screen-lg'}>
-          <MdToHtml mdSource={content} />
-        </div>
-      </section>
+      <div className="md:px-16">
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+        <section className="flex flex-col items-center justify-center">
+          <h2 className="">{postMetadata.title}</h2>
+          <div className={'max-w-screen-lg'}>
+            <MdToHtml mdSource={content} />
+          </div>
+        </section>
+      </div>
     </HomeLayout>
   );
 };

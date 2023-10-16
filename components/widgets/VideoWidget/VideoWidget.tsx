@@ -20,7 +20,7 @@ const VideoWidget: FC<VideoWidgetProps> = ({
 }) => {
   return videoLink ? (
     <video
-      width="330"
+      width="310"
       controls
       muted
       autoPlay

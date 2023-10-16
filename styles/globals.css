@@ -114,4 +114,13 @@ button:disabled {
     a{
         font-size: 16px;
     }
+
+    h4{
+        font-size: 16px;
+    }
+    article {
+        padding: 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
 }

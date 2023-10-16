@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
 import { primaryLinks } from '../../../constants/menuLinks';
 

@@ -22,10 +22,12 @@ const breadcrumbs = [
 const Blog = ({ articles }) => {
   return (
     <HomeLayout title={'Блог'}>
-      <Breadcrumb breadcrumbs={breadcrumbs} />
-      <section className="flex flex-col items-center">
-        <List posts={articles} isRecipe={false} />
-      </section>
+      <div className="md:px-16">
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+        <section className="flex flex-col items-center">
+          <List posts={articles} isRecipe={false} />
+        </section>
+      </div>
     </HomeLayout>
   );
 };
