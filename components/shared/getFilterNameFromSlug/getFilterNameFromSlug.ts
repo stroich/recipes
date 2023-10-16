@@ -24,6 +24,6 @@ export const getSlugFromFilterName = (name: string) => {
   });
 
   return res;
-}
+};
 
 export default getFilterNameFromSlug;

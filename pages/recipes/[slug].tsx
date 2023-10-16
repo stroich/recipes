@@ -1,16 +1,15 @@
-import Image from 'next/image';
-import React, { FC, useEffect } from 'react';
+import Link from 'next/link';
+import React, { FC } from 'react';
 
 import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import Breadcrumb from '../../components/seo/breadcrumb';
+import { getSlugFromFilterName } from '../../components/shared/getFilterNameFromSlug/getFilterNameFromSlug';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import SpinnerComponent from '../../components/shared/Spiner/Spiner';
 import VideoWidget from '../../components/widgets/VideoWidget/VideoWidget';
 import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
-import Link from "next/link";
-import {getSlugFromFilterName} from "../../components/shared/getFilterNameFromSlug/getFilterNameFromSlug";
 
 interface IRecipeMetadata {
   title: string;
@@ -71,7 +70,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
             </div>
             <MdToHtml mdSource={content} />
           </div>
-          <div className="flex-col">
+          <div className="flex-col h-60 w-[330px]">
             {isLoading && <SpinnerComponent />}
             <VideoWidget
               videoLink={postMetadata.video}
