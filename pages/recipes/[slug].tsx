@@ -70,7 +70,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
             </div>
             <MdToHtml mdSource={content} />
           </div>
-          <div className="flex-col h-60 w-[330px]">
+          <div className="flex-col w-[330px]">
             {isLoading && <SpinnerComponent />}
             <VideoWidget
               videoLink={postMetadata.video}

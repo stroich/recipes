@@ -87,3 +87,9 @@ button:disabled {
     opacity: .4;
 }
 
+mark {
+    background-color: #bae6e8;
+    border-radius: 5px;
+    padding: 1px 7px;
+    font-weight: 500;
+}
