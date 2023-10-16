@@ -9,6 +9,8 @@ import VideoWidget from '../../components/widgets/VideoWidget/VideoWidget';
 import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
+import Link from "next/link";
+import {getSlugFromFilterName} from "../../components/shared/getFilterNameFromSlug/getFilterNameFromSlug";
 
 interface IRecipeMetadata {
   title: string;
@@ -49,7 +51,6 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
     setIsLoading(false);
   };
 
-  console.log(isLoading);
   return (
     <HomeLayout title={'Кушать будешь?'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
@@ -59,12 +60,13 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
           <div className="w-[40%]">
             <div>
               {postMetadata.tags.map((tag) => (
-                <button
+                <Link
+                  href={`/recipes?filter=${getSlugFromFilterName(tag)}`}
                   key={tag}
-                  className="bg-yellow-300 p-1 mr-1 rounded-xl font-bold hover:shadow transition-all duration-100"
+                  className="bg-yellow-300 text-sm p-1 mr-1 rounded-xl font-bold hover:shadow transition-all duration-100"
                 >
                   #{tag}
-                </button>
+                </Link>
               ))}
             </div>
             <MdToHtml mdSource={content} />
