@@ -3,7 +3,7 @@ title: "Бананово-клубничный коктейль"
 subtitle: "Идеальный выбор для вегетарианского десерта без лишнего сахара.."
 author: "andron13"
 language: ru
-tags: ["напиток", "десерт", "вегетарианство", "безсахара"]
+tags: ["напиток", "десерт", "вегетарианское", "безсахара"]
 weight: 20
 slug: banana-strawberry-smoothie
 image: https://github.com/stroich/recipes/assets/115462690/1d48a7e5-f7e8-4403-8579-eba412788f8d
