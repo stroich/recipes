@@ -19,11 +19,11 @@ const TYPE_DATA = [
 
 const WISHES_DATA = [
   { name: 'завтрак', slug: 'breakfast' },
-  { name: 'с собой', slug: 'to-go' },
-  { name: 'без заморочек', slug: 'easy' },
+  { name: 'ссобой', slug: 'to-go' },
+  { name: 'беззаморочек', slug: 'easy' },
   { name: 'перекус', slug: 'snack' },
   { name: 'вегетарианское', slug: 'vegetarian' },
-  { name: 'без сахара', slug: 'sugar-free' },
+  { name: 'безсахара', slug: 'sugar-free' },
 ];
 
 export const CATEGORIES = [

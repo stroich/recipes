@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import Link from 'next/link';
 
-import Logo from '../../../public/assets/img/logo.svg';
+import Logo from '../../../public/assets/img/logo.png';
 import imgBanner from '../../../public/assets/img/mainBanner.png';
 import Banner from '../../shared/banner/banner';
 import NavBar from '../../shared/navbar/navBar';
@@ -12,9 +12,9 @@ const Header = () => {
   return (
     <header className="bg-customBlue shadow-md pb-0">
       <div className=" mt-5 bg-white p-5">
-        <div className="flex justify-between items-center  max-w-5xl mx-auto">
-          <Link href={'/'} className="flex">
-            <Image src={Logo} alt={'Logo'} width={40} height={40} />
+        <div className="flex justify-between items-center max-w-5xl mx-auto">
+          <Link href={'/'} className="flex items-center">
+            <Image src={Logo} alt={'Logo'} width={70} height={70} />
             <h3 className="text-neutral-800 ml-5">Кушать будешь?</h3>
           </Link>
           <NavBar />

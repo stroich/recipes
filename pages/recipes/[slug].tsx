@@ -5,6 +5,7 @@ import MdToHtml from '../../components/features/MdToHtml/Md.ToHtml';
 import Breadcrumb from '../../components/seo/breadcrumb';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import SpinnerComponent from '../../components/shared/Spiner/Spiner';
+import VideoWidget from '../../components/widgets/VideoWidget/VideoWidget';
 import { Folders } from '../../interfaces/interfaces';
 import { getRecipeData } from '../../service/postHandler';
 import { getAllPostSlugs } from '../../service/postMetadata';
@@ -34,7 +35,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
     { label: `${postMetadata.title}`, href: `/recipes/${postMetadata.slug}` },
   ];
 
-  const [isLoading, setIsLoading] = React.useState(true);
+  const [isLoading, setIsLoading] = React.useState(false);
 
   const handleLoadStart = () => {
     setIsLoading(true);
@@ -48,6 +49,7 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
     setIsLoading(false);
   };
 
+  console.log(isLoading);
   return (
     <HomeLayout title={'Кушать будешь?'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
@@ -69,29 +71,14 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
           </div>
           <div className="flex-col">
             {isLoading && <SpinnerComponent />}
-            {postMetadata.video ? (
-              <video
-                width="330"
-                controls
-                muted
-                autoPlay
-                onLoadedData={handleLoadedData}
-                onLoadStart={handleLoadStart}
-                onError={handleError}
-              >
-                <source src={postMetadata.video} type="video/mp4" />
-                Your browser does not support the video.
-              </video>
-            ) : (
-              <Image
-                width="330"
-                height="400"
-                src={postMetadata.image}
-                alt={'image'}
-                onLoad={handleLoadedData}
-                onError={handleError}
-              />
-            )}
+            <VideoWidget
+              videoLink={postMetadata.video}
+              imageLink={postMetadata.image}
+              handleLoadedData={handleLoadedData}
+              handleLoadStart={handleLoadStart}
+              handleError={handleError}
+              isLoading={isLoading}
+            />
           </div>
         </div>
       </article>

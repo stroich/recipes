@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { FC, useState } from 'react';
+import { useRouter } from 'next/router';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import { IArticle } from '../../../interfaces/interfaces';
 import arrow from '../../../public/assets/icons/arrow-pagination.svg';
@@ -11,8 +12,10 @@ interface ListProps {
 }
 
 const List: FC<ListProps> = ({ posts, isRecipe }) => {
-  const pageSize = 3;
+  const router = useRouter();
+  const pageSize = 6;
   const [currentPage, setCurrentPage] = useState(1);
+  const mainRef = useRef<HTMLDivElement>(null);
 
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
@@ -20,15 +23,43 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
 
   const totalPages = Math.ceil(posts.length / pageSize);
 
+  const changeUrl = (page: number) => {
+    const query = { ...router.query, page: page };
+    router.push({
+      pathname: router.pathname,
+      query,
+    });
+  };
+
   const handleNextPage = () => {
-    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages));
+    const nextPage = Math.min(currentPage * 1 + 1, totalPages);
+    setCurrentPage(nextPage);
+    changeUrl(nextPage);
   };
 
   const handlePrevPage = () => {
-    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1));
+    const prevPage = Math.max(currentPage - 1, 1);
+    setCurrentPage(prevPage);
+    changeUrl(prevPage);
   };
+
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollIntoView({ inline: 'start' });
+    }
+  }, [changeUrl]);
+
+  useEffect(() => {
+    const { page: currentPageAfterLoad } = router.query;
+    if (currentPageAfterLoad) {
+      setCurrentPage(Number(currentPageAfterLoad));
+    } else {
+      setCurrentPage(1);
+    }
+  }, [router.query]);
+
   return (
-    <div className="mt-10">
+    <div className="mt-10" ref={mainRef}>
       <div className="flex flex-col">
         {currentPosts.map((posts) => (
           <Card
@@ -43,7 +74,7 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
         <button
           className="p-1 bg-yellow-300 rounded-3xl mr-1"
           onClick={handlePrevPage}
-          disabled={currentPage === 1}
+          disabled={currentPage == 1}
         >
           <Image width={15} height={15} src={arrow} alt={'arrow'} className="rotate-180" />
         </button>
@@ -53,7 +84,7 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
         <button
           className="p-1 bg-yellow-300 rounded-2xl ml-1"
           onClick={handleNextPage}
-          disabled={currentPage === totalPages}
+          disabled={currentPage == totalPages}
         >
           <Image width={15} height={15} src={arrow} alt={'arrow'} />
         </button>

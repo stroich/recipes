@@ -1,6 +1,11 @@
+import { useRouter } from 'next/router';
+
+import { useEffect, useState } from 'react';
+
 import FilterRecipesSection from '../../components/features/FilterRecipesSection/FilterRecipesSection';
 import List from '../../components/features/List/List';
 import Breadcrumb from '../../components/seo/breadcrumb';
+import getFilterNameFromSlug from '../../components/shared/getFilterNameFromSlug/getFilterNameFromSlug';
 import HomeLayout from '../../components/shared/layouts/homeLayout';
 import { Folders } from '../../interfaces/interfaces';
 import postMetadata from '../../service/postMetadata';
@@ -15,18 +20,51 @@ export async function getStaticProps() {
   };
 }
 
-const breadcrumbs = [
-  { label: 'Главная', href: '/' },
-  { label: 'Рецепты', href: '/recipes' },
-];
-
 const Recipes = ({ posts }) => {
+  const router = useRouter();
+  const [postWithFilter, setPostWithFilter] = useState(posts);
+  const [filterName, setFilterName] = useState('');
+
+  const breadcrumbs = [
+    { label: 'Главная', href: '/' },
+    { label: 'Рецепты', href: '/recipes' },
+  ];
+
+  const handleFilterClick = (filterName, filterSlug) => {
+    router.push({
+      pathname: '/recipes',
+      query: { filter: filterSlug },
+    });
+    setPostWithFilter(posts.filter((post) => post.tags.some((el) => el === filterName)));
+  };
+
+  const resetFilters = () => {
+    router.push({
+      pathname: '/recipes',
+    });
+    setPostWithFilter(posts);
+    setFilterName('');
+  };
+
+  useEffect(() => {
+    const { filter: filterSlug } = router.query;
+    if (filterSlug) {
+      const filterNameAfterLoad = getFilterNameFromSlug(filterSlug as string);
+      setFilterName(filterNameAfterLoad);
+      setPostWithFilter(posts.filter((post) => post.tags.some((el) => el === filterNameAfterLoad)));
+    }
+  }, [router.query, posts]);
+
   return (
     <HomeLayout title={'Рецепты'}>
       <Breadcrumb breadcrumbs={breadcrumbs} />
       <section className="flex justify-between">
-        <FilterRecipesSection />
-        <List posts={posts} isRecipe={true} />
+        <FilterRecipesSection
+          handleFilterClick={handleFilterClick}
+          filterName={filterName}
+          resetFilters={resetFilters}
+        />
+        <List posts={postWithFilter} isRecipe={true} />
       </section>
     </HomeLayout>
   );
