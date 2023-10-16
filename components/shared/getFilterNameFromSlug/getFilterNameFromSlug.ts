@@ -13,4 +13,17 @@ const getFilterNameFromSlug = (slug: string) => {
   return res;
 };
 
+export const getSlugFromFilterName = (name: string) => {
+  let res = '';
+  CATEGORIES.map((categories) => {
+    return categories.data.map((category) => {
+      if (category.name === name) {
+        res = category.slug;
+      }
+    });
+  });
+
+  return res;
+};
+
 export default getFilterNameFromSlug;
