@@ -15,7 +15,7 @@ const FilterRecipesSection: FC<FilterRecipesSectionProps> = ({
   resetFilters,
 }) => {
   return (
-    <aside className="w-[33%] sticky">
+    <aside className="w-[33%] sticky top-0 h-full">
       <h2>Навигация:</h2>
       <div>
         {filterName && (
