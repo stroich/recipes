@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       fontFamily: {
         cursive: ['Poiret One', 'cursive'],
-        sanSerif: ['Raleway', 'sans-serif']
+        sanSerif: ['Raleway', 'sans-serif'],
       },
       screens: {
         sm: '640px',
