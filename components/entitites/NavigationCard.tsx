@@ -22,7 +22,7 @@ const NavigationCard: FC<NavigationCardProps> = ({
   return (
     <div className="mb-5">
       <h5 className="font-bold">{title}:</h5>
-      <div className="flex flex-wrap w-[50%]">
+      <div className="flex flex-wrap w-full">
         {data.map((subcat) => (
           <button
             onClick={() => clickButton(subcat.name, subcat.slug)}

@@ -13,6 +13,7 @@ body {
     color: #133;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
@@ -30,7 +31,7 @@ h1 {
 }
 
 h2 {
-    margin: 10px 0;
+    margin: 15px 0;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
@@ -94,6 +95,7 @@ button:disabled {
 
     h2, h3{
         font-size: 1.5rem;
+        line-height: 20px;
     }
 
     a{
@@ -107,7 +109,7 @@ button:disabled {
         line-height: 20px;
     }
 
-    h2, h3{
+    h3{
         font-size: 1.0rem;
     }
 
@@ -116,11 +118,13 @@ button:disabled {
     }
 
     h4{
-        font-size: 16px;
+        font-size: 1.25rem;
     }
+
     article {
         padding: 0;
         border: 1px solid #ddd;
         border-radius: 4px;
     }
+
 }

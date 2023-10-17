@@ -30,10 +30,10 @@ export async function getStaticProps() {
 const Index: FC<IndexProps> = ({ posts, articles }) => {
   return (
     <HomeLayout title={'Кушать будешь?'}>
-      <section className="flex flex-col sm:flex-row justify-between md:px-16">
-        <div className="sm:m-3 m-auto">
+      <section className="flex flex-col md:flex-row justify-between container m-auto 2xl:px-20  md:px-10 px-3">
+        <div className="md:m-3 m-auto">
           <h2>Популярные рецепты:</h2>
-          <div className="sm:m-3 grid lg:grid-cols-3 grid-cols-1 gap-2">
+          <div className=" grid 2xl:grid-cols-3 xl:grid-cols-2 grid-cols-1 gap-2">
             {posts.map((post) => (
               <RecipeCardOnMain key={post.slug} recipe={post} />
             ))}

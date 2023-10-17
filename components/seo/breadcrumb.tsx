@@ -6,7 +6,7 @@ import arrow from '../../public/assets/icons/arrow-pagination.svg';
 const Breadcrumb = ({ breadcrumbs }) => {
   return (
     <nav aria-label="breadcrumb">
-      <div className="flex items-baseline">
+      <div className="flex items-baseline px-3">
         {breadcrumbs.map(({ label, href }, i) => {
           const lastElement = i === breadcrumbs.length - 1;
           if (lastElement) {

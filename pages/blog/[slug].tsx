@@ -15,8 +15,8 @@ const Article = ({ postMetadata, content }) => {
     <HomeLayout title={postMetadata.title}>
       <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <section className="flex flex-col items-center justify-center">
-          <h2 className="">{postMetadata.title}</h2>
+        <section className="flex flex-col items-center justify-center px-3">
+          <h2 className="text-center">{postMetadata.title}</h2>
           <div className={'max-w-screen-lg'}>
             <MdToHtml mdSource={content} />
           </div>
