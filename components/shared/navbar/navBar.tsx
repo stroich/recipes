@@ -22,7 +22,7 @@ const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu, headerHeight }) => {
   return (
     <div
       className={`navigation md:translate-y-0 z-10 w-full h-[100vh] md:h-auto md:w-auto rounded-l md:p-0 md:static md:flex-row absolute flex flex-col bg-white top-0 right-0 p-10 transition-all duration-300 ease-in-out ${
-        isOpenBurger ? `` : `transform translate-y-[-100%] lg:transform-none`
+        isOpenBurger ? `` : `transform translate-y-[-150%] lg:transform-none`
       }`}
       style={menuStyles}
     >
@@ -32,11 +32,12 @@ const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu, headerHeight }) => {
 
       {primaryLinks.map(({ title, path, id }) => (
         <Link
-          className={`mx-3 md:p-0 p-5 lg:p-5 border-b-4 border-solid border-white ${
+          className={`mx-3 md:p-0 p-5 lg:m-5 border-b-4 border-solid border-white ${
             path === pathname ? 'border-yellow-400' : ''
           }`}
           href={path}
           key={id}
+          onClick={closeMenu}
         >
           {title}
         </Link>
