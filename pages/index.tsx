@@ -39,7 +39,7 @@ const Index: FC<IndexProps> = ({ posts, articles }) => {
             ))}
           </div>
         </div>
-        <div className="bg-yellow-50 p-6 m-auto md:m-0">
+        <div className="lg:bg-yellow-50 p-6 m-auto md:m-0">
           <h5 className="mb-4 font-cursive text-center">Популярное в блоге:</h5>
           {articles.map((article) => (
             <ArticleCardOnMain key={article.slug} article={article} />

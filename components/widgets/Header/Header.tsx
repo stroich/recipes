@@ -33,6 +33,7 @@ const Header = () => {
   function workWithMenu() {
     setIsOpenBurger(!isOpenBurger);
     updateHeaderHeight();
+    document.body.classList.toggle('overflow-hidden', !isOpenBurger);
   }
 
   return (
@@ -53,7 +54,7 @@ const Header = () => {
             headerHeight={headerHeight}
           />
           <SearchBox />
-          <div className="lg:hidden h-auto" onClick={workWithMenu}>
+          <div className="md:hidden h-auto" onClick={workWithMenu}>
             <Image
               className={`${
                 isOpenBurger ? 'transform rotate-90 transition-all duration-300 ease-in-out' : ''
