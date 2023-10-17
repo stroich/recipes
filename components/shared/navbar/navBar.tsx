@@ -32,7 +32,7 @@ const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu, headerHeight }) => {
 
       {primaryLinks.map(({ title, path, id }) => (
         <Link
-          className={`mx-3 md:p-0 p-5 lg:m-5 border-b-4 border-solid border-white ${
+          className={`mx-3 mt-2 md:p-0 p-5 lg:m-5 border-b-4 border-solid border-white ${
             path === pathname ? 'border-yellow-400' : ''
           }`}
           href={path}
