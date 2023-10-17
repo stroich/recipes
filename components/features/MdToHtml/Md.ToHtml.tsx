@@ -20,9 +20,10 @@ const MdToHtml = ({ mdSource }) => {
     a: {
       component: 'a',
       props: {
-        className: 'text-blue-500 hover:underline',
+        className: 'text-customBlue font-sanSerif text-lg',
         role: 'link',
         'aria-label': 'external link',
+        target: '_blank',
       },
     },
     ul: { component: 'ul', props: { className: 'list-disc my-4 ml-8' } },
