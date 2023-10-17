@@ -52,13 +52,13 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
 
   return (
     <HomeLayout title={'Кушать будешь?'}>
-      <div className="md:px-16 px-1">
+      <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <article className="border-0">
+        <article className="border-0 px-3">
           <h2 className="text-center">{postMetadata.title}</h2>
           <div className="flex md:flex-row flex-col justify-between">
             <div className="md:w-[40%] w-full">
-              <div>
+              <div className={'flex flex-wrap'}>
                 {postMetadata.tags.map((tag) => (
                   <Link
                     href={`/recipes?filter=${getSlugFromFilterName(tag)}`}

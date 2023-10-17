@@ -29,7 +29,9 @@ const FilterRecipesSection: FC<FilterRecipesSectionProps> = ({
         />
       </div>
       <aside
-        className={`${isOpenFiltering ? 'block' : 'hidden'} w-[33%] sticky top-0 h-full md:block`}
+        className={`${
+          isOpenFiltering ? 'block' : 'hidden'
+        } md:w-[33%] top-0 h-1/2 md:block lg:sticky`}
       >
         <h2>Навигация:</h2>
         <div>
