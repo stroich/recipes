@@ -37,7 +37,9 @@ const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu, headerHeight }) => {
           }`}
           href={path}
           key={id}
-          onClick={closeMenu}
+          onClick={() => {
+            document.body.classList.remove('overflow-hidden');
+          }}
         >
           {title}
         </Link>
