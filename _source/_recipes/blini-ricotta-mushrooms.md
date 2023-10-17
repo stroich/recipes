@@ -7,7 +7,7 @@ tags: ["десерт"]
 weight: 55
 slug: blini-ricotta-mushrooms
 image: https://github.com/stroich/recipes/assets/115462690/78d50fa6-538e-4f6d-8b18-fef87f7351e7
-video: https://github.com/stroich/recipes/assets/115462690/3bdb07b0-5cb5-4237-b419-f44ca38a5826
+video: https://github.com/stroich/recipes/assets/115462690/cf16eb6a-3b5e-4e4d-b76c-bb8f6f7059ef
 ---
 
 
@@ -16,7 +16,6 @@ video: https://github.com/stroich/recipes/assets/115462690/3bdb07b0-5cb5-4237-b4
 * Рисовая мука 3 ст.л. с горкой 
 * Яйцо 1 шт. 
 * Молоко 100 мл
-  (я использую коровье безлактозное)
 
 Начинка:
 * Рикотта 100 г 
