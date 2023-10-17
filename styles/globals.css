@@ -13,14 +13,25 @@ body {
     color: #133;
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 h1, h2, h3 {
     font-family: 'Poiret One', cursive;
 }
 
+h1 {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 38px;
+    line-height: 47px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
 h2 {
-    margin: 10px 0px;
+    margin: 15px 0;
     font-size: 2rem;
     font-style: normal;
     font-weight: 400;
@@ -34,17 +45,6 @@ h3 {
     font-size: 32px;
     line-height: 39px;
     color: #2C2B2B;
-}
-
-
-h1 {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 38px;
-    line-height: 47px;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 
 a,
@@ -70,7 +70,7 @@ a {
 
 .navigation a:hover,
 .active{
-    border-bottom: 3px solid #fdd20d;
+    border-bottom: 4px solid #fdd20d;
     transition: all .2s;
 }
 
@@ -83,6 +83,7 @@ article {
 .list-decimal {
     list-style-type: decimal;
 }
+
 button:disabled {
     opacity: .4;
 }
@@ -92,4 +93,44 @@ mark {
     border-radius: 5px;
     padding: 1px 7px;
     font-weight: 500;
+}
+
+@media (max-width: 1100px) {
+    h1{
+        font-size: 22px;
+    }
+
+    h2, h3{
+        font-size: 1.5rem;
+        line-height: 20px;
+    }
+
+    a{
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 700px) {
+    h1{
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    h3{
+        font-size: 1.0rem;
+    }
+
+    a{
+        font-size: 16px;
+    }
+
+    h4{
+        font-size: 1.25rem;
+    }
+
+    article {
+        padding: 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
 }

@@ -59,8 +59,8 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
   }, [router.query]);
 
   return (
-    <div className="mt-10" ref={mainRef}>
-      <div className="flex flex-col">
+    <div className="md:mt-10" ref={mainRef}>
+      <div className="flex flex-col justify-center items-center">
         {currentPosts.map((posts) => (
           <Card
             key={posts.slug}
@@ -70,7 +70,7 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
           />
         ))}
       </div>
-      <div className="max-w-fit my-0 mx-auto font-bold flex">
+      <div className="max-w-fit my-0 mx-auto font-bold flex p-3">
         <button
           className="p-1 bg-yellow-300 rounded-3xl mr-1"
           onClick={handlePrevPage}

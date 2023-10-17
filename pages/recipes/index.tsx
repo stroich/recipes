@@ -57,15 +57,17 @@ const Recipes = ({ posts }) => {
 
   return (
     <HomeLayout title={'Рецепты'}>
-      <Breadcrumb breadcrumbs={breadcrumbs} />
-      <section className="flex justify-between">
-        <FilterRecipesSection
-          handleFilterClick={handleFilterClick}
-          filterName={filterName}
-          resetFilters={resetFilters}
-        />
-        <List posts={postWithFilter} isRecipe={true} />
-      </section>
+      <div className="md:px-16">
+        <Breadcrumb breadcrumbs={breadcrumbs} />
+        <section className="flex flex-col md:flex-row md:justify-between justify-center">
+          <FilterRecipesSection
+            handleFilterClick={handleFilterClick}
+            filterName={filterName}
+            resetFilters={resetFilters}
+          />
+          <List posts={postWithFilter} isRecipe={true} />
+        </section>
+      </div>
     </HomeLayout>
   );
 };
