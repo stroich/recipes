@@ -11,13 +11,14 @@ type RecipeCardOnMainProps = {
 
 const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isComposition, setIsComposition] = useState(false);
 
   const handleImageLoad = () => {
     setIsLoading(true);
   };
 
   return (
-    <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg hover:shadow-2xl transition-all duration-200">
+    <div className={`w-72 bg-gray-100 mb-4 flex flex-col ${isComposition ? 'rounded-t-lg' : 'rounded-lg'} hover:shadow-2xl transition-all duration-200 relative`}>
       <div className="relative shrink-0">
         {!isLoading && <SpinnerComponent />}
         <Link href={`recipes/${recipe.slug}`}>
@@ -45,9 +46,26 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
             {' '}
             Готовить{' '}
           </Link>
-          {/*<button className="px-2 bg-gray-300 rounded-3xl">V</button>*/}
+          <button
+            className="px-2 relative z-20"
+            onClick={() => {
+              setIsComposition(!isComposition);
+            }}
+          >
+            ...
+          </button>
         </div>
       </div>
+      {isComposition && (
+        <div className="text-start absolute bg-gray-100 rounded-b-lg w-full p-2 top-full z-10">
+          <span className="font-bold">Состав:</span>
+          <ul>
+            {recipe.composition.map((el) => (
+              <li key={Math.random()}>- {el}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
