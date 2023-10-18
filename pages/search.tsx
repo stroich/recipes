@@ -47,11 +47,15 @@ const SearchPage = ({ posts }) => {
     <HomeLayout title={'Блог'}>
       <div className="md:px-16">
         <h3 className={'my-10'}>Результаты поиска по запросу: {t}</h3>
-        <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2">
-          {filteredPosts.map((post) => (
-            <RecipeCardOnMain key={post.slug} recipe={post} />
-          ))}
-        </div>
+
+        {filteredPosts.length !== 0 && (
+          <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 grid-cols-1 gap-2">
+            {filteredPosts.map((post) => (
+              <RecipeCardOnMain key={post.slug} recipe={post} />
+            ))}
+          </div>
+        )}
+        {filteredPosts.length === 0 && <h4 className={'my-36 text-center'}>Ничего не найдено</h4>}
       </div>
     </HomeLayout>
   );
