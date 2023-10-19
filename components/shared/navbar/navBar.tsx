@@ -12,7 +12,7 @@ interface NavBarProps {
   headerHeight: number;
   closeMenu: () => void;
 }
-const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu, headerHeight }) => {
+const NavBar: FC<NavBarProps> = ({ isOpenBurger, closeMenu }) => {
   const { pathname } = useRouter();
 
   return (

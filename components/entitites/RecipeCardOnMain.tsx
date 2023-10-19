@@ -7,14 +7,29 @@ import SpinnerComponent from '../shared/Spiner/Spiner';
 
 type RecipeCardOnMainProps = {
   recipe: IArticle;
+  search?: string | string[];
 };
 
-const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, search }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleImageLoad = () => {
     setIsLoading(true);
   };
+
+  const isMatch = (word: string, search: string | string[] | undefined) => {
+    const searchMinusOne = search.slice(0, -1);
+    const searchTermsMinusOne = Array.isArray(searchMinusOne) ? searchMinusOne : [searchMinusOne];
+    if (!search) return false;
+    const searchTerms = Array.isArray(search) ? search : [search];
+    let result = searchTerms.some((term) => word.toLowerCase().includes(term.toLowerCase()));
+    if (!result && searchMinusOne.length > 3) {
+      result = searchTermsMinusOne.some((term) => word.toLowerCase().includes(term.toLowerCase()));
+    }
+    return result;
+  };
+
+  const titleWords = recipe.title.split(' ');
 
   return (
     <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg hover:shadow-2xl transition-all duration-200">
@@ -34,7 +49,19 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
         </Link>
       </div>
       <div className="flex flex-col justify-between p-2 h-full">
-        <h4 className="mb-1">{recipe.title}</h4>
+        <h4 className="mb-1">
+          {search &&
+            titleWords.map((word, index) =>
+              isMatch(word, search) ? (
+                <span key={index} className="text-red-500">
+                  {`${word} `}
+                </span>
+              ) : (
+                <span key={index}>{`${word} `}</span>
+              )
+            )}
+          {!search && recipe.title}
+        </h4>
         <div className="my-3 text-base">{recipe.subtitle}</div>
         <div className="text-center">
           <Link

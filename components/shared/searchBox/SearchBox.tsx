@@ -13,14 +13,19 @@ const SearchBox = () => {
   };
 
   const handleKeyPress = (event) => {
-    if (event.key === 'Enter' && searchTerm) {
+    if ((event.key === 'Enter' || event.type === 'click') && searchTerm) {
       router.push(`/search?t=${searchTerm}`);
     }
   };
 
   return (
     <div className="flex items-center border rounded-full bg-gray-100 p-2 shadow-md w-[160px] sm:w-auto">
-      <Image src={search} alt="Search" className="w-[17px] h-[17px] mr-2" />
+      <Image
+        src={search}
+        alt="Search"
+        className="w-[17px] h-[17px] mx-2"
+        onClick={handleKeyPress}
+      />
       <input
         value={searchTerm}
         type="text"
