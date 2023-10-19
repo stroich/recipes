@@ -8,9 +8,14 @@ import SpinnerComponent from '../shared/Spiner/Spiner';
 type RecipeCardOnMainProps = {
   recipe: IArticle;
   allCompositions: { [key: string]: boolean };
+  setRecipeStatus: (allCompositions) => void;
 };
 
-const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, allCompositions }) => {
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
+  recipe,
+  allCompositions,
+  setRecipeStatus,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isComposition, setIsComposition] = useState({});
 
@@ -26,6 +31,17 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, allCompositions }
     setIsComposition((prevState) => {
       const updatedState = { ...prevState };
       updatedState[slug] = !isComposition[slug];
+      return updatedState;
+    });
+    setRecipeStatus((prevState) => {
+      const updatedState = { ...prevState };
+      for (const key in updatedState) {
+        if (key === slug) {
+          updatedState[key] = !updatedState[key];
+        } else {
+          updatedState[key] = false;
+        }
+      }
       return updatedState;
     });
   };

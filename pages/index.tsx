@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC, useEffect, useRef, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
 import RecipeCardOnMain from '../components/entitites/RecipeCardOnMain';
@@ -46,7 +46,12 @@ const Index: FC<IndexProps> = ({ posts, articles }) => {
           <h2>Популярные рецепты:</h2>
           <div className=" grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-2">
             {posts.map((post) => (
-              <RecipeCardOnMain key={post.slug} recipe={post} allCompositions={allRecipes} />
+              <RecipeCardOnMain
+                key={post.slug}
+                recipe={post}
+                allCompositions={allRecipes}
+                setRecipeStatus={setAllRecipes}
+              />
             ))}
           </div>
         </div>
