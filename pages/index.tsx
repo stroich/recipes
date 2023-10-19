@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 
 import ArticleCardOnMain from '../components/entitites/ArticleCardOnMain';
 import RecipeCardOnMain from '../components/entitites/RecipeCardOnMain';
@@ -28,6 +28,17 @@ export async function getStaticProps() {
   };
 }
 const Index: FC<IndexProps> = ({ posts, articles }) => {
+  const [allRecipes, setAllRecipes] = useState<{ [key: string]: boolean }>({});
+
+  useEffect(() => {
+    const initialRecipes = posts.reduce((recipes, post) => {
+      recipes[post.slug] = false;
+      return recipes;
+    }, {});
+
+    setAllRecipes(initialRecipes);
+  }, [posts]);
+
   return (
     <HomeLayout title={'Кушать будешь?'}>
       <section className="flex flex-col md:flex-row justify-between container m-auto 2xl:px-20  md:px-10 px-3">
@@ -35,7 +46,7 @@ const Index: FC<IndexProps> = ({ posts, articles }) => {
           <h2>Популярные рецепты:</h2>
           <div className=" grid 2xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-2">
             {posts.map((post) => (
-              <RecipeCardOnMain key={post.slug} recipe={post} />
+              <RecipeCardOnMain key={post.slug} recipe={post} allCompositions={allRecipes} />
             ))}
           </div>
         </div>

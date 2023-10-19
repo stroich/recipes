@@ -1,24 +1,41 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { IArticle } from '../../interfaces/interfaces';
 import SpinnerComponent from '../shared/Spiner/Spiner';
 
 type RecipeCardOnMainProps = {
   recipe: IArticle;
+  allCompositions: { [key: string]: boolean };
 };
 
-const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, allCompositions }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isComposition, setIsComposition] = useState(false);
+  const [isComposition, setIsComposition] = useState({});
+
+  useEffect(() => {
+    setIsComposition(allCompositions);
+  }, [allCompositions]);
 
   const handleImageLoad = () => {
     setIsLoading(true);
   };
 
+  const handleClick = (slug: string) => {
+    setIsComposition((prevState) => {
+      const updatedState = { ...prevState };
+      updatedState[slug] = !isComposition[slug];
+      return updatedState;
+    });
+  };
+
   return (
-    <div className={`w-72 bg-gray-100 mb-4 flex flex-col ${isComposition ? 'rounded-t-lg' : 'rounded-lg'} hover:shadow-2xl transition-all duration-200 relative`}>
+    <div
+      className={`recipe-card-main w-72 bg-gray-100 mb-4 flex flex-col ${
+        isComposition[recipe.slug] ? 'rounded-t-lg' : 'rounded-lg'
+      } hover:shadow-xl transition-all duration-200 relative`}
+    >
       <div className="relative shrink-0">
         {!isLoading && <SpinnerComponent />}
         <Link href={`recipes/${recipe.slug}`}>
@@ -47,25 +64,29 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe }) => {
             Готовить{' '}
           </Link>
           <button
-            className="px-2 relative z-20"
+            className="px-2 absolute right-10 font-bold"
             onClick={() => {
-              setIsComposition(!isComposition);
+              handleClick(recipe.slug);
             }}
           >
             ...
           </button>
         </div>
       </div>
-      {isComposition && (
-        <div className="text-start absolute bg-gray-100 rounded-b-lg w-full p-2 top-full z-10">
-          <span className="font-bold">Состав:</span>
-          <ul>
-            {recipe.composition.map((el) => (
-              <li key={Math.random()}>- {el}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`composition text-start absolute bg-gray-100 max-h-0 opacity-0 invisible ${
+          isComposition[recipe.slug] ? 'open' : ''
+        }
+        rounded-b-lg w-full p-2 top-full z-10 transition-all ease-in-out duration-200 pt-2 border-b-4 border-slate-300
+        `}
+      >
+        <span className="font-bold">Состав:</span>
+        <ul>
+          {recipe.composition.map((el) => (
+            <li key={Math.random()}>- {el}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

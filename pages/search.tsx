@@ -35,7 +35,7 @@ const SearchPage = ({ posts }) => {
       }
     };
     searchPosts();
-  }, [t]);
+  }, [t, posts]);
 
   return (
     <HomeLayout title={'Блог'}>

@@ -84,6 +84,10 @@ article {
     list-style-type: decimal;
 }
 
+.recipe-card-main:hover .composition {
+    filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+}
+
 button:disabled {
     opacity: .4;
 }
@@ -93,6 +97,12 @@ mark {
     border-radius: 5px;
     padding: 1px 7px;
     font-weight: 500;
+}
+
+.open {
+    opacity: 1;
+    max-height: fit-content;
+    visibility: visible;
 }
 
 @media (max-width: 1100px) {
