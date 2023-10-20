@@ -9,12 +9,14 @@ type RecipeCardOnMainProps = {
   recipe: IArticle;
   allCompositions: { [key: string]: boolean };
   setRecipeStatus: (allCompositions) => void;
+  search?: string | string[];
 };
 
 const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
   recipe,
   allCompositions,
   setRecipeStatus,
+  search,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isComposition, setIsComposition] = useState({});
@@ -46,6 +48,32 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
     });
   };
 
+  const isMatch = (word: string, search: string | string[] | undefined) => {
+    const searchMinusOne = search.slice(0, -1);
+    const searchTermsMinusOne = Array.isArray(searchMinusOne) ? searchMinusOne : [searchMinusOne];
+    if (!search) return false;
+    const searchTerms = Array.isArray(search) ? search : [search];
+    let result = searchTerms.some((term) => word.toLowerCase().includes(term.toLowerCase()));
+    if (!result && searchMinusOne.length > 3) {
+      result = searchTermsMinusOne.some((term) => word.toLowerCase().includes(term.toLowerCase()));
+    }
+
+    return result;
+  };
+
+  const isMatchColor = (word, search) => {
+    const regex = new RegExp(search, 'i');
+    const parts = word.split(regex);
+    return parts.map((part, partIndex) => (
+      <span key={partIndex}>
+        {partIndex > 0 && <span className="bg-customBlue">{search.trim()}</span>}
+        {part.trim()}
+      </span>
+    ));
+  };
+
+  const titleWords = recipe.title.split(' ');
+
   return (
     <div
       className={`recipe-card-main w-72 bg-gray-100 mb-4 flex flex-col ${
@@ -68,7 +96,17 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
         </Link>
       </div>
       <div className="flex flex-col justify-between p-2 h-full">
-        <h4 className="mb-1">{recipe.title}</h4>
+        <h4 className="mb-1">
+          {search &&
+            titleWords.map((word, index) =>
+              isMatch(word, search) ? (
+                <span key={Math.random()}>{isMatchColor(word, search)} </span>
+              ) : (
+                <span key={Math.random()}>{`${word} `}</span>
+              )
+            )}
+          {!search && recipe.title}
+        </h4>
         <div className="my-3 text-base">{recipe.subtitle}</div>
         <div className="text-center">
           <Link

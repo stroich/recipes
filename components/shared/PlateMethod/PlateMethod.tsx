@@ -4,7 +4,7 @@ import plateMethodData from '../../../constants/plateMethodData';
 
 const PlateMethod = () => {
   return (
-    <section className={'bg-customBlue md:px-16'}>
+    <section className={'bg-customBlue py-6 md:px-16'}>
       <h2 className="text-center">Метод тарелки:</h2>
       <div className="flex flex-col sm:flex-row justify-center sm:gap-10 lg:gap-20 mb-5 items-center">
         {plateMethodData.map((data) => (
