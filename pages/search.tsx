@@ -21,6 +21,7 @@ const SearchPage = ({ posts }) => {
   const { t } = router.query;
 
   const [filteredPosts, setFilteredPosts] = useState([]);
+  const [allRecipes, setAllRecipes] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const searchPosts = async () => {
@@ -43,7 +44,16 @@ const SearchPage = ({ posts }) => {
       }
     };
     searchPosts();
-  }, [t]);
+  }, [t, posts]);
+
+  useEffect(() => {
+    const initialRecipes = posts.reduce((recipes, post) => {
+      recipes[post.slug] = false;
+      return recipes;
+    }, {});
+
+    setAllRecipes(initialRecipes);
+  }, [posts]);
 
   return (
     <HomeLayout title={'Поиск'}>
@@ -53,7 +63,13 @@ const SearchPage = ({ posts }) => {
         {filteredPosts.length !== 0 && (
           <div className="grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-2 justify-items-center">
             {filteredPosts.map((post) => (
-              <RecipeCardOnMain key={post.slug} recipe={post} search={t} />
+              <RecipeCardOnMain
+                key={post.slug}
+                recipe={post}
+                search={t}
+                allCompositions={allRecipes}
+                setRecipeStatus={setAllRecipes}
+              />
             ))}
           </div>
         )}

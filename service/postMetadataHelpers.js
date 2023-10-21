@@ -11,6 +11,7 @@ function parseMetadata(matterResult, filepath) {
     slug: matterResult.data.slug || path.basename(filepath).replace('.md', ''),
     image: matterResult.data.image || '',
     video: matterResult.data.video || '',
+    composition: matterResult.data.composition || '',
   };
 }
 

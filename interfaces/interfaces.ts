@@ -12,4 +12,6 @@ export interface IArticle {
   slug: string;
   image: string;
   video: string;
+  composition: string[];
+  tags: string[];
 }

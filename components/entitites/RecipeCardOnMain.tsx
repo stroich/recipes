@@ -1,20 +1,51 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { IArticle } from '../../interfaces/interfaces';
 import SpinnerComponent from '../shared/Spiner/Spiner';
 
 type RecipeCardOnMainProps = {
   recipe: IArticle;
+  allCompositions: { [key: string]: boolean };
+  setRecipeStatus: (allCompositions) => void;
   search?: string | string[];
 };
 
-const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, search }) => {
+const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
+  recipe,
+  allCompositions,
+  setRecipeStatus,
+  search,
+}) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [isComposition, setIsComposition] = useState({});
+
+  useEffect(() => {
+    setIsComposition(allCompositions);
+  }, [allCompositions]);
 
   const handleImageLoad = () => {
     setIsLoading(true);
+  };
+
+  const handleClick = (slug: string) => {
+    setIsComposition((prevState) => {
+      const updatedState = { ...prevState };
+      updatedState[slug] = !isComposition[slug];
+      return updatedState;
+    });
+    setRecipeStatus((prevState) => {
+      const updatedState = { ...prevState };
+      for (const key in updatedState) {
+        if (key === slug) {
+          updatedState[key] = !updatedState[key];
+        } else {
+          updatedState[key] = false;
+        }
+      }
+      return updatedState;
+    });
   };
 
   const isMatch = (word: string, search: string | string[] | undefined) => {
@@ -26,13 +57,29 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, search }) => {
     if (!result && searchMinusOne.length > 3) {
       result = searchTermsMinusOne.some((term) => word.toLowerCase().includes(term.toLowerCase()));
     }
+
     return result;
+  };
+
+  const isMatchColor = (word, search) => {
+    const regex = new RegExp(search, 'i');
+    const parts = word.split(regex);
+    return parts.map((part, partIndex) => (
+      <span key={partIndex}>
+        {partIndex > 0 && <span className="bg-customBlue">{search.trim()}</span>}
+        {part.trim()}
+      </span>
+    ));
   };
 
   const titleWords = recipe.title.split(' ');
 
   return (
-    <div className="w-72 bg-gray-100 mb-4 flex flex-col rounded-lg hover:shadow-2xl transition-all duration-200">
+    <div
+      className={`recipe-card-main w-72 bg-gray-100 mb-4 flex flex-col ${
+        isComposition[recipe.slug] ? 'rounded-t-lg' : 'rounded-lg'
+      } hover:shadow-xl transition-all duration-200 relative`}
+    >
       <div className="relative shrink-0">
         {!isLoading && <SpinnerComponent />}
         <Link href={`recipes/${recipe.slug}`}>
@@ -53,11 +100,9 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, search }) => {
           {search &&
             titleWords.map((word, index) =>
               isMatch(word, search) ? (
-                <span key={index} className="text-red-500">
-                  {`${word} `}
-                </span>
+                <span key={Math.random()}>{isMatchColor(word, search)} </span>
               ) : (
-                <span key={index}>{`${word} `}</span>
+                <span key={Math.random()}>{`${word} `}</span>
               )
             )}
           {!search && recipe.title}
@@ -72,8 +117,29 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({ recipe, search }) => {
             {' '}
             Готовить{' '}
           </Link>
-          {/*<button className="px-2 bg-gray-300 rounded-3xl">V</button>*/}
+          <button
+            className="px-2 absolute right-10 font-bold"
+            onClick={() => {
+              handleClick(recipe.slug);
+            }}
+          >
+            ...
+          </button>
         </div>
+      </div>
+      <div
+        className={`composition text-start absolute bg-gray-100 max-h-0 opacity-0 invisible ${
+          isComposition[recipe.slug] ? 'open' : ''
+        }
+        rounded-b-lg w-full p-2 top-full z-10 transition-all ease-in-out duration-200 pt-2 border-b-4 border-slate-300
+        `}
+      >
+        <span className="font-bold">Состав:</span>
+        <ul>
+          {recipe.composition.map((el) => (
+            <li key={Math.random()}>- {el}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );

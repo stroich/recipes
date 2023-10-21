@@ -43,6 +43,16 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
     changeUrl(prevPage);
   };
 
+  const handleFirstPage = () => {
+    setCurrentPage(1);
+    changeUrl(1);
+  };
+
+  const handleLastPage = () => {
+    setCurrentPage(totalPages);
+    changeUrl(totalPages);
+  };
+
   useEffect(() => {
     if (mainRef.current) {
       mainRef.current.scrollIntoView({ inline: 'start' });
@@ -71,6 +81,12 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
         ))}
       </div>
       <div className="max-w-fit my-0 mx-auto font-bold flex p-3">
+        {isRecipe && (
+          <button className="flex p-1 ml-1" disabled={currentPage == 1} onClick={handleFirstPage}>
+            <Image width={15} height={15} src={arrow} alt={'arrow'} className="rotate-180" />
+            <Image width={15} height={15} src={arrow} alt={'arrow'} className="rotate-180" />
+          </button>
+        )}
         <button
           className="p-1 bg-yellow-300 rounded-3xl mr-1"
           onClick={handlePrevPage}
@@ -88,6 +104,16 @@ const List: FC<ListProps> = ({ posts, isRecipe }) => {
         >
           <Image width={15} height={15} src={arrow} alt={'arrow'} />
         </button>
+        {isRecipe && (
+          <button
+            className="flex p-1 ml-1"
+            disabled={currentPage == totalPages}
+            onClick={handleLastPage}
+          >
+            <Image width={15} height={15} src={arrow} alt={'arrow'} />
+            <Image width={15} height={15} src={arrow} alt={'arrow'} />
+          </button>
+        )}
       </div>
     </div>
   );

@@ -22,7 +22,9 @@ export async function getStaticProps() {
 
 const Recipes = ({ posts }) => {
   const router = useRouter();
-  const [postWithFilter, setPostWithFilter] = useState(posts);
+  const [postWithFilter, setPostWithFilter] = useState(
+    posts.sort((post1, post2) => (post1.weight > post2.weight ? -1 : 1))
+  );
   const [filterName, setFilterName] = useState('');
 
   const breadcrumbs = [
