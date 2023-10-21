@@ -12,7 +12,11 @@ const Article = ({ postMetadata, content }) => {
     { label: `${postMetadata.title}`, href: `/blog/${postMetadata.slug}` },
   ];
   return (
-    <HomeLayout title={postMetadata.title}>
+    <HomeLayout
+      title={postMetadata.title}
+      description={postMetadata.subtitle}
+      keywords={'правильное питание, вегетарианство, похудение, сбалансированная диета'}
+    >
       <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
         <section className="flex flex-col items-center justify-center px-3">

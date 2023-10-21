@@ -21,7 +21,15 @@ const breadcrumbs = [
 
 const Blog = ({ articles }) => {
   return (
-    <HomeLayout title={'Блог'}>
+    <HomeLayout
+      title={'Блог'}
+      description={
+        'Изучайте полезные статьи о правильном питании на нашем сайте. Узнайте советы и рекомендации экспертов о здоровом образе жизни, сбалансированном питании и здоровых пищевых привычках, чтобы достичь оптимального благополучия и формы.'
+      }
+      keywords={
+        'правильное питание, вегетарианство, похудение, сбалансированная диета, здоровое меню'
+      }
+    >
       <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
         <section className="flex flex-col items-center">

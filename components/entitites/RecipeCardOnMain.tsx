@@ -87,7 +87,7 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
             src={recipe.image}
             width={350}
             height={180}
-            alt={'image'}
+            alt={recipe.title}
             loading="lazy"
             className={`rounded-t-lg ${isLoading ? 'loaded' : ''}`}
             style={{ objectFit: 'cover', height: 180 }}
@@ -107,7 +107,7 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
             )}
           {!search && recipe.title}
         </h4>
-        <div className="my-3 text-base">{recipe.subtitle}</div>
+        <p className="my-3 text-base">{recipe.subtitle}</p>
         <div className="text-center">
           <Link
             href={`recipes/${recipe.slug}`}

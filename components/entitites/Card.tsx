@@ -27,7 +27,7 @@ const Card: FC<CardProps> = ({ posts, content, href }) => {
           src={posts.image}
           layout="fill"
           objectFit="cover"
-          alt={'image'}
+          alt={posts.title}
           className={`rounded-t-xl h-full block ${isLoading ? 'loaded' : ''}`}
           onLoad={handleImageLoad}
         />
