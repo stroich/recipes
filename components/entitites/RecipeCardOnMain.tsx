@@ -21,6 +21,13 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
   const [isLoading, setIsLoading] = useState(false);
   const [isComposition, setIsComposition] = useState({});
 
+  const compositionStyle = {
+    borderBottom: '4px solid #09AAB4',
+    transformOrigin: 'top center',
+    transform: isComposition[recipe.slug] ? 'scaleY(1)' : 'scaleY(0)',
+    transition: 'transform 0.2s ease-in',
+  };
+
   useEffect(() => {
     setIsComposition(allCompositions);
   }, [allCompositions]);
@@ -128,11 +135,8 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
         </div>
       </div>
       <div
-        className={`composition text-start absolute bg-gray-100 max-h-0 opacity-0 invisible ${
-          isComposition[recipe.slug] ? 'open' : ''
-        }
-        rounded-b-lg w-full p-2 top-full z-10 transition-all ease-in-out duration-200 pt-2 border-b-4 border-slate-300
-        `}
+          className="composition text-start absolute bg-gray-100 rounded-b-lg w-full p-1 top-full z-10 pt-2"
+          style={compositionStyle}
       >
         <span className="font-bold">Состав:</span>
         <ul>
