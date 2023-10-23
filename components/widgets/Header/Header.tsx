@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import imgBurger from '../../../public/assets/icons/burger.svg';
 import Logo from '../../../public/assets/img/logo.png';
@@ -13,27 +13,9 @@ import SearchBox from '../../shared/searchBox/SearchBox';
 
 const Header = () => {
   const [isOpenBurger, setIsOpenBurger] = useState(false);
-  const [headerHeight, setHeaderHeight] = useState(0);
-
-  function updateHeaderHeight() {
-    const header = document.querySelector('header');
-    if (header) {
-      setHeaderHeight(header.clientHeight);
-    }
-  }
-
-  useEffect(() => {
-    updateHeaderHeight();
-    window.addEventListener('resize', updateHeaderHeight);
-    return () => {
-      window.removeEventListener('resize', updateHeaderHeight);
-    };
-  }, []);
 
   function workWithMenu() {
     setIsOpenBurger(!isOpenBurger);
-    updateHeaderHeight();
-    document.body.classList.toggle('overflow-hidden', !isOpenBurger);
   }
 
   return (
@@ -48,13 +30,9 @@ const Header = () => {
             />
             <h3 className="text-neutral-800 lg:ml-5 md:ml-1.5 hidden sm:block">Кушать будешь?</h3>
           </Link>
-          <NavBar
-            isOpenBurger={isOpenBurger}
-            closeMenu={workWithMenu}
-            headerHeight={headerHeight}
-          />
+          <NavBar isOpenBurger={isOpenBurger} />
           <SearchBox />
-          <div className="md:hidden h-auto" onClick={workWithMenu}>
+          <div className="md:hidden h-auto z-30" onClick={workWithMenu}>
             <Image
               className={`${
                 isOpenBurger ? 'transform rotate-90 transition-all duration-300 ease-in-out' : ''
