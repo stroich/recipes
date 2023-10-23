@@ -22,6 +22,7 @@ interface IRecipeMetadata {
   tags: string[];
   weight: number;
   video: string;
+  composition: string[];
 }
 
 interface SlugProps {
@@ -51,7 +52,11 @@ const Slug: FC<SlugProps> = ({ postMetadata, content }) => {
   };
 
   return (
-    <HomeLayout title={'Кушать будешь?'}>
+    <HomeLayout
+      title={`${postMetadata.title} на портале «Кушать будешь?»`}
+      description={postMetadata.subtitle}
+      keywords={postMetadata.composition.join(',')}
+    >
       <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
         <article className="border-0 px-3">
