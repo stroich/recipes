@@ -26,7 +26,7 @@ const ArticleCardOnMain: FC<ArticleCardOnMainProps> = ({ article }) => {
           src={article.image}
           width={200}
           height={100}
-          alt={'image'}
+          alt={article.title}
           loading="lazy"
           className={`w-full ${isLoading ? 'loaded' : ''}`}
           style={{ objectFit: 'cover', height: 100 }}

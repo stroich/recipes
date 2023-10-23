@@ -33,7 +33,7 @@ const MdToHtml = ({ mdSource }) => {
       component: 'img',
       props: {
         className: 'rounded-md p-1',
-        alt: '',
+        alt: 'image',
         width: '300px',
         height: '300px',
       },
