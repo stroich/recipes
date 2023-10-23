@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC, useState } from 'react';
 
 import { CATEGORIES } from '../../../constants/navigationProperties';
+import closeIcon from '../../../public/assets/icons/close-icon.svg';
 import iconFiltering from '../../../public/assets/icons/equalizer-line.svg';
 import NavigationCard from '../../entitites/NavigationCard';
 
@@ -18,40 +19,71 @@ const FilterRecipesSection: FC<FilterRecipesSectionProps> = ({
 }) => {
   const [isOpenFiltering, setIsOpenFiltering] = useState(false);
 
+  const filterStyle = {
+    transition: 'transform 0.3s ease-in',
+  };
+
+  const showFilterStyle = {
+    transformOrigin: 'top center',
+    transform: filterName ? 'scaleY(1)' : 'scaleY(0)',
+    transition: 'transform 0.3s ease-in-out',
+    height: filterName ? 'auto' : 0,
+  };
+
   return (
-    <div>
-      <div className={`h-auto md:hidden`}>
+    <>
+      <div className="bg-white h-fit md:hidden sticky z-20 top-0 flex justify-between items-center">
         <Image
+          className={`${isOpenFiltering ? 'saturate-50' : ''}  cursor-pointer`}
           src={iconFiltering}
           alt={'filtering'}
-          className={'relative bottom-6 right-9 ml-auto'}
           onClick={() => setIsOpenFiltering(!isOpenFiltering)}
         />
+        {filterName && (
+          <div className="font-bold md:hidden">
+            <span>
+              {' '}
+              Поиск по:{' '}
+              <span className="bg-yellow-300 rounded-xl max-w-fit px-2 py-0.5 mb-1 text-sm">
+                #{filterName}
+              </span>
+            </span>
+          </div>
+        )}
       </div>
+
       <aside
-        className={`${
-          isOpenFiltering ? 'block' : 'hidden'
-        } md:w-[33%] top-0 h-1/2 md:block lg:sticky`}
+        className={`fixed z-30 top-0 h-full pt-10 md: ${
+          isOpenFiltering ? 'translate-x-0' : '-translate-x-full'
+        } bg-white md:h-fit w-full md:w-[23%] md:translate-x-0 md:sticky md:top-0 md:pt-0`}
+        style={filterStyle}
       >
+        <div
+          className="md:hidden absolute top-5 right-5 cursor-pointer"
+          onClick={() => setIsOpenFiltering(false)}
+        >
+          <Image src={closeIcon} alt={'close'} width={30} height={30} />
+        </div>
         <h2>Навигация:</h2>
         <div>
-          {filterName && (
-            <div className="mb-5 font-bold">
-              <div className="mb-3">
-                {' '}
-                Поиск по:{' '}
-                <span className="bg-yellow-300 rounded-xl max-w-fit px-2 py-0.5 mb-1 text-sm">
-                  #{filterName}
-                </span>
-              </div>
-              <button
-                className="bg-customBlue py-1 px-3 rounded-xl text-l w-52"
-                onClick={resetFilters}
-              >
-                Сбросить фильтры
-              </button>
+          <div className="mb-5 font-bold" style={showFilterStyle}>
+            <div className="mb-3">
+              {' '}
+              Поиск по:{' '}
+              <span className="bg-yellow-300 rounded-xl max-w-fit px-2 py-0.5 mb-1 text-sm">
+                #{filterName}
+              </span>
             </div>
-          )}
+            <button
+              className="bg-customBlue py-1 px-3 rounded-xl text-l w-52"
+              onClick={() => {
+                resetFilters();
+                setIsOpenFiltering(false);
+              }}
+            >
+              Сбросить фильтры
+            </button>
+          </div>
 
           {CATEGORIES.map((category) => (
             <NavigationCard
@@ -64,7 +96,7 @@ const FilterRecipesSection: FC<FilterRecipesSectionProps> = ({
           ))}
         </div>
       </aside>
-    </div>
+    </>
   );
 };
 

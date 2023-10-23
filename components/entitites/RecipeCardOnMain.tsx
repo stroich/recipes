@@ -135,8 +135,8 @@ const RecipeCardOnMain: FC<RecipeCardOnMainProps> = ({
         </div>
       </div>
       <div
-          className="composition text-start absolute bg-gray-100 rounded-b-lg w-full p-1 top-full z-10 pt-2"
-          style={compositionStyle}
+        className="composition text-start absolute bg-gray-100 rounded-b-lg w-full p-1 top-full z-10 pt-2"
+        style={compositionStyle}
       >
         <span className="font-bold">Состав:</span>
         <ul>

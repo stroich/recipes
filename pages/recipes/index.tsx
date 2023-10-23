@@ -61,7 +61,7 @@ const Recipes = ({ posts }) => {
     <HomeLayout title={'Рецепты'}>
       <div className="md:px-16">
         <Breadcrumb breadcrumbs={breadcrumbs} />
-        <section className="flex flex-col md:flex-row md:justify-between justify-center">
+        <section className="relative flex flex-col md:flex-row md:justify-between justify-center">
           <FilterRecipesSection
             handleFilterClick={handleFilterClick}
             filterName={filterName}
